@@ -1,0 +1,16 @@
+# Local backups are retained on disk but never uploaded.
+*.旧版备份-*/
+
+# Generated validation and Python cache files.
+**/.validation-work/
+**/__pycache__/
+**/*.py[cod]
+
+# Common local credentials and private keys.
+**/.env
+**/.env.*
+!**/.env.example
+**/*credentials*.json
+**/*secrets*.json
+**/*.pem
+**/*.key

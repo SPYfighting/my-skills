@@ -1,0 +1,6 @@
+interface:
+  display_name: "生物科研公众号写作"
+  short_description: "把生命科学论文与技术写成双级别公众号文章并生成微信发布包"
+  default_prompt: "请使用 $wechat-biosci-writer，根据我给出的论文、技术、资料或草稿，选择快评或深解，核验证据与图片许可，并生成兼容微信发布流程的完整文章包。"
+policy:
+  allow_implicit_invocation: false
