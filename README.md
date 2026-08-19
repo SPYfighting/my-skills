@@ -11,6 +11,7 @@
 |---|---|
 | [`wechat-biosci-writer/`](wechat-biosci-writer/) | 将生命科学论文、技术或草稿写成「快评」或「深解」两级微信公众号文章，并生成兼容微信发布流程的完整文章包 |
 | [`novel-writing/`](novel-writing/) | 长篇网络小说创作协作，覆盖开书立纲、日更写作、剧情讨论修改、角色代入推演，并提供选题扫榜和审稿去 AI 味检查 |
+| [`cross-agent-review/`](cross-agent-review/) | 跨 agent 工作审查：请求方把刚完成的工作写成带锚点的审查请求，审查方按风险分层核对并产出分级审查结果 |
 
 ## 安装
 
