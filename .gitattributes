@@ -1,0 +1,8 @@
+# Keep LF in the repository and in the checkout. The scripts here run under
+# node and python on whatever machine the skill is installed on.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.pdf binary
+*.docx binary
