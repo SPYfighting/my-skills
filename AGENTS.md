@@ -9,6 +9,7 @@
 | 生命科学论文、技术或草稿写成微信公众号文章，或修改已有的科普草稿 | `wechat-biosci-writer/SKILL.md` |
 | 长篇网络小说：开书立纲、日更写作、剧情讨论、角色代入推演、去 AI 味审稿 | `novel-writing/SKILL.md` |
 | 把刚做完的工作交给另一个 agent 审查，或作为审查方核对另一个 agent 的交付 | `cross-agent-review/SKILL.md` |
+| 用户明确要求通过本机 OpenCode 执行任务或继续 OpenCode 会话 | `opencode/SKILL.md` |
 
 skill 内部的引用路径是相对 skill 根目录写的。`references/quality-gates.md` 里写 `scripts/validate_package.py`，指的是 `wechat-biosci-writer/scripts/validate_package.py`。
 

@@ -1,0 +1,6 @@
+interface:
+  display_name: "OpenCode for Codex"
+  short_description: "Run explicitly requested tasks through local OpenCode"
+  default_prompt: "Use $opencode to run my specified task through local OpenCode."
+policy:
+  allow_implicit_invocation: false
