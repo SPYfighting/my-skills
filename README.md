@@ -13,6 +13,7 @@
 | [`novel-writing/`](novel-writing/) | 长篇网络小说创作协作，覆盖开书立纲、日更写作、剧情讨论修改、角色代入推演，并提供选题扫榜和审稿去 AI 味检查 |
 | [`cross-agent-review/`](cross-agent-review/) | 跨 agent 工作审查：请求方把刚完成的工作写成带锚点的审查请求，审查方按风险分层核对并产出分级审查结果 |
 | [`opencode/`](opencode/) | 仅在用户明确要求时，由 Codex 优先、兼容其他终端 Agent 调用本机 OpenCode，支持模型、推理强度、会话恢复和低上下文长任务管理 |
+| [`draw-complex-interactions/`](draw-complex-interactions/) | 为小分子、核酸、修饰、离子及大分子界面生成可追溯的局部二维互作图或残基网络图 |
 
 ## 安装
 
