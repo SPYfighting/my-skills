@@ -14,6 +14,7 @@
 | [`cross-agent-review/`](cross-agent-review/) | 跨 agent 工作审查：请求方把刚完成的工作写成带锚点的审查请求，审查方按风险分层核对并产出分级审查结果 |
 | [`opencode/`](opencode/) | 仅在用户明确要求时，由 Codex 优先、兼容其他终端 Agent 调用本机 OpenCode，支持模型、推理强度、会话恢复和低上下文长任务管理 |
 | [`draw-complex-interactions/`](draw-complex-interactions/) | 为小分子、核酸、修饰、离子及大分子界面生成可追溯的局部二维互作图或残基网络图 |
+| [`my-academic-ppt/`](my-academic-ppt/) | My Academic PPT：制作图文充实、技术路线清晰、适合跨专业听众的科研汇报PPT，提供讲稿、布局指南及结构核验 |
 
 ## 安装
 

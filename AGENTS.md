@@ -11,6 +11,7 @@
 | 把刚做完的工作交给另一个 agent 审查，或作为审查方核对另一个 agent 的交付 | `cross-agent-review/SKILL.md` |
 | 用户明确要求通过本机 OpenCode 执行任务或继续 OpenCode 会话 | `opencode/SKILL.md` |
 | 用户明确点名 `draw-complex-interactions` 分析或绘制复合物二维互作 | `draw-complex-interactions/SKILL.md` |
+| 科研汇报 PPT 的制作、布局优化、技术路线与逐页讲稿 | `my-academic-ppt/SKILL.md` |
 
 skill 内部的引用路径是相对 skill 根目录写的。`references/quality-gates.md` 里写 `scripts/validate_package.py`，指的是 `wechat-biosci-writer/scripts/validate_package.py`。
 

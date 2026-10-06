@@ -1,0 +1,4 @@
+interface:
+  display_name: "My Academic PPT"
+  short_description: "制作信息充实、图文清晰、科研严谨且适合跨专业听众的学术汇报PPT"
+  default_prompt: "使用 $my-academic-ppt 将我的研究材料制作或优化为图文清晰、可直接汇报的科研PPT。"
