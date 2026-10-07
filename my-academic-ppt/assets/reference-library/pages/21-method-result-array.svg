@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="white"/>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
+<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start">方法步骤与结果图阵建立逐项对应</text>
+<text x="52" y="100" font-size="19" fill="#657B8B" font-weight="400" text-anchor="start">先控制输入，再分离响应，最后检验可复现性</text>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
+<circle cx="72" cy="185" r="20" fill="#365F85"/>
+<text x="72" y="192" font-size="20" fill="white" font-weight="700" text-anchor="middle">1</text>
+<text x="107" y="192" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">统一样品</text>
+<text x="107" y="232" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">同批原料</text>
+<text x="107" y="262" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">记录初始状态</text>
+<polygon points="67.50,273.00 67.50,292.00 62.32,292.00 71.00,306.00 79.68,292.00 74.50,292.00 74.50,273.00" fill="#365F85"/>
+<circle cx="72" cy="339" r="20" fill="#365F85"/>
+<text x="72" y="346" font-size="20" fill="white" font-weight="700" text-anchor="middle">2</text>
+<text x="107" y="346" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">分离变量</text>
+<text x="107" y="386" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">只改变处理梯度</text>
+<text x="107" y="416" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">并行设置参照</text>
+<polygon points="67.50,427.00 67.50,446.00 62.32,446.00 71.00,460.00 79.68,446.00 74.50,446.00 74.50,427.00" fill="#365F85"/>
+<circle cx="72" cy="493" r="20" fill="#365F85"/>
+<text x="72" y="500" font-size="20" fill="white" font-weight="700" text-anchor="middle">3</text>
+<text x="107" y="500" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">独立复核</text>
+<text x="107" y="540" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">更换制备批次</text>
+<text x="107" y="570" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">检查误差来源</text>
+<line x1="302" y1="144" x2="302" y2="625" stroke="#CCD7DF" stroke-width="1.4"/>
+<rect x="335" y="145" width="432" height="34" fill="#365F85"/>
+<text x="551.0" y="169.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">初始状态分布</text>
+<rect x="353" y="198" width="198" height="119" fill="#202C33"/>
+<ellipse cx="365.0" cy="208.0" rx="4.5" ry="3.0" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="472.53791426" cy="249.00714244" rx="6.8999999999999995" ry="4.6" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="406.07582852" cy="290.01428488" rx="9.3" ry="6.2" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="513.61374278" cy="232.02142732000002" rx="11.700000000000001" ry="7.800000000000001" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="447.15165704000003" cy="273.02856976" rx="14.100000000000001" ry="9.4" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="380.6895713" cy="215.03571219999998" rx="4.5" ry="3.0" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="488.22748556000005" cy="256.04285464000003" rx="6.8999999999999995" ry="4.6" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="421.7653998200001" cy="297.04999708" rx="9.3" ry="6.2" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="529.3033140800001" cy="239.05713952" rx="11.700000000000001" ry="7.800000000000001" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="462.84122834000004" cy="280.06428195999996" rx="14.100000000000001" ry="9.4" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="396.37914259999997" cy="222.07142439999996" rx="4.5" ry="3.0" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="503.9170568600001" cy="263.07856684" rx="6.8999999999999995" ry="4.6" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="437.4549711200001" cy="304.08570928" rx="9.3" ry="6.2" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="370.99288538" cy="246.09285171999997" rx="11.700000000000001" ry="7.800000000000001" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="478.53079964000017" cy="287.09999416" rx="14.100000000000001" ry="9.4" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="412.0687139" cy="229.10713659999993" rx="4.5" ry="3.0" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="519.6066281600001" cy="270.11427904" rx="6.8999999999999995" ry="4.6" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="453.1445424200002" cy="212.12142148" rx="9.3" ry="6.2" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="386.68245668000003" cy="253.12856391999995" rx="11.700000000000001" ry="7.800000000000001" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="494.2203709400002" cy="294.13570636" rx="14.100000000000001" ry="9.4" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="427.75828519999993" cy="236.1428487999999" rx="4.5" ry="3.0" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="535.29619946" cy="277.14999123999996" rx="6.8999999999999995" ry="4.6" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="468.83411372000023" cy="219.15713368" rx="9.3" ry="6.2" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="402.37202798" cy="260.16427612" rx="11.700000000000001" ry="7.800000000000001" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="509.90994224000013" cy="301.17141856" rx="14.100000000000001" ry="9.4" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="443.4478565000003" cy="243.1785609999999" rx="4.5" ry="3.0" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="376.9857707600001" cy="284.18570343999994" rx="6.8999999999999995" ry="4.6" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="484.5236850200002" cy="226.19284587999996" rx="9.3" ry="6.2" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="418.06159928000034" cy="267.19998832" rx="11.700000000000001" ry="7.800000000000001" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="525.5995135400004" cy="209.20713076" rx="14.100000000000001" ry="9.4" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="459.13742779999995" cy="250.21427319999987" rx="4.5" ry="3.0" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="392.67534206000005" cy="291.2214156399999" rx="6.8999999999999995" ry="4.6" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="500.2132563200002" cy="233.22855807999994" rx="9.3" ry="6.2" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="433.7511705800003" cy="274.23570051999997" rx="11.700000000000001" ry="7.800000000000001" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="367.28908484000044" cy="216.24284296" rx="14.100000000000001" ry="9.4" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="474.82699909999997" cy="257.24998539999984" rx="4.5" ry="3.0" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="408.36491336000006" cy="298.2571278399999" rx="6.8999999999999995" ry="4.6" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<ellipse cx="515.9028276200002" cy="240.26427027999992" rx="9.3" ry="6.2" fill="#7EAC9C" stroke="#A0C8B7" stroke-width="0.6"/>
+<line x1="485" y1="300" x2="535" y2="300" stroke="white" stroke-width="3"/>
+<text x="361" y="216" font-size="12" fill="white" font-weight="400" text-anchor="start">形貌示意</text>
+<text x="572" y="222" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">相同采集方式</text>
+<text x="572" y="254" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">比较分散范围</text>
+<text x="572" y="286" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">识别聚集区域</text>
+<rect x="798" y="145" width="432" height="34" fill="#365F85"/>
+<text x="1014.0" y="169.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">处理条件矩阵</text>
+<rect x="832.0" y="202.0" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="853.0" y="202.0" width="20.0" height="18.5" fill="#934141"/>
+<rect x="874.0" y="202.0" width="20.0" height="18.5" fill="#934141"/>
+<rect x="895.0" y="202.0" width="20.0" height="18.5" fill="#934141"/>
+<rect x="916.0" y="202.0" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="937.0" y="202.0" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="958.0" y="202.0" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="979.0" y="202.0" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="1000.0" y="202.0" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="1021.0" y="202.0" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="832.0" y="221.5" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="853.0" y="221.5" width="20.0" height="18.5" fill="#934141"/>
+<rect x="874.0" y="221.5" width="20.0" height="18.5" fill="#934141"/>
+<rect x="895.0" y="221.5" width="20.0" height="18.5" fill="#934141"/>
+<rect x="916.0" y="221.5" width="20.0" height="18.5" fill="#D9B19A"/>
+<rect x="937.0" y="221.5" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="958.0" y="221.5" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="979.0" y="221.5" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="1000.0" y="221.5" width="20.0" height="18.5" fill="#D9B19A"/>
+<rect x="1021.0" y="221.5" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="832.0" y="241.0" width="20.0" height="18.5" fill="#D9B19A"/>
+<rect x="853.0" y="241.0" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="874.0" y="241.0" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="895.0" y="241.0" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="916.0" y="241.0" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="937.0" y="241.0" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="958.0" y="241.0" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="979.0" y="241.0" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="1000.0" y="241.0" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="1021.0" y="241.0" width="20.0" height="18.5" fill="#934141"/>
+<rect x="832.0" y="260.5" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="853.0" y="260.5" width="20.0" height="18.5" fill="#D9B19A"/>
+<rect x="874.0" y="260.5" width="20.0" height="18.5" fill="#D9B19A"/>
+<rect x="895.0" y="260.5" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="916.0" y="260.5" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="937.0" y="260.5" width="20.0" height="18.5" fill="#ADC0D0"/>
+<rect x="958.0" y="260.5" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="979.0" y="260.5" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="1000.0" y="260.5" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="1021.0" y="260.5" width="20.0" height="18.5" fill="#934141"/>
+<rect x="832.0" y="280.0" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="853.0" y="280.0" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="874.0" y="280.0" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="895.0" y="280.0" width="20.0" height="18.5" fill="#ADC0D0"/>
+<rect x="916.0" y="280.0" width="20.0" height="18.5" fill="#7694AF"/>
+<rect x="937.0" y="280.0" width="20.0" height="18.5" fill="#7694AF"/>
+<rect x="958.0" y="280.0" width="20.0" height="18.5" fill="#ADC0D0"/>
+<rect x="979.0" y="280.0" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="1000.0" y="280.0" width="20.0" height="18.5" fill="#D9B19A"/>
+<rect x="1021.0" y="280.0" width="20.0" height="18.5" fill="#B96356"/>
+<rect x="832.0" y="299.5" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="853.0" y="299.5" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="874.0" y="299.5" width="20.0" height="18.5" fill="#ADC0D0"/>
+<rect x="895.0" y="299.5" width="20.0" height="18.5" fill="#7694AF"/>
+<rect x="916.0" y="299.5" width="20.0" height="18.5" fill="#456B8F"/>
+<rect x="937.0" y="299.5" width="20.0" height="18.5" fill="#456B8F"/>
+<rect x="958.0" y="299.5" width="20.0" height="18.5" fill="#7694AF"/>
+<rect x="979.0" y="299.5" width="20.0" height="18.5" fill="#DFE6EB"/>
+<rect x="1000.0" y="299.5" width="20.0" height="18.5" fill="#F2EBE4"/>
+<rect x="1021.0" y="299.5" width="20.0" height="18.5" fill="#D9B19A"/>
+<text x="842.5" y="338" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">1</text>
+<text x="947.5" y="338" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">6</text>
+<text x="1031.5" y="338" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">10</text>
+<text x="825" y="215.065" font-size="13" fill="#657B8B" font-weight="400" text-anchor="end">1</text>
+<text x="825" y="312.565" font-size="13" fill="#657B8B" font-weight="400" text-anchor="end">6</text>
+<text x="1064" y="226" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">行：配方</text>
+<text x="1064" y="260" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">列：条件</text>
+<text x="1064" y="294" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">色：响应</text>
+<rect x="335" y="395" width="432" height="34" fill="#365F85"/>
+<text x="551.0" y="419.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">动态响应分离</text>
+<line x1="372" y1="574" x2="580" y2="574" stroke="#657B8B" stroke-width="1.5"/>
+<line x1="372" y1="501" x2="372" y2="574" stroke="#657B8B" stroke-width="1.5"/>
+<line x1="372" y1="574" x2="580" y2="574" stroke="#CCD7DF" stroke-width="0.7"/>
+<text x="362" y="579" font-size="14" fill="#657B8B" font-weight="400" text-anchor="end">0</text>
+<line x1="372" y1="537.5" x2="580" y2="537.5" stroke="#CCD7DF" stroke-width="0.7"/>
+<text x="362" y="542.5" font-size="14" fill="#657B8B" font-weight="400" text-anchor="end">0.5</text>
+<line x1="372" y1="501" x2="580" y2="501" stroke="#CCD7DF" stroke-width="0.7"/>
+<text x="362" y="506" font-size="14" fill="#657B8B" font-weight="400" text-anchor="end">1</text>
+<path d="M372.0,567.4 L375.5,565.2 L378.9,563.0 L382.4,561.0 L385.9,559.1 L389.3,557.4 L392.8,555.7 L396.3,554.1 L399.7,552.6 L403.2,551.3 L406.7,550.0 L410.1,548.7 L413.6,547.6 L417.1,546.5 L420.5,545.5 L424.0,544.5 L427.5,543.6 L430.9,542.8 L434.4,542.0 L437.9,541.2 L441.3,540.5 L444.8,539.9 L448.3,539.2 L451.7,538.7 L455.2,538.1 L458.7,537.6 L462.1,537.1 L465.6,536.7 L469.1,536.2 L472.5,535.8 L476.0,535.4 L479.5,535.1 L482.9,534.7 L486.4,534.4 L489.9,534.1 L493.3,533.9 L496.8,533.6 L500.3,533.3 L503.7,533.1 L507.2,532.9 L510.7,532.7 L514.1,532.5 L517.6,532.3 L521.1,532.1 L524.5,532.0 L528.0,531.8 L531.5,531.7 L534.9,531.6 L538.4,531.4 L541.9,531.3 L545.3,531.2 L548.8,531.1 L552.3,531.0 L555.7,530.9 L559.2,530.8 L562.7,530.7 L566.1,530.7 L569.6,530.6 L573.1,530.5 L576.5,530.5 L580.0,530.4" fill="none" stroke="#365F85" stroke-width="2.8"/>
+<circle cx="372.0" cy="567.4300000000001" r="3.1" fill="#365F85"/>
+<circle cx="413.6" cy="547.5812442331785" r="3.1" fill="#365F85"/>
+<circle cx="455.2" cy="538.1111266510495" r="3.1" fill="#365F85"/>
+<circle cx="496.8" cy="533.5928017709954" r="3.1" fill="#365F85"/>
+<circle cx="538.4" cy="531.4370460958767" r="3.1" fill="#365F85"/>
+<circle cx="580.0" cy="530.4085050648141" r="3.1" fill="#365F85"/>
+<path d="M372.0,567.4 L375.5,563.0 L378.9,558.9 L382.4,555.0 L385.9,551.5 L389.3,548.3 L392.8,545.3 L396.3,542.5 L399.7,539.9 L403.2,537.5 L406.7,535.3 L410.1,533.3 L413.6,531.4 L417.1,529.7 L420.5,528.0 L424.0,526.6 L427.5,525.2 L430.9,523.9 L434.4,522.7 L437.9,521.6 L441.3,520.6 L444.8,519.7 L448.3,518.9 L451.7,518.1 L455.2,517.3 L458.7,516.6 L462.1,516.0 L465.6,515.4 L469.1,514.9 L472.5,514.4 L476.0,513.9 L479.5,513.5 L482.9,513.1 L486.4,512.8 L489.9,512.4 L493.3,512.1 L496.8,511.8 L500.3,511.6 L503.7,511.3 L507.2,511.1 L510.7,510.9 L514.1,510.7 L517.6,510.5 L521.1,510.3 L524.5,510.2 L528.0,510.0 L531.5,509.9 L534.9,509.8 L538.4,509.7 L541.9,509.6 L545.3,509.5 L548.8,509.4 L552.3,509.3 L555.7,509.2 L559.2,509.2 L562.7,509.1 L566.1,509.0 L569.6,509.0 L573.1,508.9 L576.5,508.9 L580.0,508.8" fill="none" stroke="#A63237" stroke-width="2.8"/>
+<circle cx="372.0" cy="567.4300000000001" r="3.1" fill="#A63237"/>
+<circle cx="413.6" cy="531.3978239047493" r="3.1" fill="#A63237"/>
+<circle cx="455.2" cy="517.3226529534046" r="3.1" fill="#A63237"/>
+<circle cx="496.8" cy="511.8244993923796" r="3.1" fill="#A63237"/>
+<circle cx="538.4" cy="509.67676756836767" r="3.1" fill="#A63237"/>
+<circle cx="580.0" cy="508.8378037350233" r="3.1" fill="#A63237"/>
+<text x="372" y="459" font-size="17" fill="#657B8B" font-weight="400" text-anchor="start">归一化响应</text>
+<text x="476.0" y="603" font-size="17" fill="#657B8B" font-weight="400" text-anchor="middle">时间</text>
+<text x="372" y="592" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">0</text>
+<text x="580" y="592" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">1</text>
+<line x1="390.0" y1="486" x2="414.0" y2="486" stroke="#365F85" stroke-width="3"/>
+<text x="422.0" y="492" font-size="17" fill="#657B8B" font-weight="400" text-anchor="start">参照</text>
+<line x1="489.84000000000003" y1="486" x2="513.84" y2="486" stroke="#A63237" stroke-width="3"/>
+<text x="521.84" y="492" font-size="17" fill="#657B8B" font-weight="400" text-anchor="start">处理</text>
+<text x="604" y="494" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">参数差异</text>
+<text x="604" y="528" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">对应单变量</text>
+<text x="604" y="562" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">梯度改变</text>
+<rect x="798" y="395" width="432" height="34" fill="#365F85"/>
+<text x="1014.0" y="419.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">批次预测一致性</text>
+<line x1="830" y1="586" x2="1037" y2="586" stroke="#657B8B" stroke-width="1.2"/>
+<line x1="830" y1="470" x2="830" y2="586" stroke="#657B8B" stroke-width="1.2"/>
+<line x1="830" y1="586" x2="1037" y2="470" stroke="#CCD7DF" stroke-width="1.3" stroke-dasharray="5 4"/>
+<circle cx="830.0" cy="582.52" r="3.2" fill="#A63237"/>
+<circle cx="957.9330356609" cy="501.80039303802454" r="3.2" fill="#365F85"/>
+<circle cx="878.8660713218001" cy="563.5663683345365" r="3.2" fill="#365F85"/>
+<circle cx="1006.7991069827" cy="497.47263652664077" r="3.2" fill="#365F85"/>
+<circle cx="927.7321426436" cy="522.1071292212625" r="3.2" fill="#A63237"/>
+<circle cx="848.6651783045" cy="568.6033324128207" r="3.2" fill="#365F85"/>
+<circle cx="976.5982139654" cy="515.7189351507288" r="3.2" fill="#365F85"/>
+<circle cx="897.5312496263001" cy="550.3952408402158" r="3.2" fill="#365F85"/>
+<circle cx="1025.4642852872" cy="473.48" r="3.2" fill="#A63237"/>
+<circle cx="946.3973209481001" cy="523.5824823015007" r="3.2" fill="#365F85"/>
+<circle cx="867.3303566090001" cy="576.7251251673355" r="3.2" fill="#365F85"/>
+<circle cx="995.2633922699001" cy="485.97001070714737" r="3.2" fill="#365F85"/>
+<circle cx="916.1964279308" cy="528.9882593918139" r="3.2" fill="#A63237"/>
+<circle cx="837.1294635917001" cy="582.52" r="3.2" fill="#365F85"/>
+<circle cx="965.0624992526002" cy="514.7210193466111" r="3.2" fill="#365F85"/>
+<circle cx="885.9955349135" cy="542.0109651570783" r="3.2" fill="#365F85"/>
+<circle cx="1013.9285705744" cy="483.5114141292384" r="3.2" fill="#A63237"/>
+<circle cx="934.8616062353002" cy="539.61632944492" r="3.2" fill="#365F85"/>
+<circle cx="855.7946418962" cy="566.063062600964" r="3.2" fill="#365F85"/>
+<circle cx="983.7276775571002" cy="489.64337443554973" r="3.2" fill="#365F85"/>
+<circle cx="904.6607132180002" cy="553.683891797229" r="3.2" fill="#A63237"/>
+<circle cx="1032.5937488789" cy="478.9100283266631" r="3.2" fill="#365F85"/>
+<circle cx="953.5267845398001" cy="504.70538088687107" r="3.2" fill="#365F85"/>
+<circle cx="874.4598202007003" cy="559.4222733756432" r="3.2" fill="#365F85"/>
+<circle cx="1002.3928558616" cy="502.12345132737426" r="3.2" fill="#A63237"/>
+<circle cx="923.3258915225001" cy="530.3261982958826" r="3.2" fill="#365F85"/>
+<circle cx="844.2589271834003" cy="566.6152565108474" r="3.2" fill="#365F85"/>
+<circle cx="972.1919628443" cy="514.2023646147918" r="3.2" fill="#365F85"/>
+<circle cx="893.1249985052004" cy="558.8992040049384" r="3.2" fill="#A63237"/>
+<circle cx="1021.0580341661002" cy="473.48" r="3.2" fill="#365F85"/>
+<circle cx="941.991069827" cy="519.3847303192792" r="3.2" fill="#365F85"/>
+<circle cx="862.9241054879005" cy="580.2356093392609" r="3.2" fill="#365F85"/>
+<circle cx="990.8571411488002" cy="494.69405415789004" r="3.2" fill="#A63237"/>
+<circle cx="911.7901768097" cy="527.9406565572507" r="3.2" fill="#365F85"/>
+<circle cx="832.7232124706005" cy="582.52" r="3.2" fill="#365F85"/>
+<circle cx="960.6562481315002" cy="522.6316826424508" r="3.2" fill="#365F85"/>
+<circle cx="881.5892837924" cy="547.1895272768245" r="3.2" fill="#A63237"/>
+<circle cx="1009.5223194533005" cy="479.4668543663803" r="3.2" fill="#365F85"/>
+<circle cx="930.4553551142003" cy="541.9541761708433" r="3.2" fill="#365F85"/>
+<circle cx="851.3883907751" cy="575.0980175006545" r="3.2" fill="#365F85"/>
+<circle cx="979.3214264360005" cy="489.6453572508273" r="3.2" fill="#A63237"/>
+<circle cx="900.2544620969003" cy="550.5638147151029" r="3.2" fill="#365F85"/>
+<circle cx="1028.1874977578" cy="486.05856479342145" r="3.2" fill="#365F85"/>
+<circle cx="949.1205334187005" cy="510.9118897252976" r="3.2" fill="#365F85"/>
+<circle cx="870.0535690796003" cy="555.7330021265846" r="3.2" fill="#A63237"/>
+<text x="933.5" y="609" font-size="14" fill="#657B8B" font-weight="400" text-anchor="middle">测量值</text>
+<text x="830" y="460" font-size="14" fill="#657B8B" font-weight="400" text-anchor="start">预测值</text>
+<text x="1061" y="496" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">保留盲测批次</text>
+<text x="1061" y="530" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">核对误差方向</text>
+<text x="1061" y="564" font-size="19" fill="#15344E" font-weight="400" text-anchor="start">回查异常点</text>
+<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle">统一输入与单变量对照确定差异来源，独立复核限定推广范围</text>
+<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">21</text>
+</svg>

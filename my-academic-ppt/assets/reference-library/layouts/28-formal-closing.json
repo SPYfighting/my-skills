@@ -1,0 +1,433 @@
+{
+  "schema_version": "1.1",
+  "slide_number": 28,
+  "reference_id": 28,
+  "slug": "28-formal-closing",
+  "title": "感谢聆听",
+  "family": "简洁正式结束",
+  "purpose": "为报告结束和现场讨论留下安静的视觉空间。",
+  "reading_order": "中心致谢语后自然进入讨论。",
+  "adaptation_suggestions": [
+    "可按用途添加报告题目或公开联系方式。",
+    "不需要仪式性结束时可省略本页。"
+  ],
+  "avoid": [
+    "不要为凑信息密度加入无关图表。"
+  ],
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "CSS px",
+    "dpi": 96
+  },
+  "source": {
+    "file": "pages/28-formal-closing.svg",
+    "sha256": "0d4c21591ec37f4810f2ea5d2dad001057dc93f1561464a0a7f323c717ced454"
+  },
+  "font_design": {
+    "family": "Microsoft YaHei",
+    "reason": "微软雅黑同时覆盖中文、拉丁字母及常用科研符号，保持 PowerPoint 中的原生可编辑文字。字号沿用 SVG 的 CSS 像素值。"
+  },
+  "coordinate_rule": "SVG y 是文字基线。文本框顶端 = y − 字体 fontBoundingBoxAscent；文本框宽度 = 实测字宽 + max(4 px, 0.22×字号)。文本框零内边距、禁换行、禁自动缩小，按 text-anchor 计算 x。",
+  "elements": [
+    {
+      "id": "p28-矩形-0001",
+      "type": "矩形",
+      "native": true,
+      "text": null,
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "font": null,
+      "align": null,
+      "color": "#FFFFFF",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 1,
+      "source_svg": {
+        "tag": "rect",
+        "attributes": {
+          "width": "1280",
+          "height": "720",
+          "fill": "white"
+        }
+      },
+      "ppt_bbox": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720,
+        "unit": "CSS px"
+      }
+    },
+    {
+      "id": "p28-矩形-0002",
+      "type": "矩形",
+      "native": true,
+      "text": null,
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 6,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 2,
+      "source_svg": {
+        "tag": "rect",
+        "attributes": {
+          "x": "0",
+          "y": "0",
+          "width": "1280",
+          "height": "6",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 6,
+        "unit": "CSS px"
+      }
+    },
+    {
+      "id": "p28-线-0003",
+      "type": "线条",
+      "native": true,
+      "text": null,
+      "x": 50,
+      "y": 116,
+      "w": 1180,
+      "h": 0.01,
+      "font": null,
+      "align": null,
+      "color": "none",
+      "stroke": "#CCD7DF",
+      "stroke_width": 1.4,
+      "zorder": 3,
+      "source_svg": {
+        "tag": "line",
+        "attributes": {
+          "x1": "50",
+          "y1": "116",
+          "x2": "1230",
+          "y2": "116",
+          "stroke": "#CCD7DF",
+          "stroke-width": "1.4"
+        }
+      },
+      "ppt_bbox": {
+        "x": 50,
+        "y": 116,
+        "w": 1180,
+        "h": 0.01,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 1180,
+            "y": 0
+          }
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p28-文本-0004",
+      "type": "文本框",
+      "native": true,
+      "text": "感谢聆听",
+      "x": 526.06,
+      "y": 249.8623,
+      "w": 227.88,
+      "h": 79.3705,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 54,
+        "size_pt": 40.5,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#15344E",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 4,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "640",
+          "y": "307",
+          "font-size": "54",
+          "fill": "#15344E",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 526.06,
+        "y": 249.8623,
+        "w": 227.88,
+        "h": 79.3705,
+        "unit": "CSS px"
+      },
+      "role": "主题标题",
+      "svg_baseline": {
+        "x": 640,
+        "y": 307,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 216,
+        "font_ascent": 57.1377,
+        "font_descent": 14.1328,
+        "actual_ascent": 46,
+        "actual_descent": 8,
+        "editing_reserve": 11.88
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 1
+    },
+    {
+      "id": "p28-线-0005",
+      "type": "线条",
+      "native": true,
+      "text": null,
+      "x": 475,
+      "y": 350,
+      "w": 330,
+      "h": 0.01,
+      "font": null,
+      "align": null,
+      "color": "none",
+      "stroke": "#365F85",
+      "stroke_width": 3,
+      "zorder": 5,
+      "source_svg": {
+        "tag": "line",
+        "attributes": {
+          "x1": "475",
+          "y1": "350",
+          "x2": "805",
+          "y2": "350",
+          "stroke": "#365F85",
+          "stroke-width": "3"
+        }
+      },
+      "ppt_bbox": {
+        "x": 475,
+        "y": 350,
+        "w": 330,
+        "h": 0.01,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 330,
+            "y": 0
+          }
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p28-文本-0006",
+      "type": "文本框",
+      "native": true,
+      "text": "欢迎讨论研究思路与验证路径",
+      "x": 454.92,
+      "y": 387.373,
+      "w": 370.16,
+      "h": 41.1551,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 28,
+        "size_pt": 21,
+        "bold": false
+      },
+      "align": "center",
+      "color": "#657B8B",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 6,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "640",
+          "y": "417",
+          "font-size": "28",
+          "fill": "#657B8B",
+          "font-weight": "400",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 454.92,
+        "y": 387.373,
+        "w": 370.16,
+        "h": 41.1551,
+        "unit": "CSS px"
+      },
+      "role": "说明或图中标注",
+      "svg_baseline": {
+        "x": 640,
+        "y": 417,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 364,
+        "font_ascent": 29.627,
+        "font_descent": 7.3281,
+        "actual_ascent": 24,
+        "actual_descent": 5,
+        "editing_reserve": 6.16
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 2
+    },
+    {
+      "id": "p28-文本-0007",
+      "type": "文本框",
+      "native": true,
+      "text": "28",
+      "x": 1208.41,
+      "y": 688.1284,
+      "w": 21.59,
+      "h": 22.0474,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 15,
+        "size_pt": 11.25,
+        "bold": false
+      },
+      "align": "right",
+      "color": "#657B8B",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 7,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "1230",
+          "y": "704",
+          "font-size": "15",
+          "fill": "#657B8B",
+          "font-weight": "400",
+          "text-anchor": "end"
+        }
+      },
+      "ppt_bbox": {
+        "x": 1208.41,
+        "y": 688.1284,
+        "w": 21.59,
+        "h": 22.0474,
+        "unit": "CSS px"
+      },
+      "role": "页码",
+      "svg_baseline": {
+        "x": 1230,
+        "y": 704,
+        "anchor": "end"
+      },
+      "text_metrics": {
+        "measured_width": 17.59,
+        "font_ascent": 15.8716,
+        "font_descent": 3.9258,
+        "actual_ascent": 11,
+        "actual_descent": 0,
+        "editing_reserve": 4
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 3
+    }
+  ],
+  "counts": {
+    "total": 7,
+    "native": 7,
+    "text": 3,
+    "local_images": 0
+  },
+  "text_reading_order": [
+    {
+      "element_id": "p28-文本-0004",
+      "text": "感谢聆听",
+      "role": "主题标题"
+    },
+    {
+      "element_id": "p28-文本-0006",
+      "text": "欢迎讨论研究思路与验证路径",
+      "role": "说明或图中标注"
+    },
+    {
+      "element_id": "p28-文本-0007",
+      "text": "28",
+      "role": "页码"
+    }
+  ],
+  "scope": "除明确标记的局部裁剪图外，文字、框线、箭头与基础图形均为原生可编辑对象。",
+  "regions": [
+    {
+      "id": "closing",
+      "label": "中心致谢语与研究讨论邀请",
+      "role": "closing",
+      "x": 382,
+      "y": 243,
+      "w": 516,
+      "h": 191,
+      "member_ids": [
+        "p28-文本-0004",
+        "p28-线-0005",
+        "p28-文本-0006"
+      ],
+      "text_ids": [
+        "p28-文本-0004",
+        "p28-文本-0006"
+      ]
+    }
+  ],
+  "relationships": [],
+  "unassigned_element_ids": [
+    "p28-矩形-0001",
+    "p28-矩形-0002",
+    "p28-线-0003",
+    "p28-文本-0007"
+  ],
+  "region_membership_rule": "Assign each element to the smallest containing semantic region; allow bounded center-based glyph overhang. Spanning backgrounds and connectors remain unassigned and need separate adjustment."
+}

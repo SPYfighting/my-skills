@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="white"/>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
+<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start">实施条件与验收口径在启动前对齐</text>
+<text x="52" y="100" font-size="19" fill="#657B8B" font-weight="400" text-anchor="start">从输入准备到成果交付，每一项要求都对应可查看的依据</text>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
+<rect x="50" y="148" width="213" height="34" fill="#365F85"/>
+<text x="156.5" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">实施条件</text>
+<rect x="263" y="148" width="370" height="34" fill="#365F85"/>
+<text x="448.0" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">判断依据</text>
+<rect x="633" y="148" width="367" height="34" fill="#365F85"/>
+<text x="816.5" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">交付产物</text>
+<rect x="1000" y="148" width="230" height="34" fill="#365F85"/>
+<text x="1115.0" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">进入下一步</text>
+<rect x="50" y="182" width="1180" height="108" fill="#EFF4F8"/>
+<text x="70" y="243" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">样品与对照</text>
+<text x="283" y="225" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">来源与批次记录完整</text>
+<text x="283" y="259" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">空白、参照同步准备</text>
+<text x="653" y="225" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">样品清单</text>
+<text x="653" y="259" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">条件及处理记录</text>
+<rect x="1040" y="214" width="145" height="43" fill="#E6EFEC"/>
+<text x="1112" y="243" font-size="22" fill="#537F78" font-weight="700" text-anchor="middle">可比较</text>
+<line x1="50" y1="290" x2="1230" y2="290" stroke="#CCD7DF" stroke-width="1"/>
+<rect x="50" y="290" width="1180" height="108" fill="white"/>
+<text x="70" y="351" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">测量与校准</text>
+<text x="283" y="333" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">基准覆盖预期响应范围</text>
+<text x="283" y="367" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">漂移监测可以复核</text>
+<text x="653" y="333" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">校准记录</text>
+<text x="653" y="367" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">完整原始时序</text>
+<rect x="1040" y="322" width="145" height="43" fill="#E6EFEC"/>
+<text x="1112" y="351" font-size="22" fill="#537F78" font-weight="700" text-anchor="middle">可测量</text>
+<line x1="50" y1="398" x2="1230" y2="398" stroke="#CCD7DF" stroke-width="1"/>
+<rect x="50" y="398" width="1180" height="108" fill="#EFF4F8"/>
+<text x="70" y="459" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">数据与分析</text>
+<text x="283" y="441" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">单位、缺失与异常有记录</text>
+<text x="283" y="475" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">处理步骤能够重放</text>
+<text x="653" y="441" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">整理后数据表</text>
+<text x="653" y="475" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">分析说明与图件</text>
+<rect x="1040" y="430" width="145" height="43" fill="#E6EFEC"/>
+<text x="1112" y="459" font-size="22" fill="#537F78" font-weight="700" text-anchor="middle">可复现</text>
+<line x1="50" y1="506" x2="1230" y2="506" stroke="#CCD7DF" stroke-width="1"/>
+<rect x="50" y="506" width="1180" height="108" fill="white"/>
+<text x="70" y="567" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">结果与交付</text>
+<text x="283" y="549" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">独立复测支撑主要判断</text>
+<text x="283" y="583" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">局限对应具体条件</text>
+<text x="653" y="549" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">证据索引</text>
+<text x="653" y="583" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">可编辑报告与源文件</text>
+<rect x="1040" y="538" width="145" height="43" fill="#E6EFEC"/>
+<text x="1112" y="567" font-size="22" fill="#537F78" font-weight="700" text-anchor="middle">可验收</text>
+<line x1="50" y1="614" x2="1230" y2="614" stroke="#CCD7DF" stroke-width="1"/>
+<line x1="263" y1="182" x2="263" y2="614" stroke="#CCD7DF" stroke-width="1"/>
+<line x1="633" y1="182" x2="633" y2="614" stroke="#CCD7DF" stroke-width="1"/>
+<line x1="1000" y1="182" x2="1000" y2="614" stroke="#CCD7DF" stroke-width="1"/>
+<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle">“已具备条件”必须能落实到可检查的记录与产物</text>
+<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">29</text>
+</svg>

@@ -58,3 +58,11 @@ PPT、PDF预览和独立讲稿如均交付，应保持页码、标题、图件�
 ## 可移植边界
 
 核心入口遵循 [Agent Skills 格式](https://agentskills.io/specification) 的 Markdown 与 YAML frontmatter，参考材料从技能根目录解析。`agents/openai.yaml`仅为Codex界面适配，其他Agent无需执行它。脚本只依赖Python 3标准库，不使用工具专用标记、绝对路径或自动安装逻辑。兼容格式不等于每个Agent都自带PPT生成或渲染能力。
+
+## 维护参考库
+
+用户使用技能时按 [参考文件使用说明](template-use.md) 读取可编辑PPT、逐页布局JSON与预览，无需运行生成脚本。维护者可用 `python scripts/build_reference_library.py` 重新生成37张SVG及选择索引；它只依赖标准库，不会更新PPT或PNG。修改设计后同步更新原生PPT与逐页布局JSON，用 `python scripts/enrich_reference_layouts.py` 更新模块成员和关系，再从最终PPT导出1280×720的PNG并逐页审阅。不能把SVG渲染当成PPT导出验收。
+
+`assets/reference-library/render-manifest.json` 记录各文件SHA-256及实际渲染器，测试检查源文件、PPT、JSON与预览是否为已配对的版本。哈希检查只能发现文件不同步，不能替代视觉审核。
+
+公开参考库仅包含原创合成示例。原始报告、审阅记录和来源页面对应表留在获授权的项目范围内，不随技能发布。

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="white"/>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
+<text x="69" y="181" font-size="23" fill="#365F85" font-weight="700" text-anchor="start">第二部分</text>
+<text x="68" y="289" font-size="49" fill="#15344E" font-weight="700" text-anchor="start">建立结构与性能</text>
+<text x="68" y="359" font-size="49" fill="#15344E" font-weight="700" text-anchor="start">之间的可检验联系</text>
+<text x="72" y="483" font-size="27" fill="#A63237" font-weight="400" text-anchor="start">把观测差异转化为</text>
+<text x="72" y="522" font-size="27" fill="#A63237" font-weight="400" text-anchor="start">可以由实验检验的机制假设</text>
+<rect x="832" y="171" width="341" height="34" fill="#365F85"/>
+<text x="1002.5" y="195.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">结构参数</text>
+<rect x="832" y="205" width="341" height="75" fill="#EFF4F8"/>
+<text x="1002" y="251" font-size="20" fill="#15344E" font-weight="400" text-anchor="middle">孔径 · 连通性 · 厚度</text>
+<polygon points="996.50,290.00 996.50,299.60 993.07,299.60 1002.00,314.00 1010.93,299.60 1007.50,299.60 1007.50,290.00" fill="#365F85"/>
+<rect x="832" y="324" width="341" height="34" fill="#365F85"/>
+<text x="1002.5" y="348.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">机制假设</text>
+<rect x="832" y="358" width="341" height="75" fill="#EFF4F8"/>
+<text x="1002" y="404" font-size="20" fill="#15344E" font-weight="400" text-anchor="middle">路径 · 阻力 · 边界条件</text>
+<polygon points="996.50,443.00 996.50,452.60 993.07,452.60 1002.00,467.00 1010.93,452.60 1007.50,452.60 1007.50,443.00" fill="#365F85"/>
+<rect x="832" y="477" width="341" height="34" fill="#365F85"/>
+<text x="1002.5" y="501.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">独立检验</text>
+<rect x="832" y="511" width="341" height="75" fill="#EFF4F8"/>
+<text x="1002" y="557" font-size="20" fill="#15344E" font-weight="400" text-anchor="middle">对照 · 重复 · 适用范围</text>
+<text x="72" y="627" font-size="22" fill="#657B8B" font-weight="400" text-anchor="start">研究进展：验证方案制定中</text>
+<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">03</text>
+</svg>

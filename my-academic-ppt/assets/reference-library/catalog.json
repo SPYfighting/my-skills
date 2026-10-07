@@ -1,0 +1,716 @@
+{
+  "identity": "Original synthetic teaching examples; not scientific results.",
+  "pptx": "assets/reference-library/科研汇报布局参考.pptx",
+  "entries": [
+    {
+      "id": 1,
+      "slug": "01-opening",
+      "title": "多孔材料的结构与传输",
+      "svg": "assets/reference-library/pages/01-opening.svg",
+      "preview": "assets/reference-library/previews/01-opening.png",
+      "layout": "assets/reference-library/layouts/01-opening.json",
+      "pptx_slide": 1,
+      "family": "入口与导航",
+      "purpose": "单一研究主题的简洁开场",
+      "read_order": "先读主题，再由科学对象图建立领域印象",
+      "adapt": [
+        "可移除副标题或科学插图",
+        "标题长时转为上下排布"
+      ],
+      "avoid": [
+        "不把封面扩展为摘要页"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "02-agenda-logic",
+      "title": "汇报主线：问题、方法、证据与下一步",
+      "svg": "assets/reference-library/pages/02-agenda-logic.svg",
+      "preview": "assets/reference-library/previews/02-agenda-logic.png",
+      "layout": "assets/reference-library/layouts/02-agenda-logic.json",
+      "pptx_slide": 2,
+      "family": "入口与导航",
+      "purpose": "多部分报告的导航与内在逻辑",
+      "read_order": "按章节纵向阅读，每行再从左到右读取短路线",
+      "adapt": [
+        "短报告可省略独立目录",
+        "各行可改为问题—证据—结论"
+      ],
+      "avoid": [
+        "箭头按可见词组间隙居中，不按文本框边界盲对齐"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "03-section-route",
+      "title": "建立结构与性能之间的可检验联系",
+      "svg": "assets/reference-library/pages/03-section-route.svg",
+      "preview": "assets/reference-library/previews/03-section-route.png",
+      "layout": "assets/reference-library/layouts/03-section-route.json",
+      "pptx_slide": 3,
+      "family": "入口与导航",
+      "purpose": "章节标题与最简核心路线",
+      "read_order": "左侧主题→右侧路线→左下进展",
+      "adapt": [
+        "进展标签按需删除",
+        "步骤按真实问题调整数量或改为水平排布"
+      ],
+      "avoid": [
+        "状态不能挤在主标题与重点概括之间",
+        "章节标题不能被右侧流程压弱"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "04-complementary-four",
+      "title": "资源与方法共同支撑可重复的材料评价",
+      "svg": "assets/reference-library/pages/04-complementary-four.svg",
+      "preview": "assets/reference-library/previews/04-complementary-four.png",
+      "layout": "assets/reference-library/layouts/04-complementary-four.json",
+      "pptx_slide": 4,
+      "family": "总览与关系",
+      "purpose": "说明互补模块如何共同贡献",
+      "read_order": "读两组模块→跨四块括号→共同目标",
+      "adapt": [
+        "可改为3栏或非等宽区域",
+        "加号只在确有合并贡献时保留"
+      ],
+      "avoid": [
+        "括号须覆盖全部参与模块",
+        "长方形图片区应利用有效宽度"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "05-four-perspectives",
+      "title": "把应用要求转化为可测量的设计条件",
+      "svg": "assets/reference-library/pages/05-four-perspectives.svg",
+      "preview": "assets/reference-library/previews/05-four-perspectives.png",
+      "layout": "assets/reference-library/layouts/05-four-perspectives.json",
+      "pptx_slide": 5,
+      "family": "总览与关系",
+      "purpose": "同一问题的四个互补观察角度",
+      "read_order": "按阅读顺序看四块，再由共同指标串联",
+      "adapt": [
+        "适合背景、问题拆解或研究要素",
+        "可改为三块，不强行画递进箭头"
+      ],
+      "avoid": [
+        "并列角度不能伪画成必然先后"
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "06-problem-response",
+      "title": "围绕三类难点设置对应的研究动作",
+      "svg": "assets/reference-library/pages/06-problem-response.svg",
+      "preview": "assets/reference-library/previews/06-problem-response.png",
+      "layout": "assets/reference-library/layouts/06-problem-response.json",
+      "pptx_slide": 6,
+      "family": "问题与路线",
+      "purpose": "问题与解决动作一一对应",
+      "read_order": "逐行从左侧难点走向方法、证据和目标",
+      "adapt": [
+        "问题超过3条时按主次拆页",
+        "可用于风险应对而非一律三行"
+      ],
+      "avoid": [
+        "右侧不能只有方法名，要说明输入与作用"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "07-aligned-routes",
+      "title": "两条研究路线采用相同评价尺度",
+      "svg": "assets/reference-library/pages/07-aligned-routes.svg",
+      "preview": "assets/reference-library/previews/07-aligned-routes.png",
+      "layout": "assets/reference-library/layouts/07-aligned-routes.json",
+      "pptx_slide": 7,
+      "family": "问题与路线",
+      "purpose": "让两条路线在同维度下可比较",
+      "read_order": "先看列维度，再横向读每条路线",
+      "adapt": [
+        "可以是方法前后或两套平台",
+        "小图可换成真实结构与数据"
+      ],
+      "avoid": [
+        "两行采用不同指标时必须交代不可直接比较的部分"
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "08-state-challenge",
+      "title": "已有观测与当前挑战共同限定研究问题",
+      "svg": "assets/reference-library/pages/08-state-challenge.svg",
+      "preview": "assets/reference-library/previews/08-state-challenge.png",
+      "layout": "assets/reference-library/layouts/08-state-challenge.json",
+      "pptx_slide": 8,
+      "family": "总览与关系",
+      "purpose": "上部图证据与下部解释成对呈现",
+      "read_order": "左侧已有材料→右侧未解决问题→研究切入点",
+      "adapt": [
+        "可替换为需求与现状、理论与应用",
+        "每列可用大图或两张相关小图"
+      ],
+      "avoid": [
+        "不是把外部文献结果当作本研究成绩"
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "09-logic-ladder",
+      "title": "把研究挑战逐层转化为方法与验证目标",
+      "svg": "assets/reference-library/pages/09-logic-ladder.svg",
+      "preview": "assets/reference-library/previews/09-logic-ladder.png",
+      "layout": "assets/reference-library/layouts/09-logic-ladder.json",
+      "pptx_slide": 9,
+      "family": "问题与路线",
+      "purpose": "挑战—问题—方法—目标逐层映射",
+      "read_order": "先看行层级，再沿三条纵向链阅读",
+      "adapt": [
+        "列数随问题数量变化",
+        "方法层可换成图证据或技术组合"
+      ],
+      "avoid": [
+        "每一层必须产生新信息，避免同义重述"
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "10-stage-process",
+      "title": "研究路线将每一步输出交给下一步检验",
+      "svg": "assets/reference-library/pages/10-stage-process.svg",
+      "preview": "assets/reference-library/previews/10-stage-process.png",
+      "layout": "assets/reference-library/layouts/10-stage-process.json",
+      "pptx_slide": 10,
+      "family": "问题与路线",
+      "purpose": "信息充实的串行技术总览",
+      "read_order": "沿粗箭头读取输入到反馈，每段读图再读操作与输出",
+      "adapt": [
+        "可改3或5段，也可上下两层",
+        "方法参数放在有关节点，非另列缩写墙"
+      ],
+      "avoid": [
+        "没有先后关系的算法不能为排版而串联"
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "11-parallel-discovery",
+      "title": "多种线索并行发现候选，再以统一标准筛选",
+      "svg": "assets/reference-library/pages/11-parallel-discovery.svg",
+      "preview": "assets/reference-library/previews/11-parallel-discovery.png",
+      "layout": "assets/reference-library/layouts/11-parallel-discovery.json",
+      "pptx_slide": 11,
+      "family": "问题与路线",
+      "purpose": "多路径汇聚后筛选验证",
+      "read_order": "三个输入通道→候选集合→共同筛选→实验",
+      "adapt": [
+        "通道可换成不同数据或算法",
+        "筛选可拆成独立页深入说明"
+      ],
+      "avoid": [
+        "模型相似性不是功能验证结果"
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "12-challenge-technology",
+      "title": "三个关键约束贯穿材料设计与评价",
+      "svg": "assets/reference-library/pages/12-challenge-technology.svg",
+      "preview": "assets/reference-library/previews/12-challenge-technology.png",
+      "layout": "assets/reference-library/layouts/12-challenge-technology.json",
+      "pptx_slide": 12,
+      "family": "问题与路线",
+      "purpose": "窄约束区与宽技术图带对应",
+      "read_order": "左侧约束为阅读透镜，横向看三项技术措施",
+      "adapt": [
+        "可换成材料需求或临床/工程约束",
+        "技术栏根据图大小采用非等宽"
+      ],
+      "avoid": [
+        "不要把难点栏与右侧内容做成无关清单"
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "13-whole-local-mechanism",
+      "title": "从整体结构定位局部作用，再提出可测假设",
+      "svg": "assets/reference-library/pages/13-whole-local-mechanism.svg",
+      "preview": "assets/reference-library/previews/13-whole-local-mechanism.png",
+      "layout": "assets/reference-library/layouts/13-whole-local-mechanism.json",
+      "pptx_slide": 13,
+      "family": "机制与证据",
+      "purpose": "整体、局部及作用机制之间的观察层级",
+      "read_order": "整体定位→局部放大→机制与读出",
+      "adapt": [
+        "局部可有多个窗口",
+        "机制层可换成残基互作、材料界面或细胞区域"
+      ],
+      "avoid": [
+        "放大图需要位置与尺度关联，不能任意拼一张近景"
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "14-heatmap-design",
+      "title": "条件矩阵揭示响应变化，实验设计解释比较边界",
+      "svg": "assets/reference-library/pages/14-heatmap-design.svg",
+      "preview": "assets/reference-library/previews/14-heatmap-design.png",
+      "layout": "assets/reference-library/layouts/14-heatmap-design.json",
+      "pptx_slide": 14,
+      "family": "机制与证据",
+      "purpose": "主热图与实验设计并置",
+      "read_order": "先理解侧栏条件，再按主图坐标比较模式",
+      "adapt": [
+        "主图可为矩阵、关联图或图谱",
+        "侧栏可换设计图、样本分组或统计依据"
+      ],
+      "avoid": [
+        "保留行列、颜色含义及归一化基准"
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "15-model-recommend-test",
+      "title": "用观测训练模型，用独立测量检验推荐",
+      "svg": "assets/reference-library/pages/15-model-recommend-test.svg",
+      "preview": "assets/reference-library/previews/15-model-recommend-test.png",
+      "layout": "assets/reference-library/layouts/15-model-recommend-test.json",
+      "pptx_slide": 15,
+      "family": "模型与评价",
+      "purpose": "将模型学习与科学验证保持区分",
+      "read_order": "观测→训练/评估→推荐/检验",
+      "adapt": [
+        "复杂网络结构可放附录",
+        "数据少时把模型节点标为计划而非训练完成"
+      ],
+      "avoid": [
+        "不能把内部模型分数直接写成真实实验性能"
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "16-paired-performance",
+      "title": "性能评价同时关注响应变化与跨条件一致性",
+      "svg": "assets/reference-library/pages/16-paired-performance.svg",
+      "preview": "assets/reference-library/previews/16-paired-performance.png",
+      "layout": "assets/reference-library/layouts/16-paired-performance.json",
+      "pptx_slide": 16,
+      "family": "模型与评价",
+      "purpose": "两个互补证据面板并列",
+      "read_order": "先看指标定义，再比较趋势与偏差",
+      "adapt": [
+        "可用于速度/精度、活性/稳定性等维度",
+        "两图可不等宽，按证据复杂度分配"
+      ],
+      "avoid": [
+        "同页比较应保留单位、条件和必要对照"
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "17-principle-validation",
+      "title": "从界面传递原理到可测的实验验证",
+      "svg": "assets/reference-library/pages/17-principle-validation.svg",
+      "preview": "assets/reference-library/previews/17-principle-validation.png",
+      "layout": "assets/reference-library/layouts/17-principle-validation.json",
+      "pptx_slide": 17,
+      "family": "原理与长流程验证",
+      "purpose": "把机制假设转成可核验的实验步骤。",
+      "read_order": "先读上方原理与预测，再沿下方流程核对每一步产物。",
+      "adapt": [
+        "原理层保留一个可测预测。",
+        "实验层可扩展为四至六步，并标明控制变量。"
+      ],
+      "avoid": [
+        "不要用无科学含义的图标代替步骤内容。"
+      ]
+    },
+    {
+      "id": 18,
+      "slug": "18-four-evidence",
+      "title": "结构稳定性需要四类互补证据",
+      "svg": "assets/reference-library/pages/18-four-evidence.svg",
+      "preview": "assets/reference-library/previews/18-four-evidence.png",
+      "layout": "assets/reference-library/layouts/18-four-evidence.json",
+      "pptx_slide": 18,
+      "family": "四格互补证据",
+      "purpose": "围绕同一判断安排不同类型的证据。",
+      "read_order": "左上形貌、右上化学、左下重复性、右下功能，再归纳证据交集。",
+      "adapt": [
+        "每格回答同一主问题的不同子问题。",
+        "优先使用不同图种，减少重复信息。"
+      ],
+      "avoid": [
+        "不要把四个互不相关的结果硬拼成一页。"
+      ]
+    },
+    {
+      "id": 19,
+      "slug": "19-asymmetric-evidence",
+      "title": "处理窗口由主响应曲线与两类辅助证据共同约束",
+      "svg": "assets/reference-library/pages/19-asymmetric-evidence.svg",
+      "preview": "assets/reference-library/previews/19-asymmetric-evidence.png",
+      "layout": "assets/reference-library/layouts/19-asymmetric-evidence.json",
+      "pptx_slide": 19,
+      "family": "不等宽证据拼图",
+      "purpose": "突出决定结论的主图，同时交代筛选与解释依据。",
+      "read_order": "左侧筛选和结构提供背景，右侧主曲线确定条件窗口。",
+      "adapt": [
+        "主图面积随证据权重增加。",
+        "辅助图只保留解释主图所需的信息。"
+      ],
+      "avoid": [
+        "不要把弱证据放大成视觉中心。"
+      ]
+    },
+    {
+      "id": 20,
+      "slug": "20-scale-constraints",
+      "title": "跨尺度比较必须保留条件与尺度的对应关系",
+      "svg": "assets/reference-library/pages/20-scale-constraints.svg",
+      "preview": "assets/reference-library/previews/20-scale-constraints.png",
+      "layout": "assets/reference-library/layouts/20-scale-constraints.json",
+      "pptx_slide": 20,
+      "family": "跨尺度与多约束图版",
+      "purpose": "让不同尺度的图件在共同条件下可解释、可比较。",
+      "read_order": "上方从局部读到整体，再逐行核对固定条件、观测对象和判断边界。",
+      "adapt": [
+        "在图旁保留尺度身份。",
+        "表格逐项对齐各尺度的条件与输出。"
+      ],
+      "avoid": [
+        "不要用放大倍数替代物理尺度。",
+        "不要从局部图直接推断整体性能。"
+      ]
+    },
+    {
+      "id": 21,
+      "slug": "21-method-result-array",
+      "title": "方法步骤与结果图阵建立逐项对应",
+      "svg": "assets/reference-library/pages/21-method-result-array.svg",
+      "preview": "assets/reference-library/previews/21-method-result-array.png",
+      "layout": "assets/reference-library/layouts/21-method-result-array.json",
+      "pptx_slide": 21,
+      "family": "侧边方法与结果图阵",
+      "purpose": "把纵向实施步骤映射到横向证据集合。",
+      "read_order": "左侧按步骤读方法，右侧由上到下读输入核验、变量效应与复核结果。",
+      "adapt": [
+        "侧栏只放决定证据解释的方法。",
+        "图阵中的条件名称与方法保持一致。"
+      ],
+      "avoid": [
+        "不要让方法侧栏挤压证据图到不可读。"
+      ]
+    },
+    {
+      "id": 22,
+      "slug": "22-equipment-resources",
+      "title": "测量资源围绕“可校准、可对照、可复测”配置",
+      "svg": "assets/reference-library/pages/22-equipment-resources.svg",
+      "preview": "assets/reference-library/previews/22-equipment-resources.png",
+      "layout": "assets/reference-library/layouts/22-equipment-resources.json",
+      "pptx_slide": 22,
+      "family": "设备链路与资源用途",
+      "purpose": "用原创仪器示意说明设备能回答什么、如何校准。",
+      "read_order": "先沿光路读主测量链路，再看右侧补充能力与底部共同核验。",
+      "adapt": [
+        "设备对应具体可测对象。",
+        "链路中标清样品、参照与信号出口。"
+      ],
+      "avoid": [
+        "不要把设备照片墙当成实施能力证明。"
+      ]
+    },
+    {
+      "id": 23,
+      "slug": "23-two-routes-validation",
+      "title": "两条制备路线在同一验证端点汇合",
+      "svg": "assets/reference-library/pages/23-two-routes-validation.svg",
+      "preview": "assets/reference-library/previews/23-two-routes-validation.png",
+      "layout": "assets/reference-library/layouts/23-two-routes-validation.json",
+      "pptx_slide": 23,
+      "family": "两路线对照与共享验证",
+      "purpose": "比较不同实施路线，并让它们在统一评价端点汇合。",
+      "read_order": "先分别读两条路线的操作差异，再读底部共享验证约束。",
+      "adapt": [
+        "两路线共用节点位置便于逐项比较。",
+        "把固定测量口径作为实际汇合点。"
+      ],
+      "avoid": [
+        "不要用不同条件下的最好结果直接排名。"
+      ]
+    },
+    {
+      "id": 24,
+      "slug": "24-staged-dependencies",
+      "title": "阶段计划以可验收产物驱动下一步",
+      "svg": "assets/reference-library/pages/24-staged-dependencies.svg",
+      "preview": "assets/reference-library/previews/24-staged-dependencies.png",
+      "layout": "assets/reference-library/layouts/24-staged-dependencies.json",
+      "pptx_slide": 24,
+      "family": "阶段甘特与依赖里程碑",
+      "purpose": "显示任务阶段、前置依赖和可验收出口。",
+      "read_order": "先读任务行及窗口范围，再沿依赖箭头核对底部里程碑。",
+      "adapt": [
+        "横轴使用实际日期或明确的阶段窗口。",
+        "并行或重叠任务可另行安排，标清依赖何时满足。"
+      ],
+      "avoid": [
+        "不要把孤立时间条当成项目逻辑。"
+      ]
+    },
+    {
+      "id": 25,
+      "slug": "25-task-method-output",
+      "title": "任务、方法与可测产出一一对应",
+      "svg": "assets/reference-library/pages/25-task-method-output.svg",
+      "preview": "assets/reference-library/previews/25-task-method-output.png",
+      "layout": "assets/reference-library/layouts/25-task-method-output.json",
+      "pptx_slide": 25,
+      "family": "任务方法产出矩阵",
+      "purpose": "检查任务与测量端点是否完整匹配。",
+      "read_order": "按行读任务、方法和产出，再纵向比较证据覆盖范围。",
+      "adapt": [
+        "在方法列嵌入少量对应科学图形。",
+        "产出写明测量量和判断依据。"
+      ],
+      "avoid": [
+        "不要把方法名称列表当成技术路线。"
+      ]
+    },
+    {
+      "id": 26,
+      "slug": "26-computation-experiment-loop",
+      "title": "计算与实验通过可追溯数据形成闭环",
+      "svg": "assets/reference-library/pages/26-computation-experiment-loop.svg",
+      "preview": "assets/reference-library/previews/26-computation-experiment-loop.png",
+      "layout": "assets/reference-library/layouts/26-computation-experiment-loop.json",
+      "pptx_slide": 26,
+      "family": "双域闭环架构",
+      "purpose": "呈现多输入、计算实验协作和可追溯反馈。",
+      "read_order": "顶部汇总输入，中部从计算读到实验，底部沿回流路径返回模型更新。",
+      "adapt": [
+        "标明跨域交换的信息内容。",
+        "反馈写清更新对象及触发下一轮的依据。"
+      ],
+      "avoid": [
+        "不要只画循环箭头而不说明回流数据。"
+      ]
+    },
+    {
+      "id": 27,
+      "slug": "27-three-angle-summary",
+      "title": "三项独立判断共同界定研究价值",
+      "svg": "assets/reference-library/pages/27-three-angle-summary.svg",
+      "preview": "assets/reference-library/previews/27-three-angle-summary.png",
+      "layout": "assets/reference-library/layouts/27-three-angle-summary.json",
+      "pptx_slide": 27,
+      "family": "三角度独立总结",
+      "purpose": "分别概括产出、可信依据和下一步问题。",
+      "read_order": "左侧归纳结果，右上回看可信依据，右下收束下一步验证。",
+      "adapt": [
+        "用少量证据缩图唤起前文。",
+        "下一步对应当前证据边界。"
+      ],
+      "avoid": [
+        "不要把总结页写成三栏纯文字口号。"
+      ]
+    },
+    {
+      "id": 28,
+      "slug": "28-formal-closing",
+      "title": "感谢聆听",
+      "svg": "assets/reference-library/pages/28-formal-closing.svg",
+      "preview": "assets/reference-library/previews/28-formal-closing.png",
+      "layout": "assets/reference-library/layouts/28-formal-closing.json",
+      "pptx_slide": 28,
+      "family": "简洁正式结束",
+      "purpose": "为报告结束和现场讨论留下安静的视觉空间。",
+      "read_order": "中心致谢语后自然进入讨论。",
+      "adapt": [
+        "可按用途添加报告题目或公开联系方式。",
+        "不需要仪式性结束时可省略本页。"
+      ],
+      "avoid": [
+        "不要为凑信息密度加入无关图表。"
+      ]
+    },
+    {
+      "id": 29,
+      "slug": "29-readiness-acceptance",
+      "title": "实施条件与验收口径在启动前对齐",
+      "svg": "assets/reference-library/pages/29-readiness-acceptance.svg",
+      "preview": "assets/reference-library/previews/29-readiness-acceptance.png",
+      "layout": "assets/reference-library/layouts/29-readiness-acceptance.json",
+      "pptx_slide": 29,
+      "family": "实施条件与验收表",
+      "purpose": "在同一页明确前提、依据、产物和阶段出口。",
+      "read_order": "按行核对实施条件及其证据，再确认最后一列的进入资格。",
+      "adapt": [
+        "判断依据写成可观察的状态。",
+        "交付列列出实际文件或记录。"
+      ],
+      "avoid": [
+        "不要只写资源充足、条件成熟等概括语。"
+      ]
+    },
+    {
+      "id": 30,
+      "slug": "30-risk-signal-route",
+      "title": "风险处理从识别信号转向可执行的替代路线",
+      "svg": "assets/reference-library/pages/30-risk-signal-route.svg",
+      "preview": "assets/reference-library/previews/30-risk-signal-route.png",
+      "layout": "assets/reference-library/layouts/30-risk-signal-route.json",
+      "pptx_slide": 30,
+      "family": "风险识别与替代路线",
+      "purpose": "把失败情形转成带触发条件的实施分支。",
+      "read_order": "每行从风险和信号图读向替代动作，最后检查验证出口。",
+      "adapt": [
+        "识别信号使用实际可测现象。",
+        "替代路线保留研究目标并明确验证方式。"
+      ],
+      "avoid": [
+        "不要堆叠没有触发条件的警告。"
+      ]
+    },
+    {
+      "id": 31,
+      "slug": "31-heatmap-route-distribution",
+      "title": "从条件图谱提取候选，再检验响应分布",
+      "svg": "assets/reference-library/pages/31-heatmap-route-distribution.svg",
+      "preview": "assets/reference-library/previews/31-heatmap-route-distribution.png",
+      "layout": "assets/reference-library/layouts/31-heatmap-route-distribution.json",
+      "pptx_slide": 31,
+      "family": "主热图路线与分布异构拼版",
+      "purpose": "把高维筛选、候选提取与分布验证连成可读推理。",
+      "read_order": "左上读候选区域，左下读提取规则，右侧读独立复核的整体分布。",
+      "adapt": [
+        "用边框明确候选区在热图中的位置。",
+        "分布图应检验候选集合而非孤立最优值。"
+      ],
+      "avoid": [
+        "不要用均值单独代表离散候选的表现。"
+      ]
+    },
+    {
+      "id": 32,
+      "slug": "32-performance-extension",
+      "title": "性能提升需同时观察响应能力与持续表现",
+      "svg": "assets/reference-library/pages/32-performance-extension.svg",
+      "preview": "assets/reference-library/previews/32-performance-extension.png",
+      "layout": "assets/reference-library/layouts/32-performance-extension.json",
+      "pptx_slide": 32,
+      "family": "双主证据与底部拓展证据",
+      "purpose": "并列比较两项核心性能，并用次级证据说明适用边界。",
+      "read_order": "先读左右两块主要性能，再读底部拓展条件及其验证作用。",
+      "adapt": [
+        "主证据共用可比较的图尺度。",
+        "拓展证据保留独立条件身份。"
+      ],
+      "avoid": [
+        "不要把次要拓展结果写成主要性能的替代证明。"
+      ]
+    },
+    {
+      "id": 33,
+      "slug": "33-platform-annotated",
+      "title": "测量场景与分析界面共同说明平台如何工作",
+      "svg": "assets/reference-library/pages/33-platform-annotated.svg",
+      "preview": "assets/reference-library/previews/33-platform-annotated.png",
+      "layout": "assets/reference-library/layouts/33-platform-annotated.json",
+      "pptx_slide": 33,
+      "family": "资源与实施",
+      "purpose": "场景和带标注平台主图的对应",
+      "read_order": "左场景→右界面的编号操作区",
+      "adapt": [
+        "实际项目换成获授权的真实截图",
+        "标注编号旁给明确功能，不只画高亮框"
+      ],
+      "avoid": [
+        "不要用臆造界面暗示已有软件功能"
+      ]
+    },
+    {
+      "id": 34,
+      "slug": "34-document-evidence",
+      "title": "实验记录支撑测量复核与验证追溯",
+      "svg": "assets/reference-library/pages/34-document-evidence.svg",
+      "preview": "assets/reference-library/previews/34-document-evidence.png",
+      "layout": "assets/reference-library/layouts/34-document-evidence.json",
+      "pptx_slide": 34,
+      "family": "资源与实施",
+      "purpose": "文件或记录图像与相邻判断结合",
+      "read_order": "看记录类型→定位证据区域→读支持的判断",
+      "adapt": [
+        "可用于审查材料、方法记录、文献证据",
+        "证据图难读时裁出关键区域并保留上下文"
+      ],
+      "avoid": [
+        "不要把合成记录当作真实证明材料"
+      ]
+    },
+    {
+      "id": 35,
+      "slug": "35-function-catalog",
+      "title": "按研究动作组织可调用的平台能力",
+      "svg": "assets/reference-library/pages/35-function-catalog.svg",
+      "preview": "assets/reference-library/previews/35-function-catalog.png",
+      "layout": "assets/reference-library/layouts/35-function-catalog.json",
+      "pptx_slide": 35,
+      "family": "资源与实施",
+      "purpose": "两列三行功能目录，窄标签与图文结合",
+      "read_order": "先按标签定位功能，再看对象图与用途",
+      "adapt": [
+        "功能少时改一列或2×2",
+        "单元尺寸按内容调整，不要求满六项"
+      ],
+      "avoid": [
+        "功能介绍应对应真实可用能力，不能把计划混为现成"
+      ]
+    },
+    {
+      "id": 36,
+      "slug": "36-clockwise-problem-refinement",
+      "title": "把应用需求逐步收束为可测的科学问题",
+      "svg": "assets/reference-library/pages/36-clockwise-problem-refinement.svg",
+      "preview": "assets/reference-library/previews/36-clockwise-problem-refinement.png",
+      "layout": "assets/reference-library/layouts/36-clockwise-problem-refinement.json",
+      "pptx_slide": 36,
+      "family": "顺时针四象限问题收束",
+      "purpose": "把背景需求逐步推进为对象、子系统机制及可测科学问题。",
+      "read_order": "从左上背景顺时针读到右上对象、右下机制，最后在左下形成独立检验。",
+      "adapt": [
+        "四个象限承担前后依赖的不同论证任务。",
+        "终点给出能区分解释的操作变量与读出。",
+        "存在真实更新关系时再增加注明回流信息的返回路径。"
+      ],
+      "avoid": [
+        "不要把顺序四象限改成互不关联的四个视角。",
+        "不要为了闭合形状添加无信息的回流箭头。"
+      ]
+    },
+    {
+      "id": 37,
+      "slug": "37-dense-heterogeneous-columns",
+      "title": "实验读出、局部机制与模型预测相互对应",
+      "svg": "assets/reference-library/pages/37-dense-heterogeneous-columns.svg",
+      "preview": "assets/reference-library/previews/37-dense-heterogeneous-columns.png",
+      "layout": "assets/reference-library/layouts/37-dense-heterogeneous-columns.json",
+      "pptx_slide": 37,
+      "family": "高密度三栏内部异构",
+      "purpose": "以三种不同内部构图连接实验、局部机制和模型验证。",
+      "read_order": "左栏由实验小流程读到时序数据，中栏由整体红框读到局部，右栏由输入特征读到预测和独立验证。",
+      "adapt": [
+        "三栏围绕同一研究对象，但分别使用流程、位置放大与特征预测结构。",
+        "保留整体与局部的位置连线，模型输入与实验记录使用同名变量。",
+        "跨栏箭头连接证据与解释，栏内图件各自保留必要标签。"
+      ],
+      "avoid": [
+        "不要将三栏简化成重复的图标加三行文字。",
+        "不要让训练内拟合替代独立验证。"
+      ]
+    }
+  ]
+}

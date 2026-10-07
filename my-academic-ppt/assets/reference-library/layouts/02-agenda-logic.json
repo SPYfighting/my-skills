@@ -1,0 +1,2759 @@
+{
+  "schema_version": "1.1",
+  "slide_number": 2,
+  "reference_id": 2,
+  "slug": "02-agenda-logic",
+  "title": "汇报主线：问题、方法、证据与下一步",
+  "family": "入口与导航",
+  "purpose": "多部分报告的导航与内在逻辑",
+  "reading_order": "按章节纵向阅读，每行再从左到右读取短路线",
+  "adaptation_suggestions": [
+    "短报告可省略独立目录",
+    "各行可改为问题—证据—结论"
+  ],
+  "avoid": [
+    "箭头按可见词组间隙居中，不按文本框边界盲对齐"
+  ],
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "CSS px",
+    "dpi": 96
+  },
+  "source": {
+    "file": "pages/02-agenda-logic.svg",
+    "sha256": "35770634fc5430e2098b2ca831a795ce3aa7869be1b0995868ef43c763098ba2"
+  },
+  "font_design": {
+    "family": "Microsoft YaHei",
+    "reason": "微软雅黑同时覆盖中文、拉丁字母及常用科研符号，保持 PowerPoint 中的原生可编辑文字。字号沿用 SVG 的 CSS 像素值。"
+  },
+  "coordinate_rule": "SVG y 是文字基线。文本框顶端 = y − 字体 fontBoundingBoxAscent；文本框宽度 = 实测字宽 + max(4 px, 0.22×字号)。文本框零内边距、禁换行、禁自动缩小，按 text-anchor 计算 x。",
+  "elements": [
+    {
+      "id": "p02-矩形-0001",
+      "type": "矩形",
+      "native": true,
+      "text": null,
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "font": null,
+      "align": null,
+      "color": "#FFFFFF",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 1,
+      "source_svg": {
+        "tag": "rect",
+        "attributes": {
+          "width": "1280",
+          "height": "720",
+          "fill": "white"
+        }
+      },
+      "ppt_bbox": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 720,
+        "unit": "CSS px"
+      }
+    },
+    {
+      "id": "p02-矩形-0002",
+      "type": "矩形",
+      "native": true,
+      "text": null,
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 6,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 2,
+      "source_svg": {
+        "tag": "rect",
+        "attributes": {
+          "x": "0",
+          "y": "0",
+          "width": "1280",
+          "height": "6",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 6,
+        "unit": "CSS px"
+      }
+    },
+    {
+      "id": "p02-文本-0003",
+      "type": "文本框",
+      "native": true,
+      "text": "汇报主线：问题、方法、证据与下一步",
+      "x": 50,
+      "y": 27.0244,
+      "w": 585.48,
+      "h": 49.974,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 34,
+        "size_pt": 25.5,
+        "bold": true
+      },
+      "align": "left",
+      "color": "#15344E",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 3,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "50",
+          "y": "63",
+          "font-size": "34",
+          "fill": "#15344E",
+          "font-weight": "700",
+          "text-anchor": "start"
+        }
+      },
+      "ppt_bbox": {
+        "x": 50,
+        "y": 27.0244,
+        "w": 585.48,
+        "h": 49.974,
+        "unit": "CSS px"
+      },
+      "role": "页标题",
+      "svg_baseline": {
+        "x": 50,
+        "y": 63,
+        "anchor": "start"
+      },
+      "text_metrics": {
+        "measured_width": 578,
+        "font_ascent": 35.9756,
+        "font_descent": 8.8984,
+        "actual_ascent": 29,
+        "actual_descent": 5,
+        "editing_reserve": 7.48
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 1
+    },
+    {
+      "id": "p02-文本-0004",
+      "type": "文本框",
+      "native": true,
+      "text": "围绕结构如何影响传输，依次展开表征、机制、评价与设计",
+      "x": 52,
+      "y": 79.896,
+      "w": 498.18,
+      "h": 27.9267,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 19,
+        "size_pt": 14.25,
+        "bold": false
+      },
+      "align": "left",
+      "color": "#657B8B",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 4,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "52",
+          "y": "100",
+          "font-size": "19",
+          "fill": "#657B8B",
+          "font-weight": "400",
+          "text-anchor": "start"
+        }
+      },
+      "ppt_bbox": {
+        "x": 52,
+        "y": 79.896,
+        "w": 498.18,
+        "h": 27.9267,
+        "unit": "CSS px"
+      },
+      "role": "说明或图中标注",
+      "svg_baseline": {
+        "x": 52,
+        "y": 100,
+        "anchor": "start"
+      },
+      "text_metrics": {
+        "measured_width": 494,
+        "font_ascent": 20.104,
+        "font_descent": 4.9727,
+        "actual_ascent": 17,
+        "actual_descent": 3,
+        "editing_reserve": 4.18
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 2
+    },
+    {
+      "id": "p02-线-0005",
+      "type": "线条",
+      "native": true,
+      "text": null,
+      "x": 50,
+      "y": 116,
+      "w": 1180,
+      "h": 0.01,
+      "font": null,
+      "align": null,
+      "color": "none",
+      "stroke": "#CCD7DF",
+      "stroke_width": 1.4,
+      "zorder": 5,
+      "source_svg": {
+        "tag": "line",
+        "attributes": {
+          "x1": "50",
+          "y1": "116",
+          "x2": "1230",
+          "y2": "116",
+          "stroke": "#CCD7DF",
+          "stroke-width": "1.4"
+        }
+      },
+      "ppt_bbox": {
+        "x": 50,
+        "y": 116,
+        "w": 1180,
+        "h": 0.01,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 1180,
+            "y": 0
+          }
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-矩形-0006",
+      "type": "矩形",
+      "native": true,
+      "text": null,
+      "x": 55,
+      "y": 150,
+      "w": 75,
+      "h": 80,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 6,
+      "source_svg": {
+        "tag": "rect",
+        "attributes": {
+          "x": "55",
+          "y": "150",
+          "width": "75",
+          "height": "80",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 55,
+        "y": 150,
+        "w": 75,
+        "h": 80,
+        "unit": "CSS px"
+      }
+    },
+    {
+      "id": "p02-文本-0007",
+      "type": "文本框",
+      "native": true,
+      "text": "01",
+      "x": 69.47,
+      "y": 169.1987,
+      "w": 45.06,
+      "h": 45.5646,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 31,
+        "size_pt": 23.25,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#FFFFFF",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 7,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "92",
+          "y": "202",
+          "font-size": "31",
+          "fill": "white",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 69.47,
+        "y": 169.1987,
+        "w": 45.06,
+        "h": 45.5646,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 92,
+        "y": 202,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 38.24,
+        "font_ascent": 32.8013,
+        "font_descent": 8.1133,
+        "actual_ascent": 24,
+        "actual_descent": 0,
+        "editing_reserve": 6.82
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 3
+    },
+    {
+      "id": "p02-文本-0008",
+      "type": "文本框",
+      "native": true,
+      "text": "结构表征",
+      "x": 162,
+      "y": 170.4312,
+      "w": 113.94,
+      "h": 39.6853,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 27,
+        "size_pt": 20.25,
+        "bold": true
+      },
+      "align": "left",
+      "color": "#15344E",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 8,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "162",
+          "y": "199",
+          "font-size": "27",
+          "fill": "#15344E",
+          "font-weight": "700",
+          "text-anchor": "start"
+        }
+      },
+      "ppt_bbox": {
+        "x": 162,
+        "y": 170.4312,
+        "w": 113.94,
+        "h": 39.6853,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 162,
+        "y": 199,
+        "anchor": "start"
+      },
+      "text_metrics": {
+        "measured_width": 108,
+        "font_ascent": 28.5688,
+        "font_descent": 7.0664,
+        "actual_ascent": 23,
+        "actual_descent": 4,
+        "editing_reserve": 5.94
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 4
+    },
+    {
+      "id": "p02-文本-0009",
+      "type": "文本框",
+      "native": true,
+      "text": "形貌测量",
+      "x": 507.36,
+      "y": 171.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 9,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "558",
+          "y": "197",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 507.36,
+        "y": 171.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 558,
+        "y": 197,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 5
+    },
+    {
+      "id": "p02-文本-0010",
+      "type": "文本框",
+      "native": true,
+      "text": "参数提取",
+      "x": 761.36,
+      "y": 171.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 10,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "812",
+          "y": "197",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 761.36,
+        "y": 171.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 812,
+        "y": 197,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 6
+    },
+    {
+      "id": "p02-文本-0011",
+      "type": "文本框",
+      "native": true,
+      "text": "差异定位",
+      "x": 1015.36,
+      "y": 171.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 11,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "1066",
+          "y": "197",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 1015.36,
+        "y": 171.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 1066,
+        "y": 197,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 20,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 7
+    },
+    {
+      "id": "p02-路径-0012",
+      "type": "多边形",
+      "native": true,
+      "text": null,
+      "x": 656,
+      "y": 178.08,
+      "w": 57,
+      "h": 19.84,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 12,
+      "source_svg": {
+        "tag": "polygon",
+        "attributes": {
+          "points": "656.00,192.00 697.00,192.00 697.00,197.92 713.00,188.00 697.00,178.08 697.00,184.00 656.00,184.00",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 656,
+        "y": 178.08,
+        "w": 57,
+        "h": 19.84,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 13.919999999999987
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 13.919999999999987
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 19.839999999999975
+          }
+        },
+        {
+          "lineTo": {
+            "x": 57,
+            "y": 9.919999999999987
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 5.9199999999999875
+          }
+        },
+        {
+          "lineTo": {
+            "x": 0,
+            "y": 5.9199999999999875
+          }
+        },
+        {
+          "close": {}
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-路径-0013",
+      "type": "多边形",
+      "native": true,
+      "text": null,
+      "x": 909,
+      "y": 178.08,
+      "w": 57,
+      "h": 19.84,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 13,
+      "source_svg": {
+        "tag": "polygon",
+        "attributes": {
+          "points": "909.00,192.00 950.00,192.00 950.00,197.92 966.00,188.00 950.00,178.08 950.00,184.00 909.00,184.00",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 909,
+        "y": 178.08,
+        "w": 57,
+        "h": 19.84,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 13.919999999999987
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 13.919999999999987
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 19.839999999999975
+          }
+        },
+        {
+          "lineTo": {
+            "x": 57,
+            "y": 9.919999999999987
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 5.9199999999999875
+          }
+        },
+        {
+          "lineTo": {
+            "x": 0,
+            "y": 5.9199999999999875
+          }
+        },
+        {
+          "close": {}
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-线-0014",
+      "type": "线条",
+      "native": true,
+      "text": null,
+      "x": 156,
+      "y": 237,
+      "w": 1069,
+      "h": 0.01,
+      "font": null,
+      "align": null,
+      "color": "none",
+      "stroke": "#CCD7DF",
+      "stroke_width": 1,
+      "zorder": 14,
+      "source_svg": {
+        "tag": "line",
+        "attributes": {
+          "x1": "156",
+          "y1": "237",
+          "x2": "1225",
+          "y2": "237",
+          "stroke": "#CCD7DF",
+          "stroke-width": "1"
+        }
+      },
+      "ppt_bbox": {
+        "x": 156,
+        "y": 237,
+        "w": 1069,
+        "h": 0.01,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 1069,
+            "y": 0
+          }
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-矩形-0015",
+      "type": "矩形",
+      "native": true,
+      "text": null,
+      "x": 55,
+      "y": 267,
+      "w": 75,
+      "h": 80,
+      "font": null,
+      "align": null,
+      "color": "#537F78",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 15,
+      "source_svg": {
+        "tag": "rect",
+        "attributes": {
+          "x": "55",
+          "y": "267",
+          "width": "75",
+          "height": "80",
+          "fill": "#537F78"
+        }
+      },
+      "ppt_bbox": {
+        "x": 55,
+        "y": 267,
+        "w": 75,
+        "h": 80,
+        "unit": "CSS px"
+      }
+    },
+    {
+      "id": "p02-文本-0016",
+      "type": "文本框",
+      "native": true,
+      "text": "02",
+      "x": 69.47,
+      "y": 286.1987,
+      "w": 45.06,
+      "h": 45.5646,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 31,
+        "size_pt": 23.25,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#FFFFFF",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 16,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "92",
+          "y": "319",
+          "font-size": "31",
+          "fill": "white",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 69.47,
+        "y": 286.1987,
+        "w": 45.06,
+        "h": 45.5646,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 92,
+        "y": 319,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 38.24,
+        "font_ascent": 32.8013,
+        "font_descent": 8.1133,
+        "actual_ascent": 23,
+        "actual_descent": 0,
+        "editing_reserve": 6.82
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 8
+    },
+    {
+      "id": "p02-文本-0017",
+      "type": "文本框",
+      "native": true,
+      "text": "传输机制",
+      "x": 162,
+      "y": 287.4312,
+      "w": 113.94,
+      "h": 39.6853,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 27,
+        "size_pt": 20.25,
+        "bold": true
+      },
+      "align": "left",
+      "color": "#15344E",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 17,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "162",
+          "y": "316",
+          "font-size": "27",
+          "fill": "#15344E",
+          "font-weight": "700",
+          "text-anchor": "start"
+        }
+      },
+      "ppt_bbox": {
+        "x": 162,
+        "y": 287.4312,
+        "w": 113.94,
+        "h": 39.6853,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 162,
+        "y": 316,
+        "anchor": "start"
+      },
+      "text_metrics": {
+        "measured_width": 108,
+        "font_ascent": 28.5688,
+        "font_descent": 7.0664,
+        "actual_ascent": 24,
+        "actual_descent": 4,
+        "editing_reserve": 5.94
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 9
+    },
+    {
+      "id": "p02-文本-0018",
+      "type": "文本框",
+      "native": true,
+      "text": "路径建模",
+      "x": 507.36,
+      "y": 288.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 18,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "558",
+          "y": "314",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 507.36,
+        "y": 288.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 558,
+        "y": 314,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 10
+    },
+    {
+      "id": "p02-文本-0019",
+      "type": "文本框",
+      "native": true,
+      "text": "约束分析",
+      "x": 761.36,
+      "y": 288.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 19,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "812",
+          "y": "314",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 761.36,
+        "y": 288.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 812,
+        "y": 314,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 11
+    },
+    {
+      "id": "p02-文本-0020",
+      "type": "文本框",
+      "native": true,
+      "text": "机制检验",
+      "x": 1015.36,
+      "y": 288.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 20,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "1066",
+          "y": "314",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 1015.36,
+        "y": 288.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 1066,
+        "y": 314,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 12
+    },
+    {
+      "id": "p02-路径-0021",
+      "type": "多边形",
+      "native": true,
+      "text": null,
+      "x": 656,
+      "y": 295.08,
+      "w": 57,
+      "h": 19.84,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 21,
+      "source_svg": {
+        "tag": "polygon",
+        "attributes": {
+          "points": "656.00,309.00 697.00,309.00 697.00,314.92 713.00,305.00 697.00,295.08 697.00,301.00 656.00,301.00",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 656,
+        "y": 295.08,
+        "w": 57,
+        "h": 19.84,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 13.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 13.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 19.840000000000032
+          }
+        },
+        {
+          "lineTo": {
+            "x": 57,
+            "y": 9.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 5.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 0,
+            "y": 5.920000000000016
+          }
+        },
+        {
+          "close": {}
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-路径-0022",
+      "type": "多边形",
+      "native": true,
+      "text": null,
+      "x": 909,
+      "y": 295.08,
+      "w": 57,
+      "h": 19.84,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 22,
+      "source_svg": {
+        "tag": "polygon",
+        "attributes": {
+          "points": "909.00,309.00 950.00,309.00 950.00,314.92 966.00,305.00 950.00,295.08 950.00,301.00 909.00,301.00",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 909,
+        "y": 295.08,
+        "w": 57,
+        "h": 19.84,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 13.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 13.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 19.840000000000032
+          }
+        },
+        {
+          "lineTo": {
+            "x": 57,
+            "y": 9.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 5.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 0,
+            "y": 5.920000000000016
+          }
+        },
+        {
+          "close": {}
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-线-0023",
+      "type": "线条",
+      "native": true,
+      "text": null,
+      "x": 156,
+      "y": 354,
+      "w": 1069,
+      "h": 0.01,
+      "font": null,
+      "align": null,
+      "color": "none",
+      "stroke": "#CCD7DF",
+      "stroke_width": 1,
+      "zorder": 23,
+      "source_svg": {
+        "tag": "line",
+        "attributes": {
+          "x1": "156",
+          "y1": "354",
+          "x2": "1225",
+          "y2": "354",
+          "stroke": "#CCD7DF",
+          "stroke-width": "1"
+        }
+      },
+      "ppt_bbox": {
+        "x": 156,
+        "y": 354,
+        "w": 1069,
+        "h": 0.01,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 1069,
+            "y": 0
+          }
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-矩形-0024",
+      "type": "矩形",
+      "native": true,
+      "text": null,
+      "x": 55,
+      "y": 384,
+      "w": 75,
+      "h": 80,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 24,
+      "source_svg": {
+        "tag": "rect",
+        "attributes": {
+          "x": "55",
+          "y": "384",
+          "width": "75",
+          "height": "80",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 55,
+        "y": 384,
+        "w": 75,
+        "h": 80,
+        "unit": "CSS px"
+      }
+    },
+    {
+      "id": "p02-文本-0025",
+      "type": "文本框",
+      "native": true,
+      "text": "03",
+      "x": 69.47,
+      "y": 403.1987,
+      "w": 45.06,
+      "h": 45.5646,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 31,
+        "size_pt": 23.25,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#FFFFFF",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 25,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "92",
+          "y": "436",
+          "font-size": "31",
+          "fill": "white",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 69.47,
+        "y": 403.1987,
+        "w": 45.06,
+        "h": 45.5646,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 92,
+        "y": 436,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 38.24,
+        "font_ascent": 32.8013,
+        "font_descent": 8.1133,
+        "actual_ascent": 23,
+        "actual_descent": 0,
+        "editing_reserve": 6.82
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 13
+    },
+    {
+      "id": "p02-文本-0026",
+      "type": "文本框",
+      "native": true,
+      "text": "性能评价",
+      "x": 162,
+      "y": 404.4312,
+      "w": 113.94,
+      "h": 39.6853,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 27,
+        "size_pt": 20.25,
+        "bold": true
+      },
+      "align": "left",
+      "color": "#15344E",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 26,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "162",
+          "y": "433",
+          "font-size": "27",
+          "fill": "#15344E",
+          "font-weight": "700",
+          "text-anchor": "start"
+        }
+      },
+      "ppt_bbox": {
+        "x": 162,
+        "y": 404.4312,
+        "w": 113.94,
+        "h": 39.6853,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 162,
+        "y": 433,
+        "anchor": "start"
+      },
+      "text_metrics": {
+        "measured_width": 108,
+        "font_ascent": 28.5688,
+        "font_descent": 7.0664,
+        "actual_ascent": 23,
+        "actual_descent": 4,
+        "editing_reserve": 5.94
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 14
+    },
+    {
+      "id": "p02-文本-0027",
+      "type": "文本框",
+      "native": true,
+      "text": "统一条件",
+      "x": 507.36,
+      "y": 405.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 27,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "558",
+          "y": "431",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 507.36,
+        "y": 405.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 558,
+        "y": 431,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 15
+    },
+    {
+      "id": "p02-文本-0028",
+      "type": "文本框",
+      "native": true,
+      "text": "平行测量",
+      "x": 761.36,
+      "y": 405.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 28,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "812",
+          "y": "431",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 761.36,
+        "y": 405.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 812,
+        "y": 431,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 20,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 16
+    },
+    {
+      "id": "p02-文本-0029",
+      "type": "文本框",
+      "native": true,
+      "text": "证据比较",
+      "x": 1015.36,
+      "y": 405.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 29,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "1066",
+          "y": "431",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 1015.36,
+        "y": 405.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 1066,
+        "y": 431,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 17
+    },
+    {
+      "id": "p02-路径-0030",
+      "type": "多边形",
+      "native": true,
+      "text": null,
+      "x": 656,
+      "y": 412.08,
+      "w": 57,
+      "h": 19.84,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 30,
+      "source_svg": {
+        "tag": "polygon",
+        "attributes": {
+          "points": "656.00,426.00 697.00,426.00 697.00,431.92 713.00,422.00 697.00,412.08 697.00,418.00 656.00,418.00",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 656,
+        "y": 412.08,
+        "w": 57,
+        "h": 19.84,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 13.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 13.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 19.840000000000032
+          }
+        },
+        {
+          "lineTo": {
+            "x": 57,
+            "y": 9.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 5.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 0,
+            "y": 5.920000000000016
+          }
+        },
+        {
+          "close": {}
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-路径-0031",
+      "type": "多边形",
+      "native": true,
+      "text": null,
+      "x": 909,
+      "y": 412.08,
+      "w": 57,
+      "h": 19.84,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 31,
+      "source_svg": {
+        "tag": "polygon",
+        "attributes": {
+          "points": "909.00,426.00 950.00,426.00 950.00,431.92 966.00,422.00 950.00,412.08 950.00,418.00 909.00,418.00",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 909,
+        "y": 412.08,
+        "w": 57,
+        "h": 19.84,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 13.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 13.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 19.840000000000032
+          }
+        },
+        {
+          "lineTo": {
+            "x": 57,
+            "y": 9.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 5.920000000000016
+          }
+        },
+        {
+          "lineTo": {
+            "x": 0,
+            "y": 5.920000000000016
+          }
+        },
+        {
+          "close": {}
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-线-0032",
+      "type": "线条",
+      "native": true,
+      "text": null,
+      "x": 156,
+      "y": 471,
+      "w": 1069,
+      "h": 0.01,
+      "font": null,
+      "align": null,
+      "color": "none",
+      "stroke": "#CCD7DF",
+      "stroke_width": 1,
+      "zorder": 32,
+      "source_svg": {
+        "tag": "line",
+        "attributes": {
+          "x1": "156",
+          "y1": "471",
+          "x2": "1225",
+          "y2": "471",
+          "stroke": "#CCD7DF",
+          "stroke-width": "1"
+        }
+      },
+      "ppt_bbox": {
+        "x": 156,
+        "y": 471,
+        "w": 1069,
+        "h": 0.01,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 1069,
+            "y": 0
+          }
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-矩形-0033",
+      "type": "矩形",
+      "native": true,
+      "text": null,
+      "x": 55,
+      "y": 501,
+      "w": 75,
+      "h": 80,
+      "font": null,
+      "align": null,
+      "color": "#537F78",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 33,
+      "source_svg": {
+        "tag": "rect",
+        "attributes": {
+          "x": "55",
+          "y": "501",
+          "width": "75",
+          "height": "80",
+          "fill": "#537F78"
+        }
+      },
+      "ppt_bbox": {
+        "x": 55,
+        "y": 501,
+        "w": 75,
+        "h": 80,
+        "unit": "CSS px"
+      }
+    },
+    {
+      "id": "p02-文本-0034",
+      "type": "文本框",
+      "native": true,
+      "text": "04",
+      "x": 69.47,
+      "y": 520.1987,
+      "w": 45.06,
+      "h": 45.5646,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 31,
+        "size_pt": 23.25,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#FFFFFF",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 34,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "92",
+          "y": "553",
+          "font-size": "31",
+          "fill": "white",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 69.47,
+        "y": 520.1987,
+        "w": 45.06,
+        "h": 45.5646,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 92,
+        "y": 553,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 38.24,
+        "font_ascent": 32.8013,
+        "font_descent": 8.1133,
+        "actual_ascent": 23,
+        "actual_descent": 0,
+        "editing_reserve": 6.82
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 18
+    },
+    {
+      "id": "p02-文本-0035",
+      "type": "文本框",
+      "native": true,
+      "text": "迭代设计",
+      "x": 162,
+      "y": 521.4312,
+      "w": 113.94,
+      "h": 39.6853,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 27,
+        "size_pt": 20.25,
+        "bold": true
+      },
+      "align": "left",
+      "color": "#15344E",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 35,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "162",
+          "y": "550",
+          "font-size": "27",
+          "fill": "#15344E",
+          "font-weight": "700",
+          "text-anchor": "start"
+        }
+      },
+      "ppt_bbox": {
+        "x": 162,
+        "y": 521.4312,
+        "w": 113.94,
+        "h": 39.6853,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 162,
+        "y": 550,
+        "anchor": "start"
+      },
+      "text_metrics": {
+        "measured_width": 108,
+        "font_ascent": 28.5688,
+        "font_descent": 7.0664,
+        "actual_ascent": 24,
+        "actual_descent": 4,
+        "editing_reserve": 5.94
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 19
+    },
+    {
+      "id": "p02-文本-0036",
+      "type": "文本框",
+      "native": true,
+      "text": "选择变量",
+      "x": 507.36,
+      "y": 522.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 36,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "558",
+          "y": "548",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 507.36,
+        "y": 522.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 558,
+        "y": 548,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 20
+    },
+    {
+      "id": "p02-文本-0037",
+      "type": "文本框",
+      "native": true,
+      "text": "新增实验",
+      "x": 761.36,
+      "y": 522.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 37,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "812",
+          "y": "548",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 761.36,
+        "y": 522.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 812,
+        "y": 548,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 21
+    },
+    {
+      "id": "p02-文本-0038",
+      "type": "文本框",
+      "native": true,
+      "text": "更新认识",
+      "x": 1015.36,
+      "y": 522.6055,
+      "w": 101.28,
+      "h": 35.2758,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 24,
+        "size_pt": 18,
+        "bold": true
+      },
+      "align": "center",
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 38,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "1066",
+          "y": "548",
+          "font-size": "24",
+          "fill": "#365F85",
+          "font-weight": "700",
+          "text-anchor": "middle"
+        }
+      },
+      "ppt_bbox": {
+        "x": 1015.36,
+        "y": 522.6055,
+        "w": 101.28,
+        "h": 35.2758,
+        "unit": "CSS px"
+      },
+      "role": "区域标题或重点标注",
+      "svg_baseline": {
+        "x": 1066,
+        "y": 548,
+        "anchor": "middle"
+      },
+      "text_metrics": {
+        "measured_width": 96,
+        "font_ascent": 25.3945,
+        "font_descent": 6.2813,
+        "actual_ascent": 21,
+        "actual_descent": 4,
+        "editing_reserve": 5.28
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 22
+    },
+    {
+      "id": "p02-路径-0039",
+      "type": "多边形",
+      "native": true,
+      "text": null,
+      "x": 656,
+      "y": 529.08,
+      "w": 57,
+      "h": 19.84,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 39,
+      "source_svg": {
+        "tag": "polygon",
+        "attributes": {
+          "points": "656.00,543.00 697.00,543.00 697.00,548.92 713.00,539.00 697.00,529.08 697.00,535.00 656.00,535.00",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 656,
+        "y": 529.08,
+        "w": 57,
+        "h": 19.84,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 13.919999999999959
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 13.919999999999959
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 19.839999999999918
+          }
+        },
+        {
+          "lineTo": {
+            "x": 57,
+            "y": 9.919999999999959
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 5.919999999999959
+          }
+        },
+        {
+          "lineTo": {
+            "x": 0,
+            "y": 5.919999999999959
+          }
+        },
+        {
+          "close": {}
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-路径-0040",
+      "type": "多边形",
+      "native": true,
+      "text": null,
+      "x": 909,
+      "y": 529.08,
+      "w": 57,
+      "h": 19.84,
+      "font": null,
+      "align": null,
+      "color": "#365F85",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 40,
+      "source_svg": {
+        "tag": "polygon",
+        "attributes": {
+          "points": "909.00,543.00 950.00,543.00 950.00,548.92 966.00,539.00 950.00,529.08 950.00,535.00 909.00,535.00",
+          "fill": "#365F85"
+        }
+      },
+      "ppt_bbox": {
+        "x": 909,
+        "y": 529.08,
+        "w": 57,
+        "h": 19.84,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 13.919999999999959
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 13.919999999999959
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 19.839999999999918
+          }
+        },
+        {
+          "lineTo": {
+            "x": 57,
+            "y": 9.919999999999959
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 41,
+            "y": 5.919999999999959
+          }
+        },
+        {
+          "lineTo": {
+            "x": 0,
+            "y": 5.919999999999959
+          }
+        },
+        {
+          "close": {}
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-线-0041",
+      "type": "线条",
+      "native": true,
+      "text": null,
+      "x": 156,
+      "y": 588,
+      "w": 1069,
+      "h": 0.01,
+      "font": null,
+      "align": null,
+      "color": "none",
+      "stroke": "#CCD7DF",
+      "stroke_width": 1,
+      "zorder": 41,
+      "source_svg": {
+        "tag": "line",
+        "attributes": {
+          "x1": "156",
+          "y1": "588",
+          "x2": "1225",
+          "y2": "588",
+          "stroke": "#CCD7DF",
+          "stroke-width": "1"
+        }
+      },
+      "ppt_bbox": {
+        "x": 156,
+        "y": 588,
+        "w": 1069,
+        "h": 0.01,
+        "unit": "CSS px"
+      },
+      "commands": [
+        {
+          "moveTo": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "lineTo": {
+            "x": 1069,
+            "y": 0
+          }
+        }
+      ],
+      "source_path": null,
+      "source_dasharray": null
+    },
+    {
+      "id": "p02-文本-0042",
+      "type": "文本框",
+      "native": true,
+      "text": "02",
+      "x": 1208.41,
+      "y": 688.1284,
+      "w": 21.59,
+      "h": 22.0474,
+      "font": {
+        "family": "Microsoft YaHei",
+        "size_px": 15,
+        "size_pt": 11.25,
+        "bold": false
+      },
+      "align": "right",
+      "color": "#657B8B",
+      "stroke": "none",
+      "stroke_width": 0,
+      "zorder": 42,
+      "source_svg": {
+        "tag": "text",
+        "attributes": {
+          "x": "1230",
+          "y": "704",
+          "font-size": "15",
+          "fill": "#657B8B",
+          "font-weight": "400",
+          "text-anchor": "end"
+        }
+      },
+      "ppt_bbox": {
+        "x": 1208.41,
+        "y": 688.1284,
+        "w": 21.59,
+        "h": 22.0474,
+        "unit": "CSS px"
+      },
+      "role": "页码",
+      "svg_baseline": {
+        "x": 1230,
+        "y": 704,
+        "anchor": "end"
+      },
+      "text_metrics": {
+        "measured_width": 17.59,
+        "font_ascent": 15.8716,
+        "font_descent": 3.9258,
+        "actual_ascent": 11,
+        "actual_descent": 0,
+        "editing_reserve": 4
+      },
+      "wrap": "none",
+      "insets": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "text_read_order": 23
+    }
+  ],
+  "counts": {
+    "total": 42,
+    "native": 42,
+    "text": 23,
+    "local_images": 0
+  },
+  "text_reading_order": [
+    {
+      "element_id": "p02-文本-0003",
+      "text": "汇报主线：问题、方法、证据与下一步",
+      "role": "页标题"
+    },
+    {
+      "element_id": "p02-文本-0004",
+      "text": "围绕结构如何影响传输，依次展开表征、机制、评价与设计",
+      "role": "说明或图中标注"
+    },
+    {
+      "element_id": "p02-文本-0007",
+      "text": "01",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0008",
+      "text": "结构表征",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0009",
+      "text": "形貌测量",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0010",
+      "text": "参数提取",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0011",
+      "text": "差异定位",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0016",
+      "text": "02",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0017",
+      "text": "传输机制",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0018",
+      "text": "路径建模",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0019",
+      "text": "约束分析",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0020",
+      "text": "机制检验",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0025",
+      "text": "03",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0026",
+      "text": "性能评价",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0027",
+      "text": "统一条件",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0028",
+      "text": "平行测量",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0029",
+      "text": "证据比较",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0034",
+      "text": "04",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0035",
+      "text": "迭代设计",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0036",
+      "text": "选择变量",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0037",
+      "text": "新增实验",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0038",
+      "text": "更新认识",
+      "role": "区域标题或重点标注"
+    },
+    {
+      "element_id": "p02-文本-0042",
+      "text": "02",
+      "role": "页码"
+    }
+  ],
+  "scope": "除明确标记的局部裁剪图外，文字、框线、箭头与基础图形均为原生可编辑对象。",
+  "regions": [
+    {
+      "id": "structure",
+      "label": "结构表征：形貌测量、参数提取、差异定位",
+      "role": "navigation",
+      "x": 50,
+      "y": 145,
+      "w": 1180,
+      "h": 101,
+      "member_ids": [
+        "p02-矩形-0006",
+        "p02-文本-0007",
+        "p02-文本-0008",
+        "p02-文本-0009",
+        "p02-文本-0010",
+        "p02-文本-0011",
+        "p02-路径-0012",
+        "p02-路径-0013",
+        "p02-线-0014"
+      ],
+      "text_ids": [
+        "p02-文本-0007",
+        "p02-文本-0008",
+        "p02-文本-0009",
+        "p02-文本-0010",
+        "p02-文本-0011"
+      ]
+    },
+    {
+      "id": "mechanism",
+      "label": "传输机制：路径建模、约束分析、机制检验",
+      "role": "navigation",
+      "x": 50,
+      "y": 262,
+      "w": 1180,
+      "h": 101,
+      "member_ids": [
+        "p02-矩形-0015",
+        "p02-文本-0016",
+        "p02-文本-0017",
+        "p02-文本-0018",
+        "p02-文本-0019",
+        "p02-文本-0020",
+        "p02-路径-0021",
+        "p02-路径-0022",
+        "p02-线-0023"
+      ],
+      "text_ids": [
+        "p02-文本-0016",
+        "p02-文本-0017",
+        "p02-文本-0018",
+        "p02-文本-0019",
+        "p02-文本-0020"
+      ]
+    },
+    {
+      "id": "performance",
+      "label": "性能评价：统一条件、平行测量、证据比较",
+      "role": "navigation",
+      "x": 50,
+      "y": 379,
+      "w": 1180,
+      "h": 101,
+      "member_ids": [
+        "p02-矩形-0024",
+        "p02-文本-0025",
+        "p02-文本-0026",
+        "p02-文本-0027",
+        "p02-文本-0028",
+        "p02-文本-0029",
+        "p02-路径-0030",
+        "p02-路径-0031",
+        "p02-线-0032"
+      ],
+      "text_ids": [
+        "p02-文本-0025",
+        "p02-文本-0026",
+        "p02-文本-0027",
+        "p02-文本-0028",
+        "p02-文本-0029"
+      ]
+    },
+    {
+      "id": "iteration",
+      "label": "迭代设计：选择变量、新增实验、更新认识",
+      "role": "navigation",
+      "x": 50,
+      "y": 496,
+      "w": 1180,
+      "h": 101,
+      "member_ids": [
+        "p02-矩形-0033",
+        "p02-文本-0034",
+        "p02-文本-0035",
+        "p02-文本-0036",
+        "p02-文本-0037",
+        "p02-文本-0038",
+        "p02-路径-0039",
+        "p02-路径-0040",
+        "p02-线-0041"
+      ],
+      "text_ids": [
+        "p02-文本-0034",
+        "p02-文本-0035",
+        "p02-文本-0036",
+        "p02-文本-0037",
+        "p02-文本-0038"
+      ]
+    }
+  ],
+  "relationships": [],
+  "unassigned_element_ids": [
+    "p02-矩形-0001",
+    "p02-矩形-0002",
+    "p02-文本-0003",
+    "p02-文本-0004",
+    "p02-线-0005",
+    "p02-文本-0042"
+  ],
+  "region_membership_rule": "Assign each element to the smallest containing semantic region; allow bounded center-based glyph overhang. Spanning backgrounds and connectors remain unassigned and need separate adjustment."
+}
