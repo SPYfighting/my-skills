@@ -45,7 +45,7 @@ def _conclusion(label):
 
 _PAGES = {
     1: _page([
-        _r('scope', '研究范围：结构表征、性能比较与可检验设计依据', 'context', 65, 377, 655, 112),
+        _r('scope', '研究范围：结构表征、性能比较与可检验设计依据', 'context', 65, 377, 655, 244),
         _r('object', '多孔材料整体与层状结构示意', 'scientific_object', 760, 6, 520, 680),
     ]),
     2: _page([
@@ -56,9 +56,9 @@ _PAGES = {
     ]),
     3: _page([
         _r('chapter_statement', '章节命题与概括：建立结构和性能的可检验联系', 'chapter_statement', 65, 235, 705, 313),
-        _r('structure_parameters', '结构参数：孔径、连通性与厚度', 'process', 832, 171, 341, 109),
-        _r('mechanism_hypothesis', '机制假设：路径、阻力与边界条件', 'process', 832, 324, 341, 109),
-        _r('independent_test', '独立检验：对照、重复与适用范围', 'validation', 832, 477, 341, 109),
+        _r('structure_parameters', '结构参数：孔径、连通性与厚度', 'process', 816, 171, 389, 122),
+        _r('mechanism_hypothesis', '机制假设：路径、阻力与边界条件', 'process', 816, 324, 389, 122),
+        _r('independent_test', '独立检验：对照、重复与适用范围', 'validation', 816, 477, 389, 153),
         _r('status', '研究进展：验证方案制定中', 'status', 68, 599, 690, 38),
     ], [
         _e('structure_parameters', 'mechanism_hypothesis', 'sequence', '以结构参数建立可检验的机制假设'),
@@ -79,6 +79,7 @@ _PAGES = {
         _r('object', '结构对象：孔道、界面和有效厚度', 'scientific_object', 660, 151, 570, 230),
         _r('metrics', '评价指标：传输响应与机械稳定性', 'criterion', 50, 388, 570, 238),
         _r('validation', '验证条件：独立批次与条件覆盖', 'validation', 660, 388, 570, 238),
+        _conclusion('应用条件、结构变量与验证范围共同限定设计目标'),
     ]),
     6: _page([
         _r('structure_problem', '难点：结构差异难比较', 'problem', 50, 147, 281, 139),
@@ -102,6 +103,7 @@ _PAGES = {
         _r('interface_strategy', '界面路线：控制变量与处理记录', 'process', 370, 441, 212, 139),
         _r('interface_readout', '界面路线：响应测量', 'evidence', 650, 441, 251, 179),
         _r('interface_comparison', '界面路线：统一基准、对照与代价比较', 'criterion', 986, 450, 244, 143),
+        _conclusion('固定评价基准后比较两条路线的效果与代价'),
     ], [
         _e('structure_input', 'structure_strategy', 'sequence', '选择结构路线的可控变量'),
         _e('structure_strategy', 'structure_readout', 'sequence', '保持其余条件后测量响应'),
@@ -201,6 +203,7 @@ _PAGES = {
     16: _page([
         _r('response', '响应特征：曲线形状、评价区间与测试条件', 'evidence', 50, 150, 565, 477),
         _r('agreement', '测量预测一致性：偏差分布与独立检验', 'evidence', 665, 150, 565, 477),
+        _conclusion('统一条件与评价尺度，检验响应变化和预测一致性'),
     ]),
     17: _page([
         _r('interface', '原理层：多层界面与局部传递路径', 'mechanism', 50, 134, 318, 224),
@@ -341,7 +344,14 @@ _PAGES = {
         _e('findings', 'next_questions', 'constrains', '下一阶段验证由当前已测条件和证据边界限定'),
     ]),
     28: _page([
-        _r('closing', '中心致谢语与研究讨论邀请', 'closing', 382, 243, 516, 191),
+        _r('closing', '致谢语与研究主题', 'closing', 310, 64, 660, 127),
+        _r('observation', '结构观测：孔道与界面差异及有效路径', 'discussion', 65, 242, 340, 347),
+        _r('hypothesis', '机制假设：动态响应与主控步骤', 'discussion', 470, 242, 340, 347),
+        _r('verification', '独立检验：预测实测与跨批次重复性', 'discussion', 875, 242, 340, 347),
+        _conclusion('围绕关键机制、验证设计与后续研究展开讨论'),
+    ], [
+        _e('observation', 'hypothesis', 'sequence', '由已讲过的结构观测回顾机制假设'),
+        _e('hypothesis', 'verification', 'sequence', '以独立测量检验机制与预测'),
     ]),
     29: _page([
         _r('columns', '验收列：实施条件、判断依据、交付产物与进入资格', 'matrix_guide', 50, 148, 1180, 34),
@@ -393,10 +403,10 @@ _PAGES = {
         _e('measurement_scene', 'analysis_workspace', 'sequence', '实验场景导出的结构与响应数据进入分析工作区'),
     ]),
     34: _page([
-        _r('measurement_record', '测量记录合成样张及红框证据区域', 'document_evidence', 68, 202, 265, 337),
-        _r('measurement_claim', '测量判断：条件、单位、样本和读出可核对', 'supported_claim', 405, 252, 210, 225),
-        _r('validation_record', '验证记录合成样张及红框证据区域', 'document_evidence', 684, 202, 265, 337),
-        _r('validation_claim', '验证判断：对象处理和比较依据可追溯', 'supported_claim', 1021, 252, 209, 225),
+        _r('measurement_record', '测量记录合成样张及红框证据区域', 'document_evidence', 68, 202, 280, 410),
+        _r('measurement_claim', '测量判断：条件、单位、样本和读出可核对', 'supported_claim', 412, 235, 205, 335),
+        _r('validation_record', '验证记录合成样张及红框证据区域', 'document_evidence', 684, 202, 280, 410),
+        _r('validation_claim', '验证判断：对象处理和比较依据可追溯', 'supported_claim', 1028, 235, 202, 335),
         _conclusion('记录中的具体证据支持相邻判断'),
     ], [
         _e('measurement_record', 'measurement_claim', 'supports', '红框测量证据支持相邻可核对判断；记录为合成样张'),

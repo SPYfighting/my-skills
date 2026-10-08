@@ -148,7 +148,7 @@ def _page19():
     molecules(p, 74, 438, 295, 105)
     p.lines(75, 573, ['分散链段形成可达界面', '结构示意用于解释响应'], 20, 29)
     p.panel(426, 145, 804, 480, '主证据：响应随处理程度变化')
-    p.rect(679, 290, 95, 218, '#E9F0ED')
+    p.rect(679, 290, 95, 218, 'none', BLUE, 1.2, '5 4')
     p.text(727, 224, '候选窗口', 20, TEAL, True, 'middle')
     _graph(p, 478, 260, 453, 248, 'peak', '归一化处理程度',
            '归一化响应', ('参照配方', '候选配方'))
@@ -242,12 +242,12 @@ def _page22():
     p.circle(130, 249, 24, GOLD)
     p.text(130, 329, '稳定光源', 21, NAVY, True, 'middle')
     p.arrow(199, 248, 239, 248, GOLD, 6, 12)
-    p.rect(251, 213, 78, 73, '#DDE7ED', BLUE, 1.5)
+    p.rect(251, 213, 78, 73, '#FFFFFF', BLUE, 1.5)
     p.line(265, 270, 315, 228, BLUE, 5)
     p.text(290, 329, '选波模块', 21, NAVY, True, 'middle')
     p.arrow(339, 248, 385, 248, GOLD, 6, 12)
     p.rect(399, 201, 78, 100, 'white', TEAL, 2)
-    p.rect(409, 233, 58, 55, '#B9D1CC')
+    p.rect(409, 233, 58, 55, '#555555')
     p.text(439, 329, '样品池', 21, NAVY, True, 'middle')
     p.arrow(487, 248, 534, 248, GOLD, 6, 12)
     p.rect(547, 210, 131, 80, PALE, BLUE, 1.5)
@@ -288,7 +288,7 @@ def _page23():
     for y, color, title, kind, step1, step2, note in [
             (148, BLUE, '溶液组装', 'molecules', '调节溶剂环境', '逐步形成界面', '优势：条件调节连续'),
             (347, TEAL, '表面沉积', 'layers', '固定基底状态', '分步控制负载', '优势：空间位置明确')]:
-        p.rect(50, y, 1180, 171, '#F4F7F9')
+        p.rect(50, y, 1180, 171, '#FFFFFF')
         p.rect(50, y, 180, 171, color)
         p.text(140, y+57, title, 25, 'white', True, 'middle')
         p.lines(75, y+101, ['控制变量不同', '保留独立记录'], 19, 30, 'white')
@@ -302,7 +302,7 @@ def _page23():
     p.path('M1215,319 V539 H642', stroke=BLUE, sw=2.5)
     p.path('M1030,518 V539', stroke=TEAL, sw=2.5)
     p.arrow(642, 539, 642, 553, BLUE, 6, 10)
-    p.rect(50, 559, 1180, 67, '#E8F0EE')
+    p.rect(50, 559, 1180, 67, '#FFFFFF')
     p.text(76, 602, '共享验证', 23, TEAL, True)
     p.text(255, 602, '相同归一化基准', 21)
     p.text(550, 602, '盲法读取动态响应', 21)
@@ -414,7 +414,7 @@ def _page26():
     p.arrow(687, 421, 591, 421, TEAL, 8, 15)
     p.text(639, 454, '初步观测', 17, TEAL, True, 'middle')
     p.arrow(950, 524, 950, 555, TEAL, 6, 12)
-    p.rect(185, 558, 1020, 68, '#E8F0EE')
+    p.rect(185, 558, 1020, 68, '#FFFFFF')
     p.text(211, 586, '数据回流：实测—预测残差、失败条件与新增批次', 22, TEAL, True)
     p.text(211, 615, '更新可行范围与不确定性，再选择下一轮最有信息的测量。', 20)
     p.path('M185,593 H54 V231 H328', stroke=TEAL, sw=4)
@@ -438,7 +438,7 @@ def _page27():
     _graph(p, 339, 327, 171, 128, 'peak', '条件梯度', names=('参照', '候选'))
     p.text(101, 509, '条件图谱', 20, NAVY, True)
     p.text(339, 509, '性能窗口', 20, NAVY, True)
-    p.lines(78, 567, ['结论落在已测条件内，', '保留组成与测量边界。'], 22, 33)
+    p.lines(78, 567, ['响应窗口用于候选排序，', '批次复核确定后续验证条件。'], 22, 33)
     p.line(605, 147, 605, 626, GRID, 1.3)
     p.text(640, 189, '为何可信', 27, BLUE, True)
     scatter(p, 661, 239, 202, 117)
@@ -446,7 +446,7 @@ def _page27():
     p.line(640, 401, 1230, 401, GRID, 1.3)
     p.text(640, 450, '下一步验证什么', 27, BLUE, True)
     p.lines(640, 500, ['扩展环境条件，检验窗口是否迁移；', '追踪失效样品，解释偏离的来源。'], 23, 43)
-    p.rect(640, 582, 590, 44, '#E8F0EE')
+    p.rect(640, 582, 590, 44, '#FFFFFF')
     p.text(935, 611, '新问题由现有证据的边界产生', 21, TEAL, True, 'middle')
     return ('27-three-angle-summary', p, _meta('三角度独立总结', '分别概括产出、可信依据和下一步问题。',
              '左侧归纳结果，右上回看可信依据，右下收束下一步验证。',
@@ -456,14 +456,24 @@ def _page27():
 
 def _page28():
     p = Page(28, '', '')
-    # The closing page intentionally uses no scientific decoration or panels.
-    p.text(640, 307, '感谢聆听', 54, NAVY, True, 'middle')
-    p.line(475, 350, 805, 350, BLUE, 3)
-    p.text(640, 417, '欢迎讨论研究思路与验证路径', 28, MUTED, False, 'middle')
-    return ('28-formal-closing', p, _meta('简洁正式结束', '为报告结束和现场讨论留下安静的视觉空间。',
-             '中心致谢语后自然进入讨论。',
-             ['可按用途添加报告题目或公开联系方式。', '不需要仪式性结束时可省略本页。'],
-             ['不要为凑信息密度加入无关图表。']))
+    p.parts.pop()  # This closing title uses the upper area of the default rule.
+    p.line(50,211,1230,211,GRID,1.4)
+    p.text(640, 124, '感谢聆听', 54, NAVY, True, 'middle')
+    p.text(640, 181, '多孔材料的结构、机制与可检验设计', 29, BLUE, True, 'middle')
+    stages=[(65,'结构观测','mesh',['识别孔道与界面差异','哪些参数决定有效路径？']),
+            (470,'机制假设','curve',['连接传输过程与动态响应','哪一步控制响应变化？']),
+            (875,'独立检验','scatter',['比较预测与新增测量','跨批次能否重复观察？'])]
+    for x,title,kind,lines in stages:
+        p.header(x,242,340,title)
+        figure(p,kind,x+35,314,270,161)
+        p.lines(x+170,532,lines,22,39,anchor='middle')
+    p.arrow(419,391,456,391,BLUE,11,17)
+    p.arrow(824,391,861,391,BLUE,11,17)
+    p.takeaway('欢迎围绕关键机制、验证设计与后续研究展开讨论',650)
+    return ('28-formal-closing', p, _meta('研究主线与正式结束', '通过科学对象、核心问题和验证路线收束报告并邀请讨论。',
+             '先读致谢与研究主题，再沿三步主线回顾研究，最后进入讨论。',
+             ['用已讲过的对象与主线收束，不在结束页引入新结果。', '可按用途替换讨论问题；不需要独立结束页时可省略。'],
+             ['不保留大片无功能留白，也不为填满版面加入无关图表。']))
 
 
 def _page29():
@@ -482,7 +492,7 @@ def _page29():
         p.rect(50, yy, 1180, 108, PALE if j%2 == 0 else 'white')
         for i, lines in enumerate(row):
             if i == 3:
-                p.rect(x[i]+40, yy+32, 145, 43, '#E6EFEC')
+                p.rect(x[i]+40, yy+32, 145, 43, '#FFFFFF')
                 p.text(x[i]+112, yy+61, lines[0], 22, TEAL, True, 'middle')
             else:
                 p.lines(x[i]+20, yy+43 if len(lines)>1 else yy+61,
@@ -520,7 +530,7 @@ def _page30():
         p.arrow(557, y+73, 606, y+73, BLUE, 7, 13)
         p.lines(631, y+40, actions, 21, 36)
         p.text(631, y+121, result, 21, TEAL, True)
-    p.takeaway('触发条件、替代动作和验证出口一起写，风险才可管理')
+    p.takeaway('失效信号触发替代路线，统一测量端点检验调整效果')
     return ('30-risk-signal-route', p, _meta('风险识别与替代路线', '把失败情形转成带触发条件的实施分支。',
              '每行从风险和信号图读向替代动作，最后检查验证出口。',
              ['识别信号使用实际可测现象。', '替代路线保留研究目标并明确验证方式。'],
@@ -581,10 +591,10 @@ def _page32():
 
 def _channel_section(p, x, y, w, h):
     """Original cross-section linking interface enrichment and pore transport."""
-    p.rect(x, y, w, h, '#F1F5F7', GRID, 1)
+    p.rect(x, y, w, h, '#FFFFFF', GRID, 1)
     for yy in (y+h*.27, y+h*.63):
         for start, end in ((.0, .29), (.40, .64), (.76, 1.0)):
-            p.rect(x+w*start, yy, w*(end-start), h*.12, '#8EABB9')
+            p.rect(x+w*start, yy, w*(end-start), h*.12, '#555555')
     for i in range(8):
         xx = x+w*(.05+i*.125)
         p.circle(xx, y+h*.18, 3.6, BLUE)
@@ -651,13 +661,13 @@ def _page37():
     for i in range(3):
         xx = 77+i*22
         p.rect(xx, 214, 13, 45, 'white', BLUE, 1.2)
-        p.rect(xx+2, 235-i*4, 9, 22+i*4, ['#C1D4DD', '#91B3C3', '#668EA7'][i])
+        p.rect(xx+2, 235-i*4, 9, 22+i*4, [BLUE, TEAL, RED][i])
         p.line(xx, 213, xx+13, 213, BLUE, 3)
     p.text(105, 288, '配方分组', 19, NAVY, True, 'middle')
     p.arrow(147, 237, 171, 237, BLUE, 6, 11)
     p.rect(186, 207, 70, 55, PALE, BLUE, 1.3)
     p.circle(196, 236, 5, GOLD)
-    p.rect(216, 222, 10, 27, '#BAD0CD', TEAL, 1)
+    p.rect(216, 222, 10, 27, '#555555', TEAL, 1)
     p.arrow(201, 236, 242, 236, GOLD, 3, 7)
     p.text(221, 288, '同光路测量', 19, NAVY, True, 'middle')
     p.arrow(265, 237, 289, 237, BLUE, 6, 11)
@@ -674,9 +684,9 @@ def _page37():
     p.text(71, 606, '读出参数用于约束局部机制', 21, BLUE, True)
     # Middle: an oblique whole specimen plus a spatially connected enlargement.
     p.text(472, 211, '整体：同组成、等厚度样品', 20, NAVY, True)
-    p.path('M472,251 L734,232 L796,279 L528,301 Z', '#D4E0E6', BLUE, 1.2)
-    p.path('M472,251 L528,301 L528,316 L472,266 Z', '#9DB5C3', BLUE, 1.1)
-    p.path('M528,301 L796,279 L796,295 L528,316 Z', '#7698AC', BLUE, 1.1)
+    p.path('M472,251 L734,232 L796,279 L528,301 Z', '#1F4E79', BLUE, 1.2)
+    p.path('M472,251 L528,301 L528,316 L472,266 Z', '#555555', BLUE, 1.1)
+    p.path('M528,301 L796,279 L796,295 L528,316 Z', '#343434', BLUE, 1.1)
     for i in range(23):
         xx = 513+(i*.61803399 % 1)*229
         yy = 248+(i*.41421356 % 1)*30
@@ -701,7 +711,7 @@ def _page37():
         p.text(1061, yy+26, source, 19, MUTED)
     p.arrow(1049, 343, 1049, 368, BLUE, 6, 11)
     scatter(p, 915, 392, 268, 112)
-    p.rect(889, 549, 317, 76, '#E8F0EE')
+    p.rect(889, 549, 317, 76, '#FFFFFF')
     p.text(909, 576, '独立验证策略', 21, TEAL, True)
     p.text(909, 611, '留出批次 → 盲测 → 回查残差', 18)
     # Evidence flows between columns at the corresponding result/interpretation level.

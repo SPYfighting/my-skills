@@ -1,130 +1,128 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
 <rect width="1280" height="720" fill="white"/>
-<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
-<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
-<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start">实验记录支撑测量复核与验证追溯</text>
-<text x="52" y="100" font-size="19" fill="#657B8B" font-weight="400" text-anchor="start">两份不同类型记录对应两项可以核查的判断</text>
-<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
-<rect x="50" y="148" width="562" height="34" fill="#365F85"/>
-<text x="331.0" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">测量记录</text>
-<rect x="68" y="202" width="265" height="337" fill="#FCFCFA" stroke="#CCD7DF" stroke-width="1.3"/>
-<text x="87" y="232" font-size="18" fill="#365F85" font-weight="700" text-anchor="start">实验记录 · 合成样张</text>
-<line x1="87" y1="253" x2="310" y2="253" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="87" y1="267" x2="310" y2="267" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="87" y1="281" x2="310" y2="281" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="87" y1="443" x2="310" y2="443" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="87" y1="457" x2="310" y2="457" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="87" y1="471" x2="310" y2="471" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="87" y1="485" x2="310" y2="485" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="87" y1="499" x2="310" y2="499" stroke="#CCD7DF" stroke-width="2"/>
-<text x="101" y="297" font-size="14" fill="#657B8B" font-weight="400" text-anchor="start">相对响应</text>
-<line x1="101" y1="407" x2="297" y2="407" stroke="#657B8B" stroke-width="1.3"/>
-<line x1="101" y1="331" x2="101" y2="407" stroke="#657B8B" stroke-width="1.3"/>
-<line x1="101" y1="350.0" x2="297" y2="350.0" stroke="#CCD7DF" stroke-width="0.7"/>
-<line x1="101" y1="369.0" x2="297" y2="369.0" stroke="#CCD7DF" stroke-width="0.7"/>
-<line x1="101" y1="388.0" x2="297" y2="388.0" stroke="#CCD7DF" stroke-width="0.7"/>
-<path d="M101.0,343.9 L107.5,347.1 L114.1,350.1 L120.6,352.9 L127.1,355.5 L133.7,357.9 L140.2,360.2 L146.7,362.3 L153.3,364.3 L159.8,366.2 L166.3,368.0 L172.9,369.6 L179.4,371.1 L185.9,372.6 L192.5,373.9 L199.0,375.1 L205.5,376.3 L212.1,377.4 L218.6,378.4 L225.1,379.4 L231.7,380.3 L238.2,381.1 L244.7,381.9 L251.3,382.7 L257.8,383.3 L264.3,384.0 L270.9,384.6 L277.4,385.2 L283.9,385.7 L290.5,386.2 L297.0,386.6" fill="none" stroke="#365F85" stroke-width="2.6"/>
-<circle cx="101.0" cy="343.92" r="2.8" fill="#365F85"/>
-<circle cx="140.2" cy="360.2061897258394" r="2.8" fill="#365F85"/>
-<circle cx="179.4" cy="371.12314917260926" r="2.8" fill="#365F85"/>
-<circle cx="218.6" cy="378.44100593153723" r="2.8" fill="#365F85"/>
-<circle cx="257.8" cy="383.346312011064" r="2.8" fill="#365F85"/>
-<circle cx="297.0" cy="386.6344370081113" r="2.8" fill="#365F85"/>
-<path d="M101.0,343.9 L107.5,348.6 L114.1,352.9 L120.6,356.7 L127.1,360.2 L133.7,363.4 L140.2,366.2 L146.7,368.8 L153.3,371.1 L159.8,373.2 L166.3,375.1 L172.9,376.9 L179.4,378.4 L185.9,379.9 L192.5,381.1 L199.0,382.3 L205.5,383.3 L212.1,384.3 L218.6,385.2 L225.1,385.9 L231.7,386.6 L238.2,387.3 L244.7,387.8 L251.3,388.4 L257.8,388.8 L264.3,389.3 L270.9,389.7 L277.4,390.0 L283.9,390.3 L290.5,390.6 L297.0,390.9" fill="none" stroke="#A63237" stroke-width="2.6"/>
-<circle cx="101.0" cy="343.92" r="2.8" fill="#A63237"/>
-<circle cx="140.2" cy="366.2087051769551" r="2.8" fill="#A63237"/>
-<circle cx="179.4" cy="378.44100593153723" r="2.8" fill="#A63237"/>
-<circle cx="218.6" cy="385.15423492185363" r="2.8" fill="#A63237"/>
-<circle cx="257.8" cy="388.83853310750305" r="2.8" fill="#A63237"/>
-<circle cx="297.0" cy="390.8605188226275" r="2.8" fill="#A63237"/>
-<path d="M101.0,343.9 L107.5,350.1 L114.1,355.5 L120.6,360.2 L127.1,364.3 L133.7,368.0 L140.2,371.1 L146.7,373.9 L153.3,376.3 L159.8,378.4 L166.3,380.3 L172.9,381.9 L179.4,383.3 L185.9,384.6 L192.5,385.7 L199.0,386.6 L205.5,387.5 L212.1,388.2 L218.6,388.8 L225.1,389.4 L231.7,389.9 L238.2,390.3 L244.7,390.7 L251.3,391.0 L257.8,391.3 L264.3,391.6 L270.9,391.8 L277.4,392.0 L283.9,392.1 L290.5,392.3 L297.0,392.4" fill="none" stroke="#537F78" stroke-width="2.6"/>
-<circle cx="101.0" cy="343.92" r="2.8" fill="#537F78"/>
-<circle cx="140.2" cy="371.12314917260926" r="2.8" fill="#537F78"/>
-<circle cx="179.4" cy="383.346312011064" r="2.8" fill="#537F78"/>
-<circle cx="218.6" cy="388.83853310750305" r="2.8" fill="#537F78"/>
-<circle cx="257.8" cy="391.3063471234687" r="2.8" fill="#537F78"/>
-<circle cx="297.0" cy="392.4152074388965" r="2.8" fill="#537F78"/>
-<text x="199.0" y="432" font-size="14" fill="#657B8B" font-weight="400" text-anchor="middle">归一化条件</text>
-<line x1="107.0" y1="314" x2="125.0" y2="314" stroke="#365F85" stroke-width="3"/>
-<text x="131.0" y="318" font-size="13" fill="#657B8B" font-weight="400" text-anchor="start">A</text>
-<line x1="172.33333333333331" y1="314" x2="190.33333333333331" y2="314" stroke="#A63237" stroke-width="3"/>
-<text x="196.33333333333331" y="318" font-size="13" fill="#657B8B" font-weight="400" text-anchor="start">B</text>
-<line x1="237.66666666666666" y1="314" x2="255.66666666666666" y2="314" stroke="#537F78" stroke-width="3"/>
-<text x="261.66666666666663" y="318" font-size="13" fill="#657B8B" font-weight="400" text-anchor="start">C</text>
-<rect x="96" y="297" width="216" height="148" fill="none" stroke="#A63237" stroke-width="2"/>
-<polygon points="351.00,361.50 378.00,361.50 378.00,366.92 394.00,357.00 378.00,347.08 378.00,352.50 351.00,352.50" fill="#365F85"/>
-<text x="418" y="287" font-size="23" fill="#15344E" font-weight="700" text-anchor="start">测量条件和读</text>
-<text x="418" y="323" font-size="23" fill="#15344E" font-weight="700" text-anchor="start">出可核对</text>
-<text x="410" y="412" font-size="17" fill="#15344E" font-weight="400" text-anchor="start">条件、单位及样本对应</text>
-<text x="410" y="443" font-size="17" fill="#15344E" font-weight="400" text-anchor="start">关键读出有完整记录</text>
-<rect x="666" y="148" width="562" height="34" fill="#365F85"/>
-<text x="947.0" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">验证记录</text>
-<rect x="684" y="202" width="265" height="337" fill="#FCFCFA" stroke="#CCD7DF" stroke-width="1.3"/>
-<text x="703" y="232" font-size="18" fill="#365F85" font-weight="700" text-anchor="start">实验记录 · 合成样张</text>
-<line x1="703" y1="253" x2="926" y2="253" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="703" y1="267" x2="926" y2="267" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="703" y1="281" x2="926" y2="281" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="703" y1="443" x2="926" y2="443" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="703" y1="457" x2="926" y2="457" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="703" y1="471" x2="926" y2="471" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="703" y1="485" x2="926" y2="485" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="703" y1="499" x2="926" y2="499" stroke="#CCD7DF" stroke-width="2"/>
-<line x1="717" y1="407" x2="913" y2="407" stroke="#657B8B" stroke-width="1.2"/>
-<line x1="717" y1="307" x2="717" y2="407" stroke="#657B8B" stroke-width="1.2"/>
-<line x1="717" y1="407" x2="913" y2="307" stroke="#CCD7DF" stroke-width="1.3" stroke-dasharray="5 4"/>
-<circle cx="717.0" cy="404.0" r="3.2" fill="#A63237"/>
-<circle cx="838.1346617852" cy="334.4141319293315" r="3.2" fill="#365F85"/>
-<circle cx="763.2693235704" cy="387.660662357359" r="3.2" fill="#365F85"/>
-<circle cx="884.4039853556001" cy="330.6833073505524" r="3.2" fill="#365F85"/>
-<circle cx="809.5386471408" cy="351.91993898384703" r="3.2" fill="#A63237"/>
-<circle cx="734.673308926" cy="392.002872769673" r="3.2" fill="#365F85"/>
-<circle cx="855.8079707112" cy="346.41287512993864" r="3.2" fill="#365F85"/>
-<circle cx="780.9426324964002" cy="376.30624210363436" r="3.2" fill="#365F85"/>
-<circle cx="902.0772942816001" cy="310.0" r="3.2" fill="#A63237"/>
-<circle cx="827.2119560668" cy="353.1917950875006" r="3.2" fill="#365F85"/>
-<circle cx="752.3466178520001" cy="399.004418247703" r="3.2" fill="#365F85"/>
-<circle cx="873.4812796372" cy="320.7672506096098" r="3.2" fill="#365F85"/>
-<circle cx="798.6159414224" cy="357.8519477515637" r="3.2" fill="#A63237"/>
-<circle cx="723.7506032076001" cy="404.0" r="3.2" fill="#365F85"/>
-<circle cx="844.8852649928002" cy="345.5526028850096" r="3.2" fill="#365F85"/>
-<circle cx="770.019926778" cy="369.0784182388606" r="3.2" fill="#365F85"/>
-<circle cx="891.1545885632002" cy="318.64777080106757" r="3.2" fill="#A63237"/>
-<circle cx="816.2892503484002" cy="367.0140771076897" r="3.2" fill="#365F85"/>
-<circle cx="741.4239121336" cy="389.812985000831" r="3.2" fill="#365F85"/>
-<circle cx="862.5585739188001" cy="323.9339434789222" r="3.2" fill="#365F85"/>
-<circle cx="787.6932357040002" cy="379.14128603209394" r="3.2" fill="#A63237"/>
-<circle cx="908.8278974892" cy="314.6810589022958" r="3.2" fill="#365F85"/>
-<circle cx="833.9625592744001" cy="336.9184317990268" r="3.2" fill="#365F85"/>
-<circle cx="759.0972210596002" cy="384.0881667031407" r="3.2" fill="#365F85"/>
-<circle cx="880.2318828448" cy="334.692630454633" r="3.2" fill="#A63237"/>
-<circle cx="805.3665446300001" cy="359.00534335851944" r="3.2" fill="#365F85"/>
-<circle cx="730.5012064152003" cy="390.2890142334891" r="3.2" fill="#365F85"/>
-<circle cx="851.6358682004" cy="345.1054867368895" r="3.2" fill="#365F85"/>
-<circle cx="776.7705299856004" cy="383.6372448318434" r="3.2" fill="#A63237"/>
-<circle cx="897.9051917708002" cy="310.0" r="3.2" fill="#365F85"/>
-<circle cx="823.039853556" cy="349.573043378689" r="3.2" fill="#365F85"/>
-<circle cx="748.1745153412005" cy="402.0306977062594" r="3.2" fill="#365F85"/>
-<circle cx="869.3091771264003" cy="328.287977722319" r="3.2" fill="#A63237"/>
-<circle cx="794.4438389116" cy="356.94884185969886" r="3.2" fill="#365F85"/>
-<circle cx="719.5785006968005" cy="404.0" r="3.2" fill="#365F85"/>
-<circle cx="840.7131624820003" cy="352.3721402090093" r="3.2" fill="#365F85"/>
-<circle cx="765.8478242671999" cy="373.54269592829695" r="3.2" fill="#A63237"/>
-<circle cx="886.9824860524004" cy="315.16108135032783" r="3.2" fill="#365F85"/>
-<circle cx="812.1171478376002" cy="369.02946221624427" r="3.2" fill="#365F85"/>
-<circle cx="737.2518096228" cy="397.6017392247021" r="3.2" fill="#365F85"/>
-<circle cx="858.3864714080005" cy="323.93565280243735" r="3.2" fill="#A63237"/>
-<circle cx="783.5211331932003" cy="376.45156440957146" r="3.2" fill="#365F85"/>
-<circle cx="904.6557949784" cy="320.84359033915644" r="3.2" fill="#365F85"/>
-<circle cx="829.7904567636004" cy="342.26887045284275" r="3.2" fill="#365F85"/>
-<circle cx="754.9251185488002" cy="380.90776045395216" r="3.2" fill="#A63237"/>
-<text x="815.0" y="430" font-size="14" fill="#657B8B" font-weight="400" text-anchor="middle">测量值</text>
-<text x="717" y="297" font-size="14" fill="#657B8B" font-weight="400" text-anchor="start">预测值</text>
-<rect x="712" y="297" width="216" height="148" fill="none" stroke="#A63237" stroke-width="2"/>
-<polygon points="967.00,361.50 994.00,361.50 994.00,366.92 1010.00,357.00 994.00,347.08 994.00,352.50 967.00,352.50" fill="#365F85"/>
-<text x="1034" y="287" font-size="23" fill="#15344E" font-weight="700" text-anchor="start">重复与比较依</text>
-<text x="1034" y="323" font-size="23" fill="#15344E" font-weight="700" text-anchor="start">据可追溯</text>
-<text x="1026" y="412" font-size="17" fill="#15344E" font-weight="400" text-anchor="start">保留对象及处理过程</text>
-<text x="1026" y="443" font-size="17" fill="#15344E" font-weight="400" text-anchor="start">判断对应具体证据区域</text>
-<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle">测量与验证记录保留条件、处理过程和关键读出</text>
-<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">34</text>
+<style>text{font-family:"Times New Roman","Microsoft YaHei"}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#1F4E79"/>
+<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">实验记录支撑测量复核与验证追溯</tspan></text>
+<text x="52" y="100" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">样本、处理、读出和复核依据与相邻判断逐项对应</tspan></text>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#B7B7B7" stroke-width="1.4"/>
+<rect x="50" y="148" width="562" height="34" fill="#1F4E79"/>
+<text x="331.0" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">测量记录</tspan></text>
+<rect x="68" y="202" width="280" height="410" fill="white" stroke="#B7B7B7" stroke-width="1.3"/>
+<text x="86" y="239" font-size="23" fill="#1F4E79" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">样本、条件与读出</tspan></text>
+<text x="86" y="279" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">样本：参照组与处理组</tspan></text>
+<text x="86" y="310" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">条件：同温度、同采样频率</tspan></text>
+<text x="105" y="346" font-size="14" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">相对响应</tspan></text>
+<line x1="105" y1="456" x2="312" y2="456" stroke="#555555" stroke-width="1.3"/>
+<line x1="105" y1="380" x2="105" y2="456" stroke="#555555" stroke-width="1.3"/>
+<line x1="105" y1="399.0" x2="312" y2="399.0" stroke="#B7B7B7" stroke-width="0.7"/>
+<line x1="105" y1="418.0" x2="312" y2="418.0" stroke="#B7B7B7" stroke-width="0.7"/>
+<line x1="105" y1="437.0" x2="312" y2="437.0" stroke="#B7B7B7" stroke-width="0.7"/>
+<path d="M105.0,392.9 L111.9,396.1 L118.8,399.1 L125.7,401.9 L132.6,404.5 L139.5,406.9 L146.4,409.2 L153.3,411.3 L160.2,413.3 L167.1,415.2 L174.0,417.0 L180.9,418.6 L187.8,420.1 L194.7,421.6 L201.6,422.9 L208.5,424.1 L215.4,425.3 L222.3,426.4 L229.2,427.4 L236.1,428.4 L243.0,429.3 L249.9,430.1 L256.8,430.9 L263.7,431.7 L270.6,432.3 L277.5,433.0 L284.4,433.6 L291.3,434.2 L298.2,434.7 L305.1,435.2 L312.0,435.6" fill="none" stroke="#1F4E79" stroke-width="2.6"/>
+<circle cx="105.0" cy="392.92" r="2.8" fill="#1F4E79"/>
+<circle cx="146.4" cy="409.2061897258394" r="2.8" fill="#1F4E79"/>
+<circle cx="187.8" cy="420.12314917260926" r="2.8" fill="#1F4E79"/>
+<circle cx="229.2" cy="427.44100593153723" r="2.8" fill="#1F4E79"/>
+<circle cx="270.6" cy="432.346312011064" r="2.8" fill="#1F4E79"/>
+<circle cx="312.0" cy="435.6344370081113" r="2.8" fill="#1F4E79"/>
+<path d="M105.0,392.9 L111.9,397.6 L118.8,401.9 L125.7,405.7 L132.6,409.2 L139.5,412.4 L146.4,415.2 L153.3,417.8 L160.2,420.1 L167.1,422.2 L174.0,424.1 L180.9,425.9 L187.8,427.4 L194.7,428.9 L201.6,430.1 L208.5,431.3 L215.4,432.3 L222.3,433.3 L229.2,434.2 L236.1,434.9 L243.0,435.6 L249.9,436.3 L256.8,436.8 L263.7,437.4 L270.6,437.8 L277.5,438.3 L284.4,438.7 L291.3,439.0 L298.2,439.3 L305.1,439.6 L312.0,439.9" fill="none" stroke="#A63237" stroke-width="2.6"/>
+<circle cx="105.0" cy="392.92" r="2.8" fill="#A63237"/>
+<circle cx="146.4" cy="415.2087051769551" r="2.8" fill="#A63237"/>
+<circle cx="187.8" cy="427.44100593153723" r="2.8" fill="#A63237"/>
+<circle cx="229.2" cy="434.15423492185363" r="2.8" fill="#A63237"/>
+<circle cx="270.6" cy="437.83853310750305" r="2.8" fill="#A63237"/>
+<circle cx="312.0" cy="439.8605188226275" r="2.8" fill="#A63237"/>
+<path d="M105.0,392.9 L111.9,399.1 L118.8,404.5 L125.7,409.2 L132.6,413.3 L139.5,417.0 L146.4,420.1 L153.3,422.9 L160.2,425.3 L167.1,427.4 L174.0,429.3 L180.9,430.9 L187.8,432.3 L194.7,433.6 L201.6,434.7 L208.5,435.6 L215.4,436.5 L222.3,437.2 L229.2,437.8 L236.1,438.4 L243.0,438.9 L249.9,439.3 L256.8,439.7 L263.7,440.0 L270.6,440.3 L277.5,440.6 L284.4,440.8 L291.3,441.0 L298.2,441.1 L305.1,441.3 L312.0,441.4" fill="none" stroke="#343434" stroke-width="2.6"/>
+<circle cx="105.0" cy="392.92" r="2.8" fill="#343434"/>
+<circle cx="146.4" cy="420.12314917260926" r="2.8" fill="#343434"/>
+<circle cx="187.8" cy="432.346312011064" r="2.8" fill="#343434"/>
+<circle cx="229.2" cy="437.83853310750305" r="2.8" fill="#343434"/>
+<circle cx="270.6" cy="440.3063471234687" r="2.8" fill="#343434"/>
+<circle cx="312.0" cy="441.4152074388965" r="2.8" fill="#343434"/>
+<text x="208.5" y="481" font-size="14" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">归一化条件</tspan></text>
+<line x1="111.0" y1="363" x2="129.0" y2="363" stroke="#1F4E79" stroke-width="3"/>
+<text x="135.0" y="367" font-size="13" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Times New Roman">A</tspan></text>
+<line x1="180.0" y1="363" x2="198.0" y2="363" stroke="#A63237" stroke-width="3"/>
+<text x="204.0" y="367" font-size="13" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Times New Roman">B</tspan></text>
+<line x1="249.0" y1="363" x2="267.0" y2="363" stroke="#343434" stroke-width="3"/>
+<text x="273.0" y="367" font-size="13" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Times New Roman">C</tspan></text>
+<rect x="90" y="334" width="242" height="152" fill="none" stroke="#A63237" stroke-width="2"/>
+<text x="86" y="521" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">读出：幅度与建立时间</tspan></text>
+<text x="86" y="555" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">处理：基线校正与归一化</tspan></text>
+<text x="86" y="589" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">复核：回查完整动态时序</tspan></text>
+<polygon points="360.00,412.50 381.00,412.50 381.00,417.92 397.00,408.00 381.00,398.08 381.00,403.50 360.00,403.50" fill="#1F4E79"/>
+<text x="414" y="274" font-size="25" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">测量条件</tspan></text>
+<text x="414" y="314" font-size="25" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">与读出可核对</tspan></text>
+<text x="414" y="397" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">匹配同批参照</tspan></text>
+<text x="414" y="443" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">比较完整时序</tspan></text>
+<text x="414" y="489" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">检查启动差异</tspan></text>
+<text x="414" y="535" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">定位稳态区间</tspan></text>
+<rect x="666" y="148" width="562" height="34" fill="#1F4E79"/>
+<text x="947.0" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">验证记录</tspan></text>
+<rect x="684" y="202" width="280" height="410" fill="white" stroke="#B7B7B7" stroke-width="1.3"/>
+<text x="702" y="239" font-size="23" fill="#1F4E79" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">样本、条件与读出</tspan></text>
+<text x="702" y="279" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">样本：独立制备批次</tspan></text>
+<text x="702" y="310" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">划分：训练组与验证组</tspan></text>
+<line x1="721" y1="456" x2="928" y2="456" stroke="#555555" stroke-width="1.2"/>
+<line x1="721" y1="356" x2="721" y2="456" stroke="#555555" stroke-width="1.2"/>
+<line x1="721" y1="456" x2="928" y2="356" stroke="#B7B7B7" stroke-width="1.3" stroke-dasharray="5 4"/>
+<circle cx="721.0" cy="453.0" r="3.2" fill="#A63237"/>
+<circle cx="848.9330356609" cy="383.4141319293315" r="3.2" fill="#1F4E79"/>
+<circle cx="769.8660713218001" cy="436.660662357359" r="3.2" fill="#1F4E79"/>
+<circle cx="897.7991069827" cy="379.6833073505524" r="3.2" fill="#1F4E79"/>
+<circle cx="818.7321426436" cy="400.91993898384703" r="3.2" fill="#A63237"/>
+<circle cx="739.6651783045" cy="441.002872769673" r="3.2" fill="#1F4E79"/>
+<circle cx="867.5982139654" cy="395.41287512993864" r="3.2" fill="#1F4E79"/>
+<circle cx="788.5312496263001" cy="425.30624210363436" r="3.2" fill="#1F4E79"/>
+<circle cx="916.4642852872" cy="359.0" r="3.2" fill="#A63237"/>
+<circle cx="837.3973209481001" cy="402.1917950875006" r="3.2" fill="#1F4E79"/>
+<circle cx="758.3303566090001" cy="448.004418247703" r="3.2" fill="#1F4E79"/>
+<circle cx="886.2633922699001" cy="369.7672506096098" r="3.2" fill="#1F4E79"/>
+<circle cx="807.1964279308" cy="406.8519477515637" r="3.2" fill="#A63237"/>
+<circle cx="728.1294635917001" cy="453.0" r="3.2" fill="#1F4E79"/>
+<circle cx="856.0624992526002" cy="394.5526028850096" r="3.2" fill="#1F4E79"/>
+<circle cx="776.9955349135" cy="418.0784182388606" r="3.2" fill="#1F4E79"/>
+<circle cx="904.9285705744" cy="367.64777080106757" r="3.2" fill="#A63237"/>
+<circle cx="825.8616062353002" cy="416.0140771076897" r="3.2" fill="#1F4E79"/>
+<circle cx="746.7946418962" cy="438.812985000831" r="3.2" fill="#1F4E79"/>
+<circle cx="874.7276775571002" cy="372.9339434789222" r="3.2" fill="#1F4E79"/>
+<circle cx="795.6607132180002" cy="428.14128603209394" r="3.2" fill="#A63237"/>
+<circle cx="923.5937488789" cy="363.6810589022958" r="3.2" fill="#1F4E79"/>
+<circle cx="844.5267845398001" cy="385.9184317990268" r="3.2" fill="#1F4E79"/>
+<circle cx="765.4598202007003" cy="433.0881667031407" r="3.2" fill="#1F4E79"/>
+<circle cx="893.3928558616" cy="383.692630454633" r="3.2" fill="#A63237"/>
+<circle cx="814.3258915225001" cy="408.00534335851944" r="3.2" fill="#1F4E79"/>
+<circle cx="735.2589271834003" cy="439.2890142334891" r="3.2" fill="#1F4E79"/>
+<circle cx="863.1919628443" cy="394.1054867368895" r="3.2" fill="#1F4E79"/>
+<circle cx="784.1249985052004" cy="432.6372448318434" r="3.2" fill="#A63237"/>
+<circle cx="912.0580341661002" cy="359.0" r="3.2" fill="#1F4E79"/>
+<circle cx="832.991069827" cy="398.573043378689" r="3.2" fill="#1F4E79"/>
+<circle cx="753.9241054879005" cy="451.0306977062594" r="3.2" fill="#1F4E79"/>
+<circle cx="881.8571411488002" cy="377.287977722319" r="3.2" fill="#A63237"/>
+<circle cx="802.7901768097" cy="405.94884185969886" r="3.2" fill="#1F4E79"/>
+<circle cx="723.7232124706005" cy="453.0" r="3.2" fill="#1F4E79"/>
+<circle cx="851.6562481315002" cy="401.3721402090093" r="3.2" fill="#1F4E79"/>
+<circle cx="772.5892837924" cy="422.54269592829695" r="3.2" fill="#A63237"/>
+<circle cx="900.5223194533005" cy="364.16108135032783" r="3.2" fill="#1F4E79"/>
+<circle cx="821.4553551142003" cy="418.02946221624427" r="3.2" fill="#1F4E79"/>
+<circle cx="742.3883907751" cy="446.6017392247021" r="3.2" fill="#1F4E79"/>
+<circle cx="870.3214264360005" cy="372.93565280243735" r="3.2" fill="#A63237"/>
+<circle cx="791.2544620969003" cy="425.45156440957146" r="3.2" fill="#1F4E79"/>
+<circle cx="919.1874977578" cy="369.84359033915644" r="3.2" fill="#1F4E79"/>
+<circle cx="840.1205334187005" cy="391.26887045284275" r="3.2" fill="#1F4E79"/>
+<circle cx="761.0535690796003" cy="429.90776045395216" r="3.2" fill="#A63237"/>
+<text x="824.5" y="479" font-size="14" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">测量值</tspan></text>
+<text x="721" y="346" font-size="14" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">预测值</tspan></text>
+<rect x="706" y="334" width="242" height="152" fill="none" stroke="#A63237" stroke-width="2"/>
+<text x="702" y="521" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">读出：预测值与实测值</tspan></text>
+<text x="702" y="555" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">处理：保留偏差与异常点</tspan></text>
+<text x="702" y="589" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">复核：按批次追溯差异</tspan></text>
+<polygon points="976.00,412.50 997.00,412.50 997.00,417.92 1013.00,408.00 997.00,398.08 997.00,403.50 976.00,403.50" fill="#1F4E79"/>
+<text x="1030" y="274" font-size="25" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">比较依据</tspan></text>
+<text x="1030" y="314" font-size="25" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">与偏差可追溯</tspan></text>
+<text x="1030" y="397" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">核对样本身份</tspan></text>
+<text x="1030" y="443" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">连接预测实测</tspan></text>
+<text x="1030" y="489" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">分析系统偏差</tspan></text>
+<text x="1030" y="535" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">回查异常条件</tspan></text>
+<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">原始记录、关键证据与研究判断形成逐项对应</tspan></text>
+<text x="1230" y="704" font-size="15" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">34</tspan></text>
 </svg>

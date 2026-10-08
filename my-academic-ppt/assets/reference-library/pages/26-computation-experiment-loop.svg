@@ -1,25 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
 <rect width="1280" height="720" fill="white"/>
-<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
-<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
-<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start">计算与实验通过可追溯数据形成闭环</text>
-<text x="52" y="100" font-size="19" fill="#657B8B" font-weight="400" text-anchor="start">结构、测量与边界条件进入分析，实验检验后更新预测</text>
-<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
-<rect x="97" y="146" width="299" height="55" fill="#EFF4F8" stroke="#CCD7DF" stroke-width="1"/>
-<text x="246" y="181" font-size="22" fill="#15344E" font-weight="700" text-anchor="middle">结构与配方记录</text>
-<rect x="490" y="146" width="299" height="55" fill="#EFF4F8" stroke="#CCD7DF" stroke-width="1"/>
-<text x="639" y="181" font-size="22" fill="#15344E" font-weight="700" text-anchor="middle">历史测量与对照</text>
-<rect x="883" y="146" width="299" height="55" fill="#EFF4F8" stroke="#CCD7DF" stroke-width="1"/>
-<text x="1032" y="181" font-size="22" fill="#15344E" font-weight="700" text-anchor="middle">条件边界与成本</text>
-<line x1="246" y1="212" x2="1033" y2="212" stroke="#365F85" stroke-width="3"/>
-<line x1="246" y1="201" x2="246" y2="212" stroke="#365F85" stroke-width="3"/>
-<line x1="639" y1="201" x2="639" y2="212" stroke="#365F85" stroke-width="3"/>
-<line x1="1033" y1="201" x2="1033" y2="212" stroke="#365F85" stroke-width="3"/>
-<polygon points="327.00,212.00 327.00,233.00 321.94,233.00 330.00,246.00 338.06,233.00 333.00,233.00 333.00,212.00" fill="#365F85"/>
-<polygon points="947.00,212.00 947.00,233.00 941.94,233.00 950.00,246.00 958.06,233.00 953.00,233.00 953.00,212.00" fill="#365F85"/>
-<rect x="75" y="251" width="500" height="271" fill="white" stroke="#CCD7DF" stroke-width="1.4" stroke-dasharray="6 4"/>
-<rect x="75" y="251" width="500" height="34" fill="#365F85"/>
-<text x="325.0" y="275.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">计算工作区：形成可检验预测</text>
+<style>text{font-family:"Times New Roman","Microsoft YaHei"}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#1F4E79"/>
+<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">计算与实验通过可追溯数据形成闭环</tspan></text>
+<text x="52" y="100" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">结构、测量与边界条件进入分析，实验检验后更新预测</tspan></text>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#B7B7B7" stroke-width="1.4"/>
+<rect x="97" y="146" width="299" height="55" fill="white" stroke="#B7B7B7" stroke-width="1"/>
+<text x="246" y="181" font-size="22" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">结构与配方记录</tspan></text>
+<rect x="490" y="146" width="299" height="55" fill="white" stroke="#B7B7B7" stroke-width="1"/>
+<text x="639" y="181" font-size="22" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">历史测量与对照</tspan></text>
+<rect x="883" y="146" width="299" height="55" fill="white" stroke="#B7B7B7" stroke-width="1"/>
+<text x="1032" y="181" font-size="22" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">条件边界与成本</tspan></text>
+<line x1="246" y1="212" x2="1033" y2="212" stroke="#1F4E79" stroke-width="3"/>
+<line x1="246" y1="201" x2="246" y2="212" stroke="#1F4E79" stroke-width="3"/>
+<line x1="639" y1="201" x2="639" y2="212" stroke="#1F4E79" stroke-width="3"/>
+<line x1="1033" y1="201" x2="1033" y2="212" stroke="#1F4E79" stroke-width="3"/>
+<polygon points="327.00,212.00 327.00,233.00 321.94,233.00 330.00,246.00 338.06,233.00 333.00,233.00 333.00,212.00" fill="#1F4E79"/>
+<polygon points="947.00,212.00 947.00,233.00 941.94,233.00 950.00,246.00 958.06,233.00 953.00,233.00 953.00,212.00" fill="#1F4E79"/>
+<rect x="75" y="251" width="500" height="271" fill="white" stroke="#B7B7B7" stroke-width="1.4" stroke-dasharray="6 4"/>
+<rect x="75" y="251" width="500" height="34" fill="#1F4E79"/>
+<text x="325.0" y="275.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">计算工作区：形成可检验预测</tspan></text>
 <rect x="113.0" y="310.0" width="17.3" height="14.5" fill="#B96356"/>
 <rect x="131.3" y="310.0" width="17.3" height="14.5" fill="#934141"/>
 <rect x="149.6" y="310.0" width="17.3" height="14.5" fill="#934141"/>
@@ -80,68 +80,68 @@
 <rect x="241.1" y="387.5" width="17.3" height="14.5" fill="#DFE6EB"/>
 <rect x="259.4" y="387.5" width="17.3" height="14.5" fill="#F2EBE4"/>
 <rect x="277.70000000000005" y="387.5" width="17.3" height="14.5" fill="#D9B19A"/>
-<text x="122.15" y="422" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">1</text>
-<text x="213.65" y="422" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">6</text>
-<text x="286.85" y="422" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">10</text>
-<text x="106" y="320.385" font-size="13" fill="#657B8B" font-weight="400" text-anchor="end">1</text>
-<text x="106" y="397.885" font-size="13" fill="#657B8B" font-weight="400" text-anchor="end">6</text>
-<line x1="350" y1="400" x2="526" y2="400" stroke="#657B8B" stroke-width="1.2"/>
-<line x1="350" y1="316" x2="350" y2="400" stroke="#657B8B" stroke-width="1.2"/>
-<line x1="350" y1="400" x2="526" y2="316" stroke="#CCD7DF" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="122.15" y="422" font-size="13" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Times New Roman">1</tspan></text>
+<text x="213.65" y="422" font-size="13" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Times New Roman">6</tspan></text>
+<text x="286.85" y="422" font-size="13" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Times New Roman">10</tspan></text>
+<text x="106" y="320.385" font-size="13" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">1</tspan></text>
+<text x="106" y="397.885" font-size="13" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">6</tspan></text>
+<line x1="350" y1="400" x2="526" y2="400" stroke="#555555" stroke-width="1.2"/>
+<line x1="350" y1="316" x2="350" y2="400" stroke="#555555" stroke-width="1.2"/>
+<line x1="350" y1="400" x2="526" y2="316" stroke="#B7B7B7" stroke-width="1.3" stroke-dasharray="5 4"/>
 <circle cx="350.0" cy="397.48" r="3.2" fill="#A63237"/>
-<circle cx="458.7739820112" cy="339.02787082063844" r="3.2" fill="#365F85"/>
-<circle cx="391.54796402240004" cy="383.75495638018157" r="3.2" fill="#365F85"/>
-<circle cx="500.3219460336" cy="335.893978174464" r="3.2" fill="#365F85"/>
+<circle cx="458.7739820112" cy="339.02787082063844" r="3.2" fill="#1F4E79"/>
+<circle cx="391.54796402240004" cy="383.75495638018157" r="3.2" fill="#1F4E79"/>
+<circle cx="500.3219460336" cy="335.893978174464" r="3.2" fill="#1F4E79"/>
 <circle cx="433.0959280448" cy="353.7327487464315" r="3.2" fill="#A63237"/>
-<circle cx="365.86991005600004" cy="387.4024131265253" r="3.2" fill="#365F85"/>
-<circle cx="474.6438920672" cy="349.1068151091485" r="3.2" fill="#365F85"/>
-<circle cx="407.41787407840013" cy="374.21724336705284" r="3.2" fill="#365F85"/>
+<circle cx="365.86991005600004" cy="387.4024131265253" r="3.2" fill="#1F4E79"/>
+<circle cx="474.6438920672" cy="349.1068151091485" r="3.2" fill="#1F4E79"/>
+<circle cx="407.41787407840013" cy="374.21724336705284" r="3.2" fill="#1F4E79"/>
 <circle cx="516.1918560896" cy="318.52" r="3.2" fill="#A63237"/>
-<circle cx="448.9658381008" cy="354.8011078735005" r="3.2" fill="#365F85"/>
-<circle cx="381.7398201120001" cy="393.28371132807047" r="3.2" fill="#365F85"/>
-<circle cx="490.51380212320004" cy="327.5644905120722" r="3.2" fill="#365F85"/>
+<circle cx="448.9658381008" cy="354.8011078735005" r="3.2" fill="#1F4E79"/>
+<circle cx="381.7398201120001" cy="393.28371132807047" r="3.2" fill="#1F4E79"/>
+<circle cx="490.51380212320004" cy="327.5644905120722" r="3.2" fill="#1F4E79"/>
 <circle cx="423.2877841344" cy="358.71563611131353" r="3.2" fill="#A63237"/>
-<circle cx="356.06176614560013" cy="397.48" r="3.2" fill="#365F85"/>
-<circle cx="464.8357481568002" cy="348.3841864234081" r="3.2" fill="#365F85"/>
-<circle cx="397.609730168" cy="368.1458713206429" r="3.2" fill="#365F85"/>
+<circle cx="356.06176614560013" cy="397.48" r="3.2" fill="#1F4E79"/>
+<circle cx="464.8357481568002" cy="348.3841864234081" r="3.2" fill="#1F4E79"/>
+<circle cx="397.609730168" cy="368.1458713206429" r="3.2" fill="#1F4E79"/>
 <circle cx="506.3837121792001" cy="325.7841274728968" r="3.2" fill="#A63237"/>
-<circle cx="439.1576941904002" cy="366.4118247704593" r="3.2" fill="#365F85"/>
-<circle cx="371.9316762016" cy="385.56290740069807" r="3.2" fill="#365F85"/>
-<circle cx="480.70565821280013" cy="330.2245125222946" r="3.2" fill="#365F85"/>
+<circle cx="439.1576941904002" cy="366.4118247704593" r="3.2" fill="#1F4E79"/>
+<circle cx="371.9316762016" cy="385.56290740069807" r="3.2" fill="#1F4E79"/>
+<circle cx="480.70565821280013" cy="330.2245125222946" r="3.2" fill="#1F4E79"/>
 <circle cx="413.4796402240002" cy="376.5986802669589" r="3.2" fill="#A63237"/>
-<circle cx="522.2536222352" cy="322.45208947792844" r="3.2" fill="#365F85"/>
-<circle cx="455.0276042464001" cy="341.1314827111825" r="3.2" fill="#365F85"/>
-<circle cx="387.8015862576002" cy="380.75406003063813" r="3.2" fill="#365F85"/>
+<circle cx="522.2536222352" cy="322.45208947792844" r="3.2" fill="#1F4E79"/>
+<circle cx="455.0276042464001" cy="341.1314827111825" r="3.2" fill="#1F4E79"/>
+<circle cx="387.8015862576002" cy="380.75406003063813" r="3.2" fill="#1F4E79"/>
 <circle cx="496.5755682688" cy="339.2618095818917" r="3.2" fill="#A63237"/>
-<circle cx="429.34955028000013" cy="359.68448842115635" r="3.2" fill="#365F85"/>
-<circle cx="362.1235322912002" cy="385.96277195613084" r="3.2" fill="#365F85"/>
-<circle cx="470.8975143024" cy="348.00860885898715" r="3.2" fill="#365F85"/>
+<circle cx="429.34955028000013" cy="359.68448842115635" r="3.2" fill="#1F4E79"/>
+<circle cx="362.1235322912002" cy="385.96277195613084" r="3.2" fill="#1F4E79"/>
+<circle cx="470.8975143024" cy="348.00860885898715" r="3.2" fill="#1F4E79"/>
 <circle cx="403.6714963136004" cy="380.37528565874845" r="3.2" fill="#A63237"/>
-<circle cx="512.4454783248002" cy="318.52" r="3.2" fill="#365F85"/>
-<circle cx="445.219460336" cy="351.76135643809874" r="3.2" fill="#365F85"/>
-<circle cx="377.9934423472004" cy="395.82578607325786" r="3.2" fill="#365F85"/>
+<circle cx="512.4454783248002" cy="318.52" r="3.2" fill="#1F4E79"/>
+<circle cx="445.219460336" cy="351.76135643809874" r="3.2" fill="#1F4E79"/>
+<circle cx="377.9934423472004" cy="395.82578607325786" r="3.2" fill="#1F4E79"/>
 <circle cx="486.7674243584002" cy="333.88190128674796" r="3.2" fill="#A63237"/>
-<circle cx="419.5414063696" cy="357.9570271621471" r="3.2" fill="#365F85"/>
-<circle cx="352.3153883808004" cy="397.48" r="3.2" fill="#365F85"/>
-<circle cx="461.0893703920002" cy="354.1125977755678" r="3.2" fill="#365F85"/>
+<circle cx="419.5414063696" cy="357.9570271621471" r="3.2" fill="#1F4E79"/>
+<circle cx="352.3153883808004" cy="397.48" r="3.2" fill="#1F4E79"/>
+<circle cx="461.0893703920002" cy="354.1125977755678" r="3.2" fill="#1F4E79"/>
 <circle cx="393.8633524032" cy="371.8958645797694" r="3.2" fill="#A63237"/>
-<circle cx="502.6373344144004" cy="322.8553083342754" r="3.2" fill="#365F85"/>
-<circle cx="435.4113164256002" cy="368.10474826164517" r="3.2" fill="#365F85"/>
-<circle cx="368.1852984368" cy="392.1054609487498" r="3.2" fill="#365F85"/>
+<circle cx="502.6373344144004" cy="322.8553083342754" r="3.2" fill="#1F4E79"/>
+<circle cx="435.4113164256002" cy="368.10474826164517" r="3.2" fill="#1F4E79"/>
+<circle cx="368.1852984368" cy="392.1054609487498" r="3.2" fill="#1F4E79"/>
 <circle cx="476.9592804480004" cy="330.2259483540474" r="3.2" fill="#A63237"/>
-<circle cx="409.7332624592002" cy="374.33931410404006" r="3.2" fill="#365F85"/>
-<circle cx="518.5072444704" cy="327.62861588489136" r="3.2" fill="#365F85"/>
-<circle cx="451.2812264816004" cy="345.62585118038794" r="3.2" fill="#365F85"/>
+<circle cx="409.7332624592002" cy="374.33931410404006" r="3.2" fill="#1F4E79"/>
+<circle cx="518.5072444704" cy="327.62861588489136" r="3.2" fill="#1F4E79"/>
+<circle cx="451.2812264816004" cy="345.62585118038794" r="3.2" fill="#1F4E79"/>
 <circle cx="384.0552084928002" cy="378.0825187813198" r="3.2" fill="#A63237"/>
-<text x="438.0" y="423" font-size="14" fill="#657B8B" font-weight="400" text-anchor="middle">测量值</text>
-<text x="350" y="306" font-size="14" fill="#657B8B" font-weight="400" text-anchor="start">预测值</text>
-<text x="205" y="460" font-size="20" fill="#15344E" font-weight="700" text-anchor="middle">统一变量与数据口径</text>
-<text x="434" y="460" font-size="20" fill="#15344E" font-weight="700" text-anchor="middle">估计响应与不确定性</text>
-<text x="112" y="496" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">输出：候选条件、预测值、优先测量区间</text>
-<rect x="705" y="251" width="500" height="271" fill="white" stroke="#CCD7DF" stroke-width="1.4" stroke-dasharray="6 4"/>
-<rect x="705" y="251" width="500" height="34" fill="#365F85"/>
-<text x="955.0" y="275.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">实验工作区：生成带条件的观测</text>
-<rect x="744" y="309" width="178" height="98" fill="#EFF4F8" stroke="#CCD7DF" stroke-width="1.5"/>
+<text x="438.0" y="423" font-size="14" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">测量值</tspan></text>
+<text x="350" y="306" font-size="14" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">预测值</tspan></text>
+<text x="205" y="460" font-size="20" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">统一变量与数据口径</tspan></text>
+<text x="434" y="460" font-size="20" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">估计响应与不确定性</tspan></text>
+<text x="112" y="496" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">输出：候选条件、预测值、优先测量区间</tspan></text>
+<rect x="705" y="251" width="500" height="271" fill="white" stroke="#B7B7B7" stroke-width="1.4" stroke-dasharray="6 4"/>
+<rect x="705" y="251" width="500" height="34" fill="#1F4E79"/>
+<text x="955.0" y="275.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">实验工作区：生成带条件的观测</tspan></text>
+<rect x="744" y="309" width="178" height="98" fill="white" stroke="#B7B7B7" stroke-width="1.5"/>
 <circle cx="757.6923076923077" cy="319.8888888888889" r="4.454545454545454" fill="#6590A6"/>
 <circle cx="771.3846153846154" cy="319.8888888888889" r="4.454545454545454" fill="#416983"/>
 <circle cx="785.0769230769231" cy="319.8888888888889" r="4.454545454545454" fill="#416983"/>
@@ -238,20 +238,20 @@
 <circle cx="880.9230769230769" cy="396.1111111111111" r="4.454545454545454" fill="#C6D8DF"/>
 <circle cx="894.6153846153846" cy="396.1111111111111" r="4.454545454545454" fill="#96B8C5"/>
 <circle cx="908.3076923076924" cy="396.1111111111111" r="4.454545454545454" fill="#6590A6"/>
-<rect x="989.62" y="315.8" width="127.02" height="75.6" fill="#E9EFF2" stroke="#657B8B" stroke-width="1.6"/>
-<rect x="1005.28" y="326.6" width="74.82" height="40.800000000000004" fill="white" stroke="#365F85" stroke-width="2"/>
-<line x1="1013.98" y1="359.0" x2="1071.4" y2="359.0" stroke="#657B8B" stroke-width="1.3"/>
-<line x1="1013.98" y1="333.8" x2="1013.98" y2="359.0" stroke="#657B8B" stroke-width="1.3"/>
-<line x1="1013.98" y1="340.1" x2="1071.4" y2="340.1" stroke="#CCD7DF" stroke-width="0.7"/>
-<line x1="1013.98" y1="346.40000000000003" x2="1071.4" y2="346.40000000000003" stroke="#CCD7DF" stroke-width="0.7"/>
-<line x1="1013.98" y1="352.7" x2="1071.4" y2="352.7" stroke="#CCD7DF" stroke-width="0.7"/>
-<path d="M1014.0,338.1 L1015.9,339.1 L1017.8,340.1 L1019.7,341.1 L1021.6,341.9 L1023.6,342.7 L1025.5,343.5 L1027.4,344.2 L1029.3,344.9 L1031.2,345.5 L1033.1,346.1 L1035.0,346.6 L1036.9,347.1 L1038.9,347.6 L1040.8,348.0 L1042.7,348.4 L1044.6,348.8 L1046.5,349.2 L1048.4,349.5 L1050.3,349.8 L1052.3,350.1 L1054.2,350.4 L1056.1,350.7 L1058.0,350.9 L1059.9,351.2 L1061.8,351.4 L1063.7,351.6 L1065.7,351.8 L1067.6,351.9 L1069.5,352.1 L1071.4,352.2" fill="none" stroke="#365F85" stroke-width="2.6"/>
-<circle cx="1013.98" cy="338.084" r="2.8" fill="#365F85"/>
-<circle cx="1025.464" cy="343.48415764593625" r="2.8" fill="#365F85"/>
-<circle cx="1036.948" cy="347.1039915677599" r="2.8" fill="#365F85"/>
-<circle cx="1048.432" cy="349.53043880887816" r="2.8" fill="#365F85"/>
-<circle cx="1059.916" cy="351.15693503524756" r="2.8" fill="#365F85"/>
-<circle cx="1071.4" cy="352.2472080605843" r="2.8" fill="#365F85"/>
+<rect x="989.62" y="315.8" width="127.02" height="75.6" fill="white" stroke="#555555" stroke-width="1.6"/>
+<rect x="1005.28" y="326.6" width="74.82" height="40.800000000000004" fill="white" stroke="#1F4E79" stroke-width="2"/>
+<line x1="1013.98" y1="359.0" x2="1071.4" y2="359.0" stroke="#555555" stroke-width="1.3"/>
+<line x1="1013.98" y1="333.8" x2="1013.98" y2="359.0" stroke="#555555" stroke-width="1.3"/>
+<line x1="1013.98" y1="340.1" x2="1071.4" y2="340.1" stroke="#B7B7B7" stroke-width="0.7"/>
+<line x1="1013.98" y1="346.40000000000003" x2="1071.4" y2="346.40000000000003" stroke="#B7B7B7" stroke-width="0.7"/>
+<line x1="1013.98" y1="352.7" x2="1071.4" y2="352.7" stroke="#B7B7B7" stroke-width="0.7"/>
+<path d="M1014.0,338.1 L1015.9,339.1 L1017.8,340.1 L1019.7,341.1 L1021.6,341.9 L1023.6,342.7 L1025.5,343.5 L1027.4,344.2 L1029.3,344.9 L1031.2,345.5 L1033.1,346.1 L1035.0,346.6 L1036.9,347.1 L1038.9,347.6 L1040.8,348.0 L1042.7,348.4 L1044.6,348.8 L1046.5,349.2 L1048.4,349.5 L1050.3,349.8 L1052.3,350.1 L1054.2,350.4 L1056.1,350.7 L1058.0,350.9 L1059.9,351.2 L1061.8,351.4 L1063.7,351.6 L1065.7,351.8 L1067.6,351.9 L1069.5,352.1 L1071.4,352.2" fill="none" stroke="#1F4E79" stroke-width="2.6"/>
+<circle cx="1013.98" cy="338.084" r="2.8" fill="#1F4E79"/>
+<circle cx="1025.464" cy="343.48415764593625" r="2.8" fill="#1F4E79"/>
+<circle cx="1036.948" cy="347.1039915677599" r="2.8" fill="#1F4E79"/>
+<circle cx="1048.432" cy="349.53043880887816" r="2.8" fill="#1F4E79"/>
+<circle cx="1059.916" cy="351.15693503524756" r="2.8" fill="#1F4E79"/>
+<circle cx="1071.4" cy="352.2472080605843" r="2.8" fill="#1F4E79"/>
 <path d="M1014.0,338.1 L1015.9,339.6 L1017.8,341.1 L1019.7,342.3 L1021.6,343.5 L1023.6,344.5 L1025.5,345.5 L1027.4,346.3 L1029.3,347.1 L1031.2,347.8 L1033.1,348.4 L1035.0,349.0 L1036.9,349.5 L1038.9,350.0 L1040.8,350.4 L1042.7,350.8 L1044.6,351.2 L1046.5,351.5 L1048.4,351.8 L1050.3,352.0 L1052.3,352.2 L1054.2,352.5 L1056.1,352.6 L1058.0,352.8 L1059.9,353.0 L1061.8,353.1 L1063.7,353.2 L1065.7,353.4 L1067.6,353.5 L1069.5,353.6 L1071.4,353.6" fill="none" stroke="#A63237" stroke-width="2.6"/>
 <circle cx="1013.98" cy="338.084" r="2.8" fill="#A63237"/>
 <circle cx="1025.464" cy="345.4744654007799" r="2.8" fill="#A63237"/>
@@ -259,30 +259,30 @@
 <circle cx="1048.432" cy="351.75640421093044" r="2.8" fill="#A63237"/>
 <circle cx="1059.916" cy="352.97803992511945" r="2.8" fill="#A63237"/>
 <circle cx="1071.4" cy="353.6484878201344" r="2.8" fill="#A63237"/>
-<path d="M1014.0,338.1 L1015.9,340.1 L1017.8,341.9 L1019.7,343.5 L1021.6,344.9 L1023.6,346.1 L1025.5,347.1 L1027.4,348.0 L1029.3,348.8 L1031.2,349.5 L1033.1,350.1 L1035.0,350.7 L1036.9,351.2 L1038.9,351.6 L1040.8,351.9 L1042.7,352.2 L1044.6,352.5 L1046.5,352.8 L1048.4,353.0 L1050.3,353.2 L1052.3,353.3 L1054.2,353.5 L1056.1,353.6 L1058.0,353.7 L1059.9,353.8 L1061.8,353.9 L1063.7,354.0 L1065.7,354.0 L1067.6,354.1 L1069.5,354.1 L1071.4,354.2" fill="none" stroke="#537F78" stroke-width="2.6"/>
-<circle cx="1013.98" cy="338.084" r="2.8" fill="#537F78"/>
-<circle cx="1025.464" cy="347.1039915677599" r="2.8" fill="#537F78"/>
-<circle cx="1036.948" cy="351.15693503524756" r="2.8" fill="#537F78"/>
-<circle cx="1048.432" cy="352.97803992511945" r="2.8" fill="#537F78"/>
-<circle cx="1059.916" cy="353.7963150988344" r="2.8" fill="#537F78"/>
-<circle cx="1071.4" cy="354.16398983500255" r="2.8" fill="#537F78"/>
-<circle cx="1095.76" cy="345.8" r="6.96" fill="#537F78"/>
-<line x1="1005.28" y1="401.0" x2="1097.5" y2="401.0" stroke="#365F85" stroke-width="8"/>
-<text x="833" y="460" font-size="20" fill="#15344E" font-weight="700" text-anchor="middle">按候选条件制备</text>
-<text x="1054" y="460" font-size="20" fill="#15344E" font-weight="700" text-anchor="middle">同步读取参照信号</text>
-<text x="742" y="496" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">输出：实测值、误差、异常与制备记录</text>
-<polygon points="591.00,359.00 672.00,359.00 672.00,364.30 687.00,355.00 672.00,345.70 672.00,351.00 591.00,351.00" fill="#365F85"/>
-<text x="639" y="334" font-size="17" fill="#365F85" font-weight="700" text-anchor="middle">候选条件</text>
-<polygon points="687.00,417.00 606.00,417.00 606.00,411.70 591.00,421.00 606.00,430.30 606.00,425.00 687.00,425.00" fill="#537F78"/>
-<text x="639" y="454" font-size="17" fill="#537F78" font-weight="700" text-anchor="middle">初步观测</text>
-<polygon points="947.00,524.00 947.00,543.00 942.56,543.00 950.00,555.00 957.44,543.00 953.00,543.00 953.00,524.00" fill="#537F78"/>
-<rect x="185" y="558" width="1020" height="68" fill="#E8F0EE"/>
-<text x="211" y="586" font-size="22" fill="#537F78" font-weight="700" text-anchor="start">数据回流：实测—预测残差、失败条件与新增批次</text>
-<text x="211" y="615" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">更新可行范围与不确定性，再选择下一轮最有信息的测量。</text>
-<path d="M185,593 H54 V231 H328" fill="none" stroke="#537F78" stroke-width="4"/>
-<polygon points="279.00,234.00 317.00,234.00 317.00,238.44 329.00,231.00 317.00,223.56 317.00,228.00 279.00,228.00" fill="#537F78"/>
+<path d="M1014.0,338.1 L1015.9,340.1 L1017.8,341.9 L1019.7,343.5 L1021.6,344.9 L1023.6,346.1 L1025.5,347.1 L1027.4,348.0 L1029.3,348.8 L1031.2,349.5 L1033.1,350.1 L1035.0,350.7 L1036.9,351.2 L1038.9,351.6 L1040.8,351.9 L1042.7,352.2 L1044.6,352.5 L1046.5,352.8 L1048.4,353.0 L1050.3,353.2 L1052.3,353.3 L1054.2,353.5 L1056.1,353.6 L1058.0,353.7 L1059.9,353.8 L1061.8,353.9 L1063.7,354.0 L1065.7,354.0 L1067.6,354.1 L1069.5,354.1 L1071.4,354.2" fill="none" stroke="#343434" stroke-width="2.6"/>
+<circle cx="1013.98" cy="338.084" r="2.8" fill="#343434"/>
+<circle cx="1025.464" cy="347.1039915677599" r="2.8" fill="#343434"/>
+<circle cx="1036.948" cy="351.15693503524756" r="2.8" fill="#343434"/>
+<circle cx="1048.432" cy="352.97803992511945" r="2.8" fill="#343434"/>
+<circle cx="1059.916" cy="353.7963150988344" r="2.8" fill="#343434"/>
+<circle cx="1071.4" cy="354.16398983500255" r="2.8" fill="#343434"/>
+<circle cx="1095.76" cy="345.8" r="6.96" fill="#343434"/>
+<line x1="1005.28" y1="401.0" x2="1097.5" y2="401.0" stroke="#1F4E79" stroke-width="8"/>
+<text x="833" y="460" font-size="20" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">按候选条件制备</tspan></text>
+<text x="1054" y="460" font-size="20" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">同步读取参照信号</tspan></text>
+<text x="742" y="496" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">输出：实测值、误差、异常与制备记录</tspan></text>
+<polygon points="591.00,359.00 672.00,359.00 672.00,364.30 687.00,355.00 672.00,345.70 672.00,351.00 591.00,351.00" fill="#1F4E79"/>
+<text x="639" y="334" font-size="17" fill="#1F4E79" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">候选条件</tspan></text>
+<polygon points="687.00,417.00 606.00,417.00 606.00,411.70 591.00,421.00 606.00,430.30 606.00,425.00 687.00,425.00" fill="#343434"/>
+<text x="639" y="454" font-size="17" fill="#343434" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">初步观测</tspan></text>
+<polygon points="947.00,524.00 947.00,543.00 942.56,543.00 950.00,555.00 957.44,543.00 953.00,543.00 953.00,524.00" fill="#343434"/>
+<rect x="185" y="558" width="1020" height="68" fill="#FFFFFF"/>
+<text x="211" y="586" font-size="22" fill="#343434" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">数据回流：实测</tspan><tspan font-family="Times New Roman">—</tspan><tspan font-family="Microsoft YaHei">预测残差、失败条件与新增批次</tspan></text>
+<text x="211" y="615" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">更新可行范围与不确定性，再选择下一轮最有信息的测量。</tspan></text>
+<path d="M185,593 H54 V231 H328" fill="none" stroke="#343434" stroke-width="4"/>
+<polygon points="279.00,234.00 317.00,234.00 317.00,238.44 329.00,231.00 317.00,223.56 317.00,228.00 279.00,228.00" fill="#343434"/>
 <rect x="52" y="542" width="109" height="43" fill="white"/>
-<text x="65" y="571" font-size="18" fill="#537F78" font-weight="700" text-anchor="start">更新模型</text>
-<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle">反馈携带具体误差信息，才能改变下一轮预测与实验选择</text>
-<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">26</text>
+<text x="65" y="571" font-size="18" fill="#343434" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">更新模型</tspan></text>
+<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">反馈携带具体误差信息，才能改变下一轮预测与实验选择</tspan></text>
+<text x="1230" y="704" font-size="15" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">26</tspan></text>
 </svg>

@@ -1,27 +1,282 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
 <rect width="1280" height="720" fill="white"/>
-<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
-<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
-<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
-<text x="69" y="181" font-size="23" fill="#365F85" font-weight="700" text-anchor="start">第二部分</text>
-<text x="68" y="289" font-size="49" fill="#15344E" font-weight="700" text-anchor="start">建立结构与性能</text>
-<text x="68" y="359" font-size="49" fill="#15344E" font-weight="700" text-anchor="start">之间的可检验联系</text>
-<text x="72" y="483" font-size="27" fill="#A63237" font-weight="400" text-anchor="start">把观测差异转化为</text>
-<text x="72" y="522" font-size="27" fill="#A63237" font-weight="400" text-anchor="start">可以由实验检验的机制假设</text>
-<rect x="832" y="171" width="341" height="34" fill="#365F85"/>
-<text x="1002.5" y="195.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">结构参数</text>
-<rect x="832" y="205" width="341" height="75" fill="#EFF4F8"/>
-<text x="1002" y="251" font-size="20" fill="#15344E" font-weight="400" text-anchor="middle">孔径 · 连通性 · 厚度</text>
-<polygon points="996.50,290.00 996.50,299.60 993.07,299.60 1002.00,314.00 1010.93,299.60 1007.50,299.60 1007.50,290.00" fill="#365F85"/>
-<rect x="832" y="324" width="341" height="34" fill="#365F85"/>
-<text x="1002.5" y="348.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">机制假设</text>
-<rect x="832" y="358" width="341" height="75" fill="#EFF4F8"/>
-<text x="1002" y="404" font-size="20" fill="#15344E" font-weight="400" text-anchor="middle">路径 · 阻力 · 边界条件</text>
-<polygon points="996.50,443.00 996.50,452.60 993.07,452.60 1002.00,467.00 1010.93,452.60 1007.50,452.60 1007.50,443.00" fill="#365F85"/>
-<rect x="832" y="477" width="341" height="34" fill="#365F85"/>
-<text x="1002.5" y="501.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">独立检验</text>
-<rect x="832" y="511" width="341" height="75" fill="#EFF4F8"/>
-<text x="1002" y="557" font-size="20" fill="#15344E" font-weight="400" text-anchor="middle">对照 · 重复 · 适用范围</text>
-<text x="72" y="627" font-size="22" fill="#657B8B" font-weight="400" text-anchor="start">研究进展：验证方案制定中</text>
-<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">03</text>
+<style>text{font-family:"Times New Roman","Microsoft YaHei"}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#1F4E79"/>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#B7B7B7" stroke-width="1.4"/>
+<text x="69" y="181" font-size="23" fill="#1F4E79" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">第二部分</tspan></text>
+<text x="68" y="289" font-size="49" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">建立结构与性能</tspan></text>
+<text x="68" y="359" font-size="49" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">之间的可检验联系</tspan></text>
+<text x="72" y="483" font-size="27" fill="#A63237" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">把观测差异转化为</tspan></text>
+<text x="72" y="522" font-size="27" fill="#A63237" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">可以由实验检验的机制假设</tspan></text>
+<rect x="816" y="171" width="389" height="34" fill="#1F4E79"/>
+<text x="1010.5" y="195.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">结构参数</tspan></text>
+<rect x="816" y="205" width="389" height="88" fill="white"/>
+<rect x="829" y="219" width="104" height="60" fill="white"/>
+<line x1="829.0" y1="219.0" x2="839.4" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="219.0" x2="829.0" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="219.0" x2="839.4" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="839.4" y1="219.0" x2="849.8" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="219.0" x2="839.4" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="219.0" x2="849.8" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="849.8" y1="219.0" x2="860.1999999999999" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="219.0" x2="849.8" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="219.0" x2="860.1999999999999" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="860.2" y1="219.0" x2="870.6" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="219.0" x2="860.2" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="219.0" x2="870.6" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="870.6" y1="219.0" x2="881.0" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="219.0" x2="870.6" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="219.0" x2="881.0" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="881.0" y1="219.0" x2="891.4" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="219.0" x2="881.0" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="219.0" x2="891.4" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="891.4" y1="219.0" x2="901.8" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="219.0" x2="891.4" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="219.0" x2="901.8" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="901.8" y1="219.0" x2="912.1999999999999" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="219.0" x2="901.8" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="219.0" x2="912.1999999999999" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="912.2" y1="219.0" x2="922.6" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="219.0" x2="912.2" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="219.0" x2="922.6" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="922.6" y1="219.0" x2="933.0" y2="219.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="219.0" x2="922.6" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="219.0" x2="933.0" y2="229.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="933.0" y1="219.0" x2="933.0" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="229.0" x2="839.4" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="229.0" x2="829.0" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="229.0" x2="839.4" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="839.4" y1="229.0" x2="849.8" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="229.0" x2="839.4" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="229.0" x2="849.8" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="849.8" y1="229.0" x2="860.1999999999999" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="229.0" x2="849.8" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="229.0" x2="860.1999999999999" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="860.2" y1="229.0" x2="870.6" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="229.0" x2="860.2" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="229.0" x2="870.6" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="870.6" y1="229.0" x2="881.0" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="229.0" x2="870.6" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="229.0" x2="881.0" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="881.0" y1="229.0" x2="891.4" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="229.0" x2="881.0" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="229.0" x2="891.4" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="891.4" y1="229.0" x2="901.8" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="229.0" x2="891.4" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="229.0" x2="901.8" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="901.8" y1="229.0" x2="912.1999999999999" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="229.0" x2="901.8" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="229.0" x2="912.1999999999999" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="912.2" y1="229.0" x2="922.6" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="229.0" x2="912.2" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="229.0" x2="922.6" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="922.6" y1="229.0" x2="933.0" y2="229.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="229.0" x2="922.6" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="229.0" x2="933.0" y2="239.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="933.0" y1="229.0" x2="933.0" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="239.0" x2="839.4" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="239.0" x2="829.0" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="239.0" x2="839.4" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="839.4" y1="239.0" x2="849.8" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="239.0" x2="839.4" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="239.0" x2="849.8" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="849.8" y1="239.0" x2="860.1999999999999" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="239.0" x2="849.8" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="239.0" x2="860.1999999999999" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="860.2" y1="239.0" x2="870.6" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="239.0" x2="860.2" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="239.0" x2="870.6" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="870.6" y1="239.0" x2="881.0" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="239.0" x2="870.6" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="239.0" x2="881.0" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="881.0" y1="239.0" x2="891.4" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="239.0" x2="881.0" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="239.0" x2="891.4" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="891.4" y1="239.0" x2="901.8" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="239.0" x2="891.4" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="239.0" x2="901.8" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="901.8" y1="239.0" x2="912.1999999999999" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="239.0" x2="901.8" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="239.0" x2="912.1999999999999" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="912.2" y1="239.0" x2="922.6" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="239.0" x2="912.2" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="239.0" x2="922.6" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="922.6" y1="239.0" x2="933.0" y2="239.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="239.0" x2="922.6" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="239.0" x2="933.0" y2="249.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="933.0" y1="239.0" x2="933.0" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="249.0" x2="839.4" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="249.0" x2="829.0" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="249.0" x2="839.4" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="839.4" y1="249.0" x2="849.8" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="249.0" x2="839.4" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="249.0" x2="849.8" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="849.8" y1="249.0" x2="860.1999999999999" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="249.0" x2="849.8" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="249.0" x2="860.1999999999999" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="860.2" y1="249.0" x2="870.6" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="249.0" x2="860.2" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="249.0" x2="870.6" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="870.6" y1="249.0" x2="881.0" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="249.0" x2="870.6" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="249.0" x2="881.0" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="881.0" y1="249.0" x2="891.4" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="249.0" x2="881.0" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="249.0" x2="891.4" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="891.4" y1="249.0" x2="901.8" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="249.0" x2="891.4" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="249.0" x2="901.8" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="901.8" y1="249.0" x2="912.1999999999999" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="249.0" x2="901.8" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="249.0" x2="912.1999999999999" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="912.2" y1="249.0" x2="922.6" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="249.0" x2="912.2" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="249.0" x2="922.6" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="922.6" y1="249.0" x2="933.0" y2="249.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="249.0" x2="922.6" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="249.0" x2="933.0" y2="259.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="933.0" y1="249.0" x2="933.0" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="259.0" x2="839.4" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="259.0" x2="829.0" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="259.0" x2="839.4" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="839.4" y1="259.0" x2="849.8" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="259.0" x2="839.4" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="259.0" x2="849.8" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="849.8" y1="259.0" x2="860.1999999999999" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="259.0" x2="849.8" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="259.0" x2="860.1999999999999" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="860.2" y1="259.0" x2="870.6" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="259.0" x2="860.2" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="259.0" x2="870.6" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="870.6" y1="259.0" x2="881.0" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="259.0" x2="870.6" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="259.0" x2="881.0" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="881.0" y1="259.0" x2="891.4" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="259.0" x2="881.0" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="259.0" x2="891.4" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="891.4" y1="259.0" x2="901.8" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="259.0" x2="891.4" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="259.0" x2="901.8" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="901.8" y1="259.0" x2="912.1999999999999" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="259.0" x2="901.8" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="259.0" x2="912.1999999999999" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="912.2" y1="259.0" x2="922.6" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="259.0" x2="912.2" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="259.0" x2="922.6" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="922.6" y1="259.0" x2="933.0" y2="259.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="259.0" x2="922.6" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="259.0" x2="933.0" y2="269.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="933.0" y1="259.0" x2="933.0" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="269.0" x2="839.4" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="269.0" x2="829.0" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="269.0" x2="839.4" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="839.4" y1="269.0" x2="849.8" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="269.0" x2="839.4" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="269.0" x2="849.8" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="849.8" y1="269.0" x2="860.1999999999999" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="269.0" x2="849.8" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="269.0" x2="860.1999999999999" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="860.2" y1="269.0" x2="870.6" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="269.0" x2="860.2" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="269.0" x2="870.6" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="870.6" y1="269.0" x2="881.0" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="269.0" x2="870.6" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="269.0" x2="881.0" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="881.0" y1="269.0" x2="891.4" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="269.0" x2="881.0" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="269.0" x2="891.4" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="891.4" y1="269.0" x2="901.8" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="269.0" x2="891.4" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="269.0" x2="901.8" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="901.8" y1="269.0" x2="912.1999999999999" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="269.0" x2="901.8" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="269.0" x2="912.1999999999999" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="912.2" y1="269.0" x2="922.6" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="269.0" x2="912.2" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="269.0" x2="922.6" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="922.6" y1="269.0" x2="933.0" y2="269.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="269.0" x2="922.6" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="269.0" x2="933.0" y2="279.0" stroke="#888888" stroke-width="0.65"/>
+<line x1="933.0" y1="269.0" x2="933.0" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="829.0" y1="279.0" x2="839.4" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="839.4" y1="279.0" x2="849.8" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="849.8" y1="279.0" x2="860.1999999999999" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="860.2" y1="279.0" x2="870.6" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="870.6" y1="279.0" x2="881.0" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="881.0" y1="279.0" x2="891.4" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="891.4" y1="279.0" x2="901.8" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="901.8" y1="279.0" x2="912.1999999999999" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="912.2" y1="279.0" x2="922.6" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<line x1="922.6" y1="279.0" x2="933.0" y2="279.0" stroke="#888888" stroke-width="0.8"/>
+<ellipse cx="839.4" cy="239.0" rx="5.50668672609326" ry="4.4053493808746085" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="860.2" cy="239.0" rx="4.675053248354668" ry="3.7400425986837345" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="881.0" cy="239.0" rx="5.896681868631405" ry="4.717345494905124" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="901.8" cy="239.0" rx="5.711561574842769" ry="4.569249259874215" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="922.6" cy="239.0" rx="4.644007403847668" ry="3.715205923078135" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="839.4" cy="259.0" rx="4.675053248354668" ry="3.7400425986837345" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="860.2" cy="259.0" rx="5.896681868631405" ry="4.717345494905124" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="881.0" cy="259.0" rx="5.711561574842769" ry="4.569249259874215" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="901.8" cy="259.0" rx="4.644007403847668" ry="3.715205923078135" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<ellipse cx="922.6" cy="259.0" rx="5.717646279840942" ry="4.574117023872754" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<path d="M837,247.8 C860.2,231.0 896.6,270.0 925,246.0" fill="none" stroke="#A63237" stroke-width="3"/>
+<text x="948" y="240" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">孔径</tspan></text>
+<text x="948" y="269" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">连通性 · 厚度</tspan></text>
+<polygon points="1004.50,295.00 1004.50,303.80 1001.82,303.80 1010.00,317.00 1018.18,303.80 1015.50,303.80 1015.50,295.00" fill="#1F4E79"/>
+<rect x="816" y="324" width="389" height="34" fill="#1F4E79"/>
+<text x="1010.5" y="348.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">机制假设</tspan></text>
+<rect x="816" y="358" width="389" height="88" fill="white"/>
+<path d="M829,387.0 L910.12,372.0 L933,396.0 L851.88,411.0 Z" fill="#1F4E79" stroke="white" stroke-width="1"/>
+<path d="M829,398.4 L910.12,383.4 L933,407.4 L851.88,422.4 Z" fill="#747474" stroke="white" stroke-width="1"/>
+<path d="M829,409.8 L910.12,394.8 L933,418.8 L851.88,433.8 Z" fill="#343434" stroke="white" stroke-width="1"/>
+<path d="M829,421.2 L910.12,406.2 L933,430.2 L851.88,445.2 Z" fill="#15344E" stroke="white" stroke-width="1"/>
+<polygon points="843.10,421.80 843.10,425.40 841.25,425.40 844.60,430.80 847.95,425.40 846.10,425.40 846.10,421.80" fill="#A63237"/>
+<polygon points="855.58,421.80 855.58,425.40 853.73,425.40 857.08,430.80 860.43,425.40 858.58,425.40 858.58,421.80" fill="#A63237"/>
+<polygon points="868.06,421.80 868.06,425.40 866.21,425.40 869.56,430.80 872.91,425.40 871.06,425.40 871.06,421.80" fill="#A63237"/>
+<polygon points="880.54,421.80 880.54,425.40 878.69,425.40 882.04,430.80 885.39,425.40 883.54,425.40 883.54,421.80" fill="#A63237"/>
+<polygon points="893.02,421.80 893.02,425.40 891.17,425.40 894.52,430.80 897.87,425.40 896.02,425.40 896.02,421.80" fill="#A63237"/>
+<polygon points="905.50,421.80 905.50,425.40 903.65,425.40 907.00,430.80 910.35,425.40 908.50,425.40 908.50,421.80" fill="#A63237"/>
+<text x="948" y="393" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">路径</tspan></text>
+<text x="948" y="422" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">阻力 · 边界条件</tspan></text>
+<polygon points="1004.50,448.00 1004.50,456.80 1001.82,456.80 1010.00,470.00 1018.18,456.80 1015.50,456.80 1015.50,448.00" fill="#1F4E79"/>
+<rect x="816" y="477" width="389" height="34" fill="#1F4E79"/>
+<text x="1010.5" y="501.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">独立检验</tspan></text>
+<rect x="816" y="511" width="389" height="88" fill="white"/>
+<text x="829" y="536" font-size="14" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">相对响应</tspan></text>
+<line x1="829" y1="606" x2="933" y2="606" stroke="#555555" stroke-width="1.3"/>
+<line x1="829" y1="570" x2="829" y2="606" stroke="#555555" stroke-width="1.3"/>
+<line x1="829" y1="579.0" x2="933" y2="579.0" stroke="#B7B7B7" stroke-width="0.7"/>
+<line x1="829" y1="588.0" x2="933" y2="588.0" stroke="#B7B7B7" stroke-width="0.7"/>
+<line x1="829" y1="597.0" x2="933" y2="597.0" stroke="#B7B7B7" stroke-width="0.7"/>
+<path d="M829.0,576.1 L832.5,577.6 L835.9,579.0 L839.4,580.4 L842.9,581.6 L846.3,582.8 L849.8,583.8 L853.3,584.8 L856.7,585.8 L860.2,586.7 L863.7,587.5 L867.1,588.3 L870.6,589.0 L874.1,589.7 L877.5,590.3 L881.0,590.9 L884.5,591.5 L887.9,592.0 L891.4,592.5 L894.9,592.9 L898.3,593.4 L901.8,593.7 L905.3,594.1 L908.7,594.5 L912.2,594.8 L915.7,595.1 L919.1,595.4 L922.6,595.7 L926.1,595.9 L929.5,596.1 L933.0,596.4" fill="none" stroke="#1F4E79" stroke-width="2.6"/>
+<circle cx="829.0" cy="576.12" r="2.8" fill="#1F4E79"/>
+<circle cx="849.8" cy="583.8345109227661" r="2.8" fill="#1F4E79"/>
+<circle cx="870.6" cy="589.005702239657" r="2.8" fill="#1F4E79"/>
+<circle cx="891.4" cy="592.4720554412545" r="2.8" fill="#1F4E79"/>
+<circle cx="912.2" cy="594.7956214789251" r="2.8" fill="#1F4E79"/>
+<circle cx="933.0" cy="596.3531543722632" r="2.8" fill="#1F4E79"/>
+<path d="M829.0,576.1 L832.5,578.3 L835.9,580.4 L839.4,582.2 L842.9,583.8 L846.3,585.3 L849.8,586.7 L853.3,587.9 L856.7,589.0 L860.2,590.0 L863.7,590.9 L867.1,591.7 L870.6,592.5 L874.1,593.1 L877.5,593.7 L881.0,594.3 L884.5,594.8 L887.9,595.2 L891.4,595.7 L894.9,596.0 L898.3,596.4 L901.8,596.7 L905.3,596.9 L908.7,597.2 L912.2,597.4 L915.7,597.6 L919.1,597.8 L922.6,597.9 L926.1,598.1 L929.5,598.2 L933.0,598.4" fill="none" stroke="#A63237" stroke-width="2.6"/>
+<circle cx="829.0" cy="576.12" r="2.8" fill="#A63237"/>
+<circle cx="849.8" cy="586.6778077153998" r="2.8" fill="#A63237"/>
+<circle cx="870.6" cy="592.4720554412545" r="2.8" fill="#A63237"/>
+<circle cx="891.4" cy="595.6520060156149" r="2.8" fill="#A63237"/>
+<circle cx="912.2" cy="597.3971998930277" r="2.8" fill="#A63237"/>
+<circle cx="933.0" cy="598.354982600192" r="2.8" fill="#A63237"/>
+<path d="M829.0,576.1 L832.5,579.0 L835.9,581.6 L839.4,583.8 L842.9,585.8 L846.3,587.5 L849.8,589.0 L853.3,590.3 L856.7,591.5 L860.2,592.5 L863.7,593.4 L867.1,594.1 L870.6,594.8 L874.1,595.4 L877.5,595.9 L881.0,596.4 L884.5,596.7 L887.9,597.1 L891.4,597.4 L894.9,597.7 L898.3,597.9 L901.8,598.1 L905.3,598.3 L908.7,598.4 L912.2,598.6 L915.7,598.7 L919.1,598.8 L922.6,598.9 L926.1,599.0 L929.5,599.0 L933.0,599.1" fill="none" stroke="#343434" stroke-width="2.6"/>
+<circle cx="829.0" cy="576.12" r="2.8" fill="#343434"/>
+<circle cx="849.8" cy="589.005702239657" r="2.8" fill="#343434"/>
+<circle cx="870.6" cy="594.7956214789251" r="2.8" fill="#343434"/>
+<circle cx="891.4" cy="597.3971998930277" r="2.8" fill="#343434"/>
+<circle cx="912.2" cy="598.5661644269062" r="2.8" fill="#343434"/>
+<circle cx="933.0" cy="599.0914140500037" r="2.8" fill="#343434"/>
+<text x="881.0" y="631" font-size="14" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">归一化条件</tspan></text>
+<line x1="835.0" y1="553" x2="853.0" y2="553" stroke="#1F4E79" stroke-width="3"/>
+<text x="859.0" y="557" font-size="13" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Times New Roman">A</tspan></text>
+<line x1="869.6666666666666" y1="553" x2="887.6666666666666" y2="553" stroke="#A63237" stroke-width="3"/>
+<text x="893.6666666666666" y="557" font-size="13" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Times New Roman">B</tspan></text>
+<line x1="904.3333333333334" y1="553" x2="922.3333333333334" y2="553" stroke="#343434" stroke-width="3"/>
+<text x="928.3333333333334" y="557" font-size="13" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Times New Roman">C</tspan></text>
+<text x="948" y="546" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">对照</tspan></text>
+<text x="948" y="575" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">重复 · 适用范围</tspan></text>
+<text x="72" y="627" font-size="22" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">研究进展：验证方案制定中</tspan></text>
+<text x="1230" y="704" font-size="15" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">03</tspan></text>
 </svg>

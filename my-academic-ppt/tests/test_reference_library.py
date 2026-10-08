@@ -14,7 +14,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import build_reference_library as builder
-from reference_art import Page
+from reference_art import Page, text_font_runs
 import read_reference
 from enrich_reference_layouts import enrich
 
@@ -81,6 +81,17 @@ class ReferenceLibraryTests(unittest.TestCase):
         self.assertIn('A < B & C', ''.join(svg.itertext()))
         self.assertFalse(any(e.tag.endswith('}script') for e in svg.iter()))
 
+    def test_svg_text_has_explicit_script_fonts(self):
+        catalog = json.loads((ROOT / 'assets/reference-library/catalog.json').read_text())
+        for entry in catalog['entries']:
+            svg = ET.fromstring((ROOT / entry['svg']).read_text())
+            for text in svg.findall('.//{http://www.w3.org/2000/svg}text'):
+                value = ''.join(text.itertext())
+                actual = [(''.join(run.itertext()), run.get('font-family')) for run in text]
+                self.assertEqual(text_font_runs(value), actual)
+        self.assertEqual([('中文“标点”', 'Microsoft YaHei'), ('AI 2.0', 'Times New Roman')],
+                         text_font_runs('中文“标点”AI 2.0'))
+
     def test_reference_footers_contain_only_page_numbers(self):
         catalog = json.loads((ROOT / 'assets/reference-library/catalog.json').read_text())
         for entry in catalog['entries']:
@@ -118,6 +129,16 @@ class ReferenceLibraryTests(unittest.TestCase):
                         if element['text'] is not None:
                             actual_text = ''.join(t.text or '' for t in shape.findall('.//a:t', ns))
                             self.assertEqual(element['text'], actual_text)
+                            runs = shape.findall('p:txBody/a:p/a:r', ns)
+                            expected_runs = element['font']['runs']
+                            self.assertEqual([(r['text'], r['family']) for r in expected_runs],
+                                             text_font_runs(element['text']))
+                            self.assertEqual(len(expected_runs), len(runs))
+                            for expected_run, run in zip(expected_runs, runs):
+                                self.assertEqual(expected_run['text'], run.find('a:t', ns).text)
+                                for slot in ('latin', 'ea', 'cs'):
+                                    self.assertEqual(expected_run['family'],
+                                                     run.find('a:rPr/a:' + slot, ns).get('typeface'))
                             self.assertGreaterEqual(element['x'], -.01)
                             self.assertGreaterEqual(element['y'], -.01)
                             self.assertLessEqual(element['x'] + element['w'], 1280.01)

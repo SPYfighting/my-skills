@@ -1,19 +1,39 @@
 """Original, synthetic scientific graphics for the optional layout reference library."""
 from html import escape
 import math
+import re
 
-NAVY='#15344E'; BLUE='#365F85'; RED='#A63237'; TEAL='#537F78'; MUTED='#657B8B'; GRID='#CCD7DF'; PALE='#EFF4F8'; GOLD='#A47C3D'
+CJK_CHAR = re.compile(r'[\u2e80-\u9fff\uac00-\ud7af\uf900-\ufaff\uff01-\uff60\u2018-\u201f\u00b7]')
+
+def text_font_runs(value):
+    """Keep Chinese punctuation in YaHei and Latin letters/digits in Times."""
+    runs = []
+    for char in str(value):
+        family = (runs[-1][1] if char.isspace() and runs else
+                  "Microsoft YaHei" if CJK_CHAR.match(char) else "Times New Roman")
+        if runs and runs[-1][1] == family:
+            runs[-1] = (runs[-1][0] + char, family)
+        else:
+            runs.append((char, family))
+    return runs
+
+
+NAVY='#15344E'; BLUE='#1F4E79'; RED='#A63237'; TEAL='#343434'; MUTED='#555555'; GRID='#B7B7B7'; PALE='white'; GOLD='#6B4A2F'; TEXT='#111111'
 class Page:
     def __init__(self,number,title,subtitle='',tag=''):
         self.number=number;self.title=title;self.subtitle=subtitle;self.tag=tag
-        self.parts=['<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">','<rect width="1280" height="720" fill="white"/>','<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>']
+        self.parts=['<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">','<rect width="1280" height="720" fill="white"/>','<style>text{font-family:"Times New Roman","Microsoft YaHei"}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>']
         self.rect(0,0,1280,6,BLUE)
         if title:self.text(50,63,title,34,NAVY,True)
         if subtitle:self.text(52,100,subtitle,19,MUTED)
         self.line(50,116,1230,116,GRID,1.4)
-    def text(self,x,y,s,size=21,color=NAVY,bold=False,anchor='start'):
-        self.parts.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-weight="{700 if bold else 400}" text-anchor="{anchor}">{escape(str(s))}</text>')
-    def lines(self,x,y,items,size=20,step=31,color=NAVY,bold=False,anchor='start'):
+    def text(self,x,y,s,size=21,color=TEXT,bold=False,anchor='start'):
+        if color == MUTED or (color == NAVY and not bold):
+            color = TEXT
+        segments = ''.join(f'<tspan font-family="{family}">{escape(text)}</tspan>'
+                           for text, family in text_font_runs(s))
+        self.parts.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{color}" font-weight="{700 if bold else 400}" text-anchor="{anchor}">{segments}</text>')
+    def lines(self,x,y,items,size=20,step=31,color=TEXT,bold=False,anchor='start'):
         for i,s in enumerate(items):self.text(x,y+i*step,s,size,color,bold,anchor)
     def rect(self,x,y,w,h,fill='none',stroke=None,sw=1,dash=None):
         self.parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}"'+(f' stroke="{stroke}" stroke-width="{sw}"' if stroke else '')+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
@@ -41,21 +61,21 @@ class Page:
     def finish(self):self.footer();return self.svg()
 
 def mesh(p,x,y,w,h,mode=0):
-    p.rect(x,y,w,h,'#F4F6F6')
+    p.rect(x,y,w,h,'white')
     cols=10;rows=6;dx=w/cols;dy=h/rows
     for j in range(rows+1):
         for i in range(cols+1):
             xx=x+i*dx; yy=y+j*dy
-            if i<cols:p.line(xx,yy,xx+dx,yy,'#91A6AE',.8)
-            if j<rows:p.line(xx,yy,xx,yy+dy,'#91A6AE',.8)
-            if i<cols and j<rows:p.line(xx,yy,xx+dx,yy+dy,'#91A6AE',.65)
+            if i<cols:p.line(xx,yy,xx+dx,yy,'#888888',.8)
+            if j<rows:p.line(xx,yy,xx,yy+dy,'#888888',.8)
+            if i<cols and j<rows:p.line(xx,yy,xx+dx,yy+dy,'#888888',.65)
     for j in range(2,rows,2):
         for i in range(1,cols,2):
             r=(min(dx,dy)*.54)*(1+.14*math.sin(i+j+mode));p.ellipse(x+i*dx,y+j*dy,r,r*.8,'white',BLUE,1.5)
     p.path(f'M{x+8},{y+h*.48} C{x+w*.3},{y+h*.2} {x+w*.65},{y+h*.85} {x+w-8},{y+h*.45}',stroke=RED,sw=3)
 
 def layers(p,x,y,w,h):
-    for i,c in enumerate(['#DCE6EB','#8DAAB9','#C5D5DC','#476F8A']):
+    for i,c in enumerate(['#1F4E79','#747474','#343434','#15344E']):
         yy=y+i*h*.19;p.path(f'M{x},{yy+15} L{x+w*.78},{yy} L{x+w},{yy+24} L{x+w*.22},{yy+39} Z',c,'white',1)
     for j in range(6):p.arrow(x+w*.15+j*w*.12,y+h*.83,x+w*.15+j*w*.12,y+h*.98,RED,3,8)
 
@@ -122,7 +142,7 @@ def micrograph(p,x,y,w,h):
     p.rect(x,y,w,h,'#202C33')
     for i in range(38):
         a=(i*.61803399)%1;b=(i*.41421356)%1;rr=3+(i%5)*1.6
-        p.ellipse(x+12+a*(w-24),y+10+b*(h-20),rr*1.5,rr,'#7EAC9C','#A0C8B7',.6)
+        p.ellipse(x+12+a*(w-24),y+10+b*(h-20),rr*1.5,rr,'#909090','#D0D0D0',.6)
     p.line(x+w-66,y+h-17,x+w-16,y+h-17,'white',3);p.text(x+8,y+18,'形貌示意',12,'white')
 
 def network(p,x,y,w,h):
@@ -143,11 +163,14 @@ def plate(p,x,y,w,h):
 
 def apparatus(p,x,y,w,h,kind=0):
     if kind==0:
-        p.rect(x+w*.15,y+h*.1,w*.7,h*.78,'#E2E9ED',MUTED,1.4);p.rect(x+w*.23,y+h*.2,w*.45,h*.18,BLUE);p.lines(x+w*.45,y+h*.3,['28.0'],18,24,'white',True,'middle');p.rect(x+w*.23,y+h*.46,w*.48,h*.27,'white',GRID);p.line(x+w*.3,y+h*.77,x+w*.62,y+h*.77,MUTED,5)
+        p.rect(x+w*.15,y+h*.1,w*.7,h*.78,'white',MUTED,1.4);p.rect(x+w*.23,y+h*.2,w*.45,h*.18,BLUE)
+        if h >= 125:
+            p.text(x+w*.455,y+h*.29+6,'28.0',18,'white',True,'middle')
+        p.rect(x+w*.23,y+h*.46,w*.48,h*.27,'white',GRID);p.line(x+w*.3,y+h*.77,x+w*.62,y+h*.77,MUTED,5)
     elif kind==1:
-        p.rect(x+w*.12,y+h*.82,w*.74,h*.08,BLUE);p.path(f'M{x+w*.68},{y+h*.82} C{x+w*.8},{y+h*.39} {x+w*.6},{y+h*.16} {x+w*.34},{y+h*.31}',stroke=BLUE,sw=13);p.path(f'M{x+w*.35},{y+h*.22} L{x+w*.5},{y+h*.36} L{x+w*.39},{y+h*.49} L{x+w*.24},{y+h*.35} Z','#9BB0BD',BLUE,2);p.line(x+w*.24,y+h*.6,x+w*.65,y+h*.6,BLUE,7);p.rect(x+w*.32,y+h*.56,w*.16,h*.025,RED)
+        p.rect(x+w*.12,y+h*.82,w*.74,h*.08,BLUE);p.path(f'M{x+w*.68},{y+h*.82} C{x+w*.8},{y+h*.39} {x+w*.6},{y+h*.16} {x+w*.34},{y+h*.31}',stroke=BLUE,sw=13);p.path(f'M{x+w*.35},{y+h*.22} L{x+w*.5},{y+h*.36} L{x+w*.39},{y+h*.49} L{x+w*.24},{y+h*.35} Z','#555555',BLUE,2);p.line(x+w*.24,y+h*.6,x+w*.65,y+h*.6,BLUE,7);p.rect(x+w*.32,y+h*.56,w*.16,h*.025,RED)
     else:
-        p.rect(x+w*.13,y+h*.14,w*.73,h*.63,'#E9EFF2',MUTED,1.6);p.rect(x+w*.22,y+h*.23,w*.43,h*.34,'white',BLUE,2);curve(p,x+w*.27,y+h*.29,w*.33,h*.21,labels=False);p.circle(x+w*.74,y+h*.39,w*.04,TEAL);p.line(x+w*.22,y+h*.85,x+w*.75,y+h*.85,BLUE,8)
+        p.rect(x+w*.13,y+h*.14,w*.73,h*.63,'white',MUTED,1.6);p.rect(x+w*.22,y+h*.23,w*.43,h*.34,'white',BLUE,2);curve(p,x+w*.27,y+h*.29,w*.33,h*.21,labels=False);p.circle(x+w*.74,y+h*.39,w*.04,TEAL);p.line(x+w*.22,y+h*.85,x+w*.75,y+h*.85,BLUE,8)
 
 def molecules(p,x,y,w,h):
     for k,c in enumerate([BLUE,TEAL]):

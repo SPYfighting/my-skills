@@ -22,11 +22,16 @@
   },
   "source": {
     "file": "pages/30-risk-signal-route.svg",
-    "sha256": "4903a658fe23b56047ff1c6ec8e6796d845aa1c3e6ff35f3b13cb842b8a55f2d"
+    "sha256": "ba02bb9f924b09f43f63007d2361fccf5cb5308cf67dc0abf44afdeb04cf94bd"
   },
   "font_design": {
-    "family": "Microsoft YaHei",
-    "reason": "微软雅黑同时覆盖中文、拉丁字母及常用科研符号，保持 PowerPoint 中的原生可编辑文字。字号沿用 SVG 的 CSS 像素值。"
+    "slots": {
+      "latin": "Times New Roman",
+      "east_asian": "Microsoft YaHei",
+      "complex_script": "Times New Roman"
+    },
+    "basis": "user_request",
+    "reason": "中文采用微软雅黑，英文与数字采用 Times New Roman。每个原生文字 run 显式指定所用字体，中文标点随中文采用微软雅黑，英文与数字采用 Times New Roman。字号沿用 SVG 的 CSS 像素值。"
   },
   "coordinate_rule": "SVG y 是文字基线。文本框顶端 = y − 字体 fontBoundingBoxAscent；文本框宽度 = 实测字宽 + max(4 px, 0.22×字号)。文本框零内边距、禁换行、禁自动缩小，按 text-anchor 计算 x。",
   "elements": [
@@ -72,7 +77,7 @@
       "h": 6,
       "font": null,
       "align": null,
-      "color": "#365F85",
+      "color": "#1F4E79",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 2,
@@ -83,7 +88,7 @@
           "y": "0",
           "width": "1280",
           "height": "6",
-          "fill": "#365F85"
+          "fill": "#1F4E79"
         }
       },
       "ppt_bbox": {
@@ -104,7 +109,18 @@
       "w": 653.48,
       "h": 49.974,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "风险处理从识别信号转向可执行的替代路线",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 34,
         "size_pt": 25.5,
         "bold": true
@@ -165,13 +181,24 @@
       "w": 460.18,
       "h": 27.9267,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "每条替代路线保留原来的判断目标，同时说明验证出口",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 19,
         "size_pt": 14.25,
         "bold": false
       },
       "align": "left",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 4,
@@ -181,7 +208,7 @@
           "x": "52",
           "y": "100",
           "font-size": "19",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -228,7 +255,7 @@
       "font": null,
       "align": null,
       "color": "none",
-      "stroke": "#CCD7DF",
+      "stroke": "#B7B7B7",
       "stroke_width": 1.4,
       "zorder": 5,
       "source_svg": {
@@ -238,7 +265,7 @@
           "y1": "116",
           "x2": "1230",
           "y2": "116",
-          "stroke": "#CCD7DF",
+          "stroke": "#B7B7B7",
           "stroke-width": "1.4"
         }
       },
@@ -277,7 +304,7 @@
       "h": 145,
       "font": null,
       "align": null,
-      "color": "#EFF4F8",
+      "color": "#FFFFFF",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 6,
@@ -288,7 +315,7 @@
           "y": "151",
           "width": "1180",
           "height": "145",
-          "fill": "#EFF4F8"
+          "fill": "white"
         }
       },
       "ppt_bbox": {
@@ -309,7 +336,18 @@
       "w": 105.5,
       "h": 36.7456,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "信号偏弱",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 25,
         "size_pt": 18.75,
         "bold": true
@@ -370,13 +408,24 @@
       "w": 76,
       "h": 26.4568,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "识别信号",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 18,
         "size_pt": 13.5,
         "bold": false
       },
       "align": "left",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 8,
@@ -386,7 +435,7 @@
           "x": "75",
           "y": "229",
           "font-size": "18",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -431,13 +480,24 @@
       "w": 164.4,
       "h": 29.3965,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "样品响应接近空白",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 20,
         "size_pt": 15,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 9,
@@ -447,7 +507,7 @@
           "x": "75",
           "y": "262",
           "font-size": "20",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -494,7 +554,7 @@
       "font": null,
       "align": null,
       "color": "none",
-      "stroke": "#657B8B",
+      "stroke": "#555555",
       "stroke_width": 1.3,
       "zorder": 10,
       "source_svg": {
@@ -504,7 +564,7 @@
           "y1": "263",
           "x2": "533",
           "y2": "263",
-          "stroke": "#657B8B",
+          "stroke": "#555555",
           "stroke-width": "1.3"
         }
       },
@@ -544,7 +604,7 @@
       "font": null,
       "align": null,
       "color": "none",
-      "stroke": "#365F85",
+      "stroke": "#1F4E79",
       "stroke_width": 2,
       "zorder": 11,
       "source_svg": {
@@ -552,7 +612,7 @@
         "attributes": {
           "d": "M322.0,252.2 L323.4,252.2 L324.8,252.2 L326.2,252.2 L327.6,252.2 L329.0,252.2 L330.4,252.2 L331.8,252.2 L333.3,252.2 L334.7,252.2 L336.1,252.2 L337.5,252.2 L338.9,252.2 L340.3,252.2 L341.7,252.2 L343.1,252.2 L344.5,252.2 L345.9,252.2 L347.3,252.2 L348.7,252.2 L350.1,252.2 L351.5,252.2 L352.9,252.2 L354.4,252.2 L355.8,252.2 L357.2,252.1 L358.6,251.6 L360.0,249.3 L361.4,243.1 L362.8,234.3 L364.2,229.7 L365.6,234.3 L367.0,243.1 L368.4,249.3 L369.8,251.6 L371.2,252.1 L372.6,252.2 L374.0,252.2 L375.5,252.2 L376.9,252.2 L378.3,252.2 L379.7,252.2 L381.1,252.2 L382.5,252.2 L383.9,252.2 L385.3,252.2 L386.7,252.2 L388.1,252.2 L389.5,252.2 L390.9,252.2 L392.3,252.2 L393.7,252.2 L395.1,252.2 L396.6,252.2 L398.0,252.2 L399.4,252.2 L400.8,252.2 L402.2,252.2 L403.6,252.2 L405.0,252.1 L406.4,251.9 L407.8,251.2 L409.2,249.6 L410.6,246.1 L412.0,240.3 L413.4,232.5 L414.8,224.6 L416.2,219.6 L417.7,219.6 L419.1,224.6 L420.5,232.5 L421.9,240.3 L423.3,246.1 L424.7,249.6 L426.1,251.2 L427.5,251.9 L428.9,252.1 L430.3,252.2 L431.7,252.2 L433.1,252.2 L434.5,252.2 L435.9,252.2 L437.3,252.2 L438.8,252.2 L440.2,252.2 L441.6,252.2 L443.0,252.2 L444.4,252.2 L445.8,252.2 L447.2,252.2 L448.6,252.2 L450.0,252.2 L451.4,252.2 L452.8,252.2 L454.2,252.2 L455.6,252.2 L457.0,252.2 L458.4,252.2 L459.9,252.2 L461.3,252.2 L462.7,252.2 L464.1,252.2 L465.5,252.2 L466.9,252.1 L468.3,251.0 L469.7,245.2 L471.1,235.3 L472.5,235.3 L473.9,245.2 L475.3,251.0 L476.7,252.1 L478.1,252.2 L479.5,252.2 L481.0,252.2 L482.4,252.2 L483.8,252.2 L485.2,252.2 L486.6,252.2 L488.0,252.2 L489.4,252.2 L490.8,252.2 L492.2,252.2 L493.6,252.2 L495.0,252.2 L496.4,252.2 L497.8,252.0 L499.2,251.4 L500.6,249.7 L502.1,246.5 L503.5,242.3 L504.9,239.2 L506.3,239.2 L507.7,242.3 L509.1,246.5 L510.5,249.7 L511.9,251.4 L513.3,252.0 L514.7,252.2 L516.1,252.2 L517.5,252.2 L518.9,252.2 L520.3,252.2 L521.7,252.2 L523.2,252.2 L524.6,252.2 L526.0,252.2 L527.4,252.2 L528.8,252.2 L530.2,252.2 L531.6,252.2 L533.0,252.2",
           "fill": "none",
-          "stroke": "#365F85",
+          "stroke": "#1F4E79",
           "stroke-width": "2"
         }
       },
@@ -2428,7 +2488,7 @@
       "font": null,
       "align": null,
       "color": "none",
-      "stroke": "#537F78",
+      "stroke": "#343434",
       "stroke_width": 2,
       "zorder": 13,
       "source_svg": {
@@ -2436,7 +2496,7 @@
         "attributes": {
           "d": "M322.0,223.4 L323.4,223.4 L324.8,223.4 L326.2,223.4 L327.6,223.4 L329.0,223.4 L330.4,223.4 L331.8,223.4 L333.3,223.4 L334.7,223.4 L336.1,223.4 L337.5,223.4 L338.9,223.4 L340.3,223.4 L341.7,223.4 L343.1,223.4 L344.5,223.4 L345.9,223.4 L347.3,223.4 L348.7,223.4 L350.1,223.4 L351.5,223.4 L352.9,223.4 L354.4,223.4 L355.8,223.4 L357.2,223.4 L358.6,223.4 L360.0,223.4 L361.4,223.1 L362.8,221.8 L364.2,217.3 L365.6,209.0 L367.0,201.7 L368.4,202.7 L369.8,210.8 L371.2,218.5 L372.6,222.2 L374.0,223.2 L375.5,223.4 L376.9,223.4 L378.3,223.4 L379.7,223.4 L381.1,223.4 L382.5,223.4 L383.9,223.4 L385.3,223.4 L386.7,223.4 L388.1,223.4 L389.5,223.4 L390.9,223.4 L392.3,223.4 L393.7,223.4 L395.1,223.4 L396.6,223.4 L398.0,223.4 L399.4,223.4 L400.8,223.4 L402.2,223.4 L403.6,223.4 L405.0,223.4 L406.4,223.4 L407.8,223.4 L409.2,223.2 L410.6,222.8 L412.0,221.6 L413.4,219.0 L414.8,214.1 L416.2,207.0 L417.7,198.8 L419.1,192.3 L420.5,190.1 L421.9,193.3 L423.3,200.4 L424.7,208.5 L426.1,215.3 L427.5,219.7 L428.9,221.9 L430.3,222.9 L431.7,223.3 L433.1,223.4 L434.5,223.4 L435.9,223.4 L437.3,223.4 L438.8,223.4 L440.2,223.4 L441.6,223.4 L443.0,223.4 L444.4,223.4 L445.8,223.4 L447.2,223.4 L448.6,223.4 L450.0,223.4 L451.4,223.4 L452.8,223.4 L454.2,223.4 L455.6,223.4 L457.0,223.4 L458.4,223.4 L459.9,223.4 L461.3,223.4 L462.7,223.4 L464.1,223.4 L465.5,223.4 L466.9,223.4 L468.3,223.4 L469.7,223.4 L471.1,223.0 L472.5,219.6 L473.9,210.2 L475.3,204.6 L476.7,212.4 L478.1,220.7 L479.5,223.1 L481.0,223.4 L482.4,223.4 L483.8,223.4 L485.2,223.4 L486.6,223.4 L488.0,223.4 L489.4,223.4 L490.8,223.4 L492.2,223.4 L493.6,223.4 L495.0,223.4 L496.4,223.4 L497.8,223.4 L499.2,223.4 L500.6,223.3 L502.1,222.9 L503.5,221.7 L504.9,219.1 L506.3,215.2 L507.7,211.3 L509.1,209.9 L510.5,212.0 L511.9,216.0 L513.3,219.8 L514.7,222.1 L516.1,223.0 L517.5,223.3 L518.9,223.4 L520.3,223.4 L521.7,223.4 L523.2,223.4 L524.6,223.4 L526.0,223.4 L527.4,223.4 L528.8,223.4 L530.2,223.4 L531.6,223.4 L533.0,223.4",
           "fill": "none",
-          "stroke": "#537F78",
+          "stroke": "#343434",
           "stroke-width": "2"
         }
       },
@@ -3363,18 +3423,39 @@
       "type": "文本框",
       "native": true,
       "text": "频率 / 归一化坐标",
-      "x": 369.365,
+      "x": 370.735,
       "y": 268.1865,
-      "w": 116.27,
+      "w": 113.53,
       "h": 20.5775,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "频率 ",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          },
+          {
+            "text": "/ ",
+            "family": "Times New Roman",
+            "script": "latin"
+          },
+          {
+            "text": "归一化坐标",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 14,
         "size_pt": 10.5,
         "bold": false
       },
       "align": "center",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 14,
@@ -3384,15 +3465,15 @@
           "x": "427.5",
           "y": "283",
           "font-size": "14",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "middle"
         }
       },
       "ppt_bbox": {
-        "x": 369.365,
+        "x": 370.735,
         "y": 268.1865,
-        "w": 116.27,
+        "w": 113.53,
         "h": 20.5775,
         "unit": "CSS px"
       },
@@ -3403,7 +3484,7 @@
         "anchor": "middle"
       },
       "text_metrics": {
-        "measured_width": 112.27,
+        "measured_width": 109.53,
         "font_ascent": 14.8135,
         "font_descent": 3.6641,
         "actual_ascent": 13,
@@ -3430,7 +3511,7 @@
       "h": 16.12,
       "font": null,
       "align": null,
-      "color": "#365F85",
+      "color": "#1F4E79",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 15,
@@ -3438,7 +3519,7 @@
         "tag": "polygon",
         "attributes": {
           "points": "557.00,227.50 593.00,227.50 593.00,232.06 606.00,224.00 593.00,215.94 593.00,220.50 557.00,220.50",
-          "fill": "#365F85"
+          "fill": "#1F4E79"
         }
       },
       "ppt_bbox": {
@@ -3508,13 +3589,24 @@
       "w": 235.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "延长累积或优化采集窗口",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 16,
@@ -3524,7 +3616,7 @@
           "x": "631",
           "y": "191",
           "font-size": "21",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -3569,13 +3661,24 @@
       "w": 235.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "并行核对背景与光源漂移",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 17,
@@ -3585,7 +3688,7 @@
           "x": "631",
           "y": "227",
           "font-size": "21",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -3630,13 +3733,24 @@
       "w": 214.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "出口：响应可重复区分",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": true
       },
       "align": "left",
-      "color": "#537F78",
+      "color": "#343434",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 18,
@@ -3646,7 +3760,7 @@
           "x": "631",
           "y": "272",
           "font-size": "21",
-          "fill": "#537F78",
+          "fill": "#343434",
           "font-weight": "700",
           "text-anchor": "start"
         }
@@ -3692,7 +3806,7 @@
       "h": 145,
       "font": null,
       "align": null,
-      "color": "#EFF4F8",
+      "color": "#FFFFFF",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 19,
@@ -3703,7 +3817,7 @@
           "y": "314",
           "width": "1180",
           "height": "145",
-          "fill": "#EFF4F8"
+          "fill": "white"
         }
       },
       "ppt_bbox": {
@@ -3724,7 +3838,18 @@
       "w": 105.5,
       "h": 36.7456,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "批次离散",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 25,
         "size_pt": 18.75,
         "bold": true
@@ -3785,13 +3910,24 @@
       "w": 76,
       "h": 26.4568,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "识别信号",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 18,
         "size_pt": 13.5,
         "bold": false
       },
       "align": "left",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 21,
@@ -3801,7 +3937,7 @@
           "x": "75",
           "y": "392",
           "font-size": "18",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -3846,13 +3982,24 @@
       "w": 184.4,
       "h": 29.3965,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "分布变宽且方向不一",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 20,
         "size_pt": 15,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 22,
@@ -3862,7 +4009,7 @@
           "x": "75",
           "y": "425",
           "font-size": "20",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -3909,7 +4056,7 @@
       "font": null,
       "align": null,
       "color": "none",
-      "stroke": "#657B8B",
+      "stroke": "#555555",
       "stroke_width": 1.4,
       "zorder": 23,
       "source_svg": {
@@ -3919,7 +4066,7 @@
           "y1": "416",
           "x2": "527",
           "y2": "416",
-          "stroke": "#657B8B",
+          "stroke": "#555555",
           "stroke-width": "1.4"
         }
       },
@@ -3959,7 +4106,7 @@
       "font": null,
       "align": null,
       "color": "none",
-      "stroke": "#657B8B",
+      "stroke": "#555555",
       "stroke_width": 1.4,
       "zorder": 24,
       "source_svg": {
@@ -3969,7 +4116,7 @@
           "y1": "344",
           "x2": "326",
           "y2": "416",
-          "stroke": "#657B8B",
+          "stroke": "#555555",
           "stroke-width": "1.4"
         }
       },
@@ -4009,7 +4156,7 @@
       "font": null,
       "align": null,
       "color": "none",
-      "stroke": "#365F85",
+      "stroke": "#1F4E79",
       "stroke_width": 3,
       "zorder": 25,
       "source_svg": {
@@ -4017,7 +4164,7 @@
         "attributes": {
           "d": "M326.0,414.1 L329.4,413.6 L332.7,412.9 L336.1,412.0 L339.4,411.0 L342.8,409.8 L346.1,408.4 L349.4,406.8 L352.8,404.9 L356.1,402.9 L359.5,400.6 L362.9,398.1 L366.2,395.5 L369.6,392.8 L372.9,390.0 L376.2,387.2 L379.6,384.5 L382.9,381.9 L386.3,379.5 L389.6,377.3 L393.0,375.6 L396.4,374.2 L399.7,373.3 L403.1,372.8 L406.4,372.9 L409.8,373.4 L413.1,374.4 L416.4,375.9 L419.8,377.7 L423.1,379.9 L426.5,382.4 L429.9,385.0 L433.2,387.7 L436.6,390.5 L439.9,393.3 L443.2,396.0 L446.6,398.6 L449.9,401.1 L453.3,403.3 L456.6,405.3 L460.0,407.1 L463.4,408.7 L466.7,410.1 L470.1,411.2 L473.4,412.2 L476.8,413.0 L480.1,413.7 L483.4,414.2 L486.8,414.7 L490.1,415.0 L493.5,415.3 L496.9,415.5 L500.2,415.6 L503.5,415.7 L506.9,415.8 L510.2,415.9 L513.6,415.9 L517.0,415.9 L520.3,416.0 L523.6,416.0 L527.0,416.0",
           "fill": "none",
-          "stroke": "#365F85",
+          "stroke": "#1F4E79",
           "stroke-width": "3"
         }
       },
@@ -4811,13 +4958,24 @@
       "w": 38,
       "h": 24.987,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "频数",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 17,
         "size_pt": 12.75,
         "bold": false
       },
       "align": "left",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 27,
@@ -4827,7 +4985,7 @@
           "x": "326",
           "y": "332",
           "font-size": "17",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -4872,13 +5030,24 @@
       "w": 72,
       "h": 24.987,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "响应强度",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 17,
         "size_pt": 12.75,
         "bold": false
       },
       "align": "center",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 28,
@@ -4888,7 +5057,7 @@
           "x": "426.5",
           "y": "443",
           "font-size": "17",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "middle"
         }
@@ -4934,7 +5103,7 @@
       "h": 16.12,
       "font": null,
       "align": null,
-      "color": "#365F85",
+      "color": "#1F4E79",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 29,
@@ -4942,7 +5111,7 @@
         "tag": "polygon",
         "attributes": {
           "points": "557.00,390.50 593.00,390.50 593.00,395.06 606.00,387.00 593.00,378.94 593.00,383.50 557.00,383.50",
-          "fill": "#365F85"
+          "fill": "#1F4E79"
         }
       },
       "ppt_bbox": {
@@ -5012,13 +5181,24 @@
       "w": 214.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "先锁定原料与关键步骤",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 30,
@@ -5028,7 +5208,7 @@
           "x": "631",
           "y": "354",
           "font-size": "21",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -5073,13 +5253,24 @@
       "w": 235.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "用小批次确认主要变异源",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 31,
@@ -5089,7 +5280,7 @@
           "x": "631",
           "y": "390",
           "font-size": "21",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -5134,13 +5325,24 @@
       "w": 214.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "出口：误差来源可解释",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": true
       },
       "align": "left",
-      "color": "#537F78",
+      "color": "#343434",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 32,
@@ -5150,7 +5352,7 @@
           "x": "631",
           "y": "435",
           "font-size": "21",
-          "fill": "#537F78",
+          "fill": "#343434",
           "font-weight": "700",
           "text-anchor": "start"
         }
@@ -5196,7 +5398,7 @@
       "h": 145,
       "font": null,
       "align": null,
-      "color": "#EFF4F8",
+      "color": "#FFFFFF",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 33,
@@ -5207,7 +5409,7 @@
           "y": "477",
           "width": "1180",
           "height": "145",
-          "fill": "#EFF4F8"
+          "fill": "white"
         }
       },
       "ppt_bbox": {
@@ -5228,7 +5430,18 @@
       "w": 105.5,
       "h": 36.7456,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "条件失效",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 25,
         "size_pt": 18.75,
         "bold": true
@@ -5289,13 +5502,24 @@
       "w": 76,
       "h": 26.4568,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "识别信号",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 18,
         "size_pt": 13.5,
         "bold": false
       },
       "align": "left",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 35,
@@ -5305,7 +5529,7 @@
           "x": "75",
           "y": "555",
           "font-size": "18",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -5350,13 +5574,24 @@
       "w": 164.4,
       "h": 29.3965,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "高响应区不再连续",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 20,
         "size_pt": 15,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 36,
@@ -5366,7 +5601,7 @@
           "x": "75",
           "y": "588",
           "font-size": "20",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -6891,18 +7126,29 @@
       "type": "文本框",
       "native": true,
       "text": "1",
-      "x": 331.3567,
-      "y": 590.2446,
-      "w": 11.62,
-      "h": 19.1077,
+      "x": 331.9167,
+      "y": 592.4155,
+      "w": 10.5,
+      "h": 16.3465,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "1",
+            "family": "Times New Roman",
+            "script": "latin"
+          }
+        ],
         "size_px": 13,
         "size_pt": 9.75,
         "bold": false
       },
       "align": "center",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 82,
@@ -6912,16 +7158,16 @@
           "x": "337.1666666666667",
           "y": "604",
           "font-size": "13",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "middle"
         }
       },
       "ppt_bbox": {
-        "x": 331.3567,
-        "y": 590.2446,
-        "w": 11.62,
-        "h": 19.1077,
+        "x": 331.9167,
+        "y": 592.4155,
+        "w": 10.5,
+        "h": 16.3465,
         "unit": "CSS px"
       },
       "role": "说明或图中标注",
@@ -6931,10 +7177,10 @@
         "anchor": "middle"
       },
       "text_metrics": {
-        "measured_width": 7.62,
-        "font_ascent": 13.7554,
-        "font_descent": 3.4023,
-        "actual_ascent": 10,
+        "measured_width": 6.5,
+        "font_ascent": 11.5845,
+        "font_descent": 2.812,
+        "actual_ascent": 9,
         "actual_descent": 0,
         "editing_reserve": 4
       },
@@ -6952,18 +7198,29 @@
       "type": "文本框",
       "native": true,
       "text": "5",
-      "x": 420.69,
-      "y": 590.2446,
-      "w": 11.62,
-      "h": 19.1077,
+      "x": 421.25,
+      "y": 592.4155,
+      "w": 10.5,
+      "h": 16.3465,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "5",
+            "family": "Times New Roman",
+            "script": "latin"
+          }
+        ],
         "size_px": 13,
         "size_pt": 9.75,
         "bold": false
       },
       "align": "center",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 83,
@@ -6973,16 +7230,16 @@
           "x": "426.5",
           "y": "604",
           "font-size": "13",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "middle"
         }
       },
       "ppt_bbox": {
-        "x": 420.69,
-        "y": 590.2446,
-        "w": 11.62,
-        "h": 19.1077,
+        "x": 421.25,
+        "y": 592.4155,
+        "w": 10.5,
+        "h": 16.3465,
         "unit": "CSS px"
       },
       "role": "说明或图中标注",
@@ -6992,10 +7249,10 @@
         "anchor": "middle"
       },
       "text_metrics": {
-        "measured_width": 7.62,
-        "font_ascent": 13.7554,
-        "font_descent": 3.4023,
-        "actual_ascent": 10,
+        "measured_width": 6.5,
+        "font_ascent": 11.5845,
+        "font_descent": 2.812,
+        "actual_ascent": 9,
         "actual_descent": 0,
         "editing_reserve": 4
       },
@@ -7013,18 +7270,29 @@
       "type": "文本框",
       "native": true,
       "text": "9",
-      "x": 510.0233,
-      "y": 590.2446,
-      "w": 11.62,
-      "h": 19.1077,
+      "x": 510.5833,
+      "y": 592.4155,
+      "w": 10.5,
+      "h": 16.3465,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "9",
+            "family": "Times New Roman",
+            "script": "latin"
+          }
+        ],
         "size_px": 13,
         "size_pt": 9.75,
         "bold": false
       },
       "align": "center",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 84,
@@ -7034,16 +7302,16 @@
           "x": "515.8333333333333",
           "y": "604",
           "font-size": "13",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "middle"
         }
       },
       "ppt_bbox": {
-        "x": 510.0233,
-        "y": 590.2446,
-        "w": 11.62,
-        "h": 19.1077,
+        "x": 510.5833,
+        "y": 592.4155,
+        "w": 10.5,
+        "h": 16.3465,
         "unit": "CSS px"
       },
       "role": "说明或图中标注",
@@ -7053,10 +7321,10 @@
         "anchor": "middle"
       },
       "text_metrics": {
-        "measured_width": 7.62,
-        "font_ascent": 13.7554,
-        "font_descent": 3.4023,
-        "actual_ascent": 10,
+        "measured_width": 6.5,
+        "font_ascent": 11.5845,
+        "font_descent": 2.812,
+        "actual_ascent": 9,
         "actual_descent": 0,
         "editing_reserve": 4
       },
@@ -7074,18 +7342,29 @@
       "type": "文本框",
       "native": true,
       "text": "1",
-      "x": 307.38,
-      "y": 501.0986,
-      "w": 11.62,
-      "h": 19.1077,
+      "x": 308.5,
+      "y": 503.2695,
+      "w": 10.5,
+      "h": 16.3465,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "1",
+            "family": "Times New Roman",
+            "script": "latin"
+          }
+        ],
         "size_px": 13,
         "size_pt": 9.75,
         "bold": false
       },
       "align": "right",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 85,
@@ -7095,16 +7374,16 @@
           "x": "319",
           "y": "514.854",
           "font-size": "13",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "end"
         }
       },
       "ppt_bbox": {
-        "x": 307.38,
-        "y": 501.0986,
-        "w": 11.62,
-        "h": 19.1077,
+        "x": 308.5,
+        "y": 503.2695,
+        "w": 10.5,
+        "h": 16.3465,
         "unit": "CSS px"
       },
       "role": "说明或图中标注",
@@ -7114,10 +7393,10 @@
         "anchor": "end"
       },
       "text_metrics": {
-        "measured_width": 7.62,
-        "font_ascent": 13.7554,
-        "font_descent": 3.4023,
-        "actual_ascent": 10,
+        "measured_width": 6.5,
+        "font_ascent": 11.5845,
+        "font_descent": 2.812,
+        "actual_ascent": 9,
         "actual_descent": 0,
         "editing_reserve": 4
       },
@@ -7135,18 +7414,29 @@
       "type": "文本框",
       "native": true,
       "text": "5",
-      "x": 307.38,
-      "y": 565.8986,
-      "w": 11.62,
-      "h": 19.1077,
+      "x": 308.5,
+      "y": 568.0695,
+      "w": 10.5,
+      "h": 16.3465,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "5",
+            "family": "Times New Roman",
+            "script": "latin"
+          }
+        ],
         "size_px": 13,
         "size_pt": 9.75,
         "bold": false
       },
       "align": "right",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 86,
@@ -7156,16 +7446,16 @@
           "x": "319",
           "y": "579.654",
           "font-size": "13",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "end"
         }
       },
       "ppt_bbox": {
-        "x": 307.38,
-        "y": 565.8986,
-        "w": 11.62,
-        "h": 19.1077,
+        "x": 308.5,
+        "y": 568.0695,
+        "w": 10.5,
+        "h": 16.3465,
         "unit": "CSS px"
       },
       "role": "说明或图中标注",
@@ -7175,10 +7465,10 @@
         "anchor": "end"
       },
       "text_metrics": {
-        "measured_width": 7.62,
-        "font_ascent": 13.7554,
-        "font_descent": 3.4023,
-        "actual_ascent": 10,
+        "measured_width": 6.5,
+        "font_ascent": 11.5845,
+        "font_descent": 2.812,
+        "actual_ascent": 9,
         "actual_descent": 0,
         "editing_reserve": 4
       },
@@ -7202,7 +7492,7 @@
       "h": 16.12,
       "font": null,
       "align": null,
-      "color": "#365F85",
+      "color": "#1F4E79",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 87,
@@ -7210,7 +7500,7 @@
         "tag": "polygon",
         "attributes": {
           "points": "557.00,553.50 593.00,553.50 593.00,558.06 606.00,550.00 593.00,541.94 593.00,546.50 557.00,546.50",
-          "fill": "#365F85"
+          "fill": "#1F4E79"
         }
       },
       "ppt_bbox": {
@@ -7280,13 +7570,24 @@
       "w": 214.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "收缩到已确认的可行区",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 88,
@@ -7296,7 +7597,7 @@
           "x": "631",
           "y": "517",
           "font-size": "21",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -7341,13 +7642,24 @@
       "w": 235.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "逐项扩展边界并留出复核",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": false
       },
       "align": "left",
-      "color": "#15344E",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 89,
@@ -7357,7 +7669,7 @@
           "x": "631",
           "y": "553",
           "font-size": "21",
-          "fill": "#15344E",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "start"
         }
@@ -7402,13 +7714,24 @@
       "w": 214.62,
       "h": 30.8663,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "出口：可用范围有依据",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 21,
         "size_pt": 15.75,
         "bold": true
       },
       "align": "left",
-      "color": "#537F78",
+      "color": "#343434",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 90,
@@ -7418,7 +7741,7 @@
           "x": "631",
           "y": "598",
           "font-size": "21",
-          "fill": "#537F78",
+          "fill": "#343434",
           "font-weight": "700",
           "text-anchor": "start"
         }
@@ -7457,13 +7780,24 @@
       "id": "p30-文本-0091",
       "type": "文本框",
       "native": true,
-      "text": "触发条件、替代动作和验证出口一起写，风险才可管理",
-      "x": 313.03,
+      "text": "失效信号触发替代路线，统一测量端点检验调整效果",
+      "x": 326.53,
       "y": 636.4312,
-      "w": 653.94,
+      "w": 626.94,
       "h": 39.6853,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "失效信号触发替代路线，统一测量端点检验调整效果",
+            "family": "Microsoft YaHei",
+            "script": "east_asian"
+          }
+        ],
         "size_px": 27,
         "size_pt": 20.25,
         "bold": true
@@ -7485,9 +7819,9 @@
         }
       },
       "ppt_bbox": {
-        "x": 313.03,
+        "x": 326.53,
         "y": 636.4312,
-        "w": 653.94,
+        "w": 626.94,
         "h": 39.6853,
         "unit": "CSS px"
       },
@@ -7498,7 +7832,7 @@
         "anchor": "middle"
       },
       "text_metrics": {
-        "measured_width": 648,
+        "measured_width": 621,
         "font_ascent": 28.5688,
         "font_descent": 7.0664,
         "actual_ascent": 23,
@@ -7519,18 +7853,29 @@
       "type": "文本框",
       "native": true,
       "text": "30",
-      "x": 1208.41,
-      "y": 688.1284,
-      "w": 21.59,
-      "h": 22.0474,
+      "x": 1211,
+      "y": 690.6333,
+      "w": 19,
+      "h": 18.8613,
       "font": {
-        "family": "Microsoft YaHei",
+        "slots": {
+          "latin": "Times New Roman",
+          "east_asian": "Microsoft YaHei",
+          "complex_script": "Times New Roman"
+        },
+        "runs": [
+          {
+            "text": "30",
+            "family": "Times New Roman",
+            "script": "latin"
+          }
+        ],
         "size_px": 15,
         "size_pt": 11.25,
         "bold": false
       },
       "align": "right",
-      "color": "#657B8B",
+      "color": "#111111",
       "stroke": "none",
       "stroke_width": 0,
       "zorder": 92,
@@ -7540,16 +7885,16 @@
           "x": "1230",
           "y": "704",
           "font-size": "15",
-          "fill": "#657B8B",
+          "fill": "#111111",
           "font-weight": "400",
           "text-anchor": "end"
         }
       },
       "ppt_bbox": {
-        "x": 1208.41,
-        "y": 688.1284,
-        "w": 21.59,
-        "h": 22.0474,
+        "x": 1211,
+        "y": 690.6333,
+        "w": 19,
+        "h": 18.8613,
         "unit": "CSS px"
       },
       "role": "页码",
@@ -7559,10 +7904,10 @@
         "anchor": "end"
       },
       "text_metrics": {
-        "measured_width": 17.59,
-        "font_ascent": 15.8716,
-        "font_descent": 3.9258,
-        "actual_ascent": 11,
+        "measured_width": 15,
+        "font_ascent": 13.3667,
+        "font_descent": 3.2446,
+        "actual_ascent": 10,
         "actual_descent": 0,
         "editing_reserve": 4
       },
@@ -7725,7 +8070,7 @@
     },
     {
       "element_id": "p30-文本-0091",
-      "text": "触发条件、替代动作和验证出口一起写，风险才可管理",
+      "text": "失效信号触发替代路线，统一测量端点检验调整效果",
       "role": "页内核心判断"
     },
     {

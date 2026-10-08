@@ -1,38 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
 <rect width="1280" height="720" fill="white"/>
-<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
-<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
-<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start">阶段计划以可验收产物驱动下一步</text>
-<text x="52" y="100" font-size="19" fill="#657B8B" font-weight="400" text-anchor="start">基准建立、条件筛选、独立复测与失效分析分阶段推进</text>
-<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
-<text x="418.0" y="165" font-size="20" fill="#657B8B" font-weight="400" text-anchor="middle">窗口一</text>
-<line x1="352" y1="184" x2="352" y2="507" stroke="#CCD7DF" stroke-width="1"/>
-<text x="550.0" y="165" font-size="20" fill="#657B8B" font-weight="400" text-anchor="middle">窗口二</text>
-<line x1="484" y1="184" x2="484" y2="507" stroke="#CCD7DF" stroke-width="1"/>
-<text x="682.0" y="165" font-size="20" fill="#657B8B" font-weight="400" text-anchor="middle">窗口三</text>
-<line x1="616" y1="184" x2="616" y2="507" stroke="#CCD7DF" stroke-width="1"/>
-<text x="814.0" y="165" font-size="20" fill="#657B8B" font-weight="400" text-anchor="middle">窗口四</text>
-<line x1="748" y1="184" x2="748" y2="507" stroke="#CCD7DF" stroke-width="1"/>
-<text x="946.0" y="165" font-size="20" fill="#657B8B" font-weight="400" text-anchor="middle">窗口五</text>
-<line x1="880" y1="184" x2="880" y2="507" stroke="#CCD7DF" stroke-width="1"/>
-<text x="1078.0" y="165" font-size="20" fill="#657B8B" font-weight="400" text-anchor="middle">窗口六</text>
-<line x1="1012" y1="184" x2="1012" y2="507" stroke="#CCD7DF" stroke-width="1"/>
-<line x1="1144" y1="184" x2="1144" y2="507" stroke="#CCD7DF" stroke-width="1"/>
-<text x="50" y="222" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">基准与误差范围</text>
-<rect x="358" y="193" width="120" height="39" fill="#365F85"/>
-<line x1="50" y1="245" x2="1230" y2="245" stroke="#CCD7DF" stroke-width="0.7"/>
-<text x="50" y="284" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">小规模条件筛选</text>
-<rect x="490" y="255" width="120" height="39" fill="#365F85"/>
-<line x1="50" y1="307" x2="1230" y2="307" stroke="#CCD7DF" stroke-width="0.7"/>
-<text x="50" y="346" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">候选样品独立复测</text>
-<rect x="622" y="317" width="252" height="39" fill="#537F78"/>
-<line x1="50" y1="369" x2="1230" y2="369" stroke="#CCD7DF" stroke-width="0.7"/>
-<text x="50" y="408" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">失效模式与耐受窗口</text>
-<rect x="886" y="379" width="120" height="39" fill="#537F78"/>
-<line x1="50" y1="431" x2="1230" y2="431" stroke="#CCD7DF" stroke-width="0.7"/>
-<text x="50" y="470" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">汇总与可复现交付</text>
+<style>text{font-family:"Times New Roman","Microsoft YaHei"}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#1F4E79"/>
+<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">阶段计划以可验收产物驱动下一步</tspan></text>
+<text x="52" y="100" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">基准建立、条件筛选、独立复测与失效分析分阶段推进</tspan></text>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#B7B7B7" stroke-width="1.4"/>
+<text x="418.0" y="165" font-size="20" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">窗口一</tspan></text>
+<line x1="352" y1="184" x2="352" y2="507" stroke="#B7B7B7" stroke-width="1"/>
+<text x="550.0" y="165" font-size="20" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">窗口二</tspan></text>
+<line x1="484" y1="184" x2="484" y2="507" stroke="#B7B7B7" stroke-width="1"/>
+<text x="682.0" y="165" font-size="20" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">窗口三</tspan></text>
+<line x1="616" y1="184" x2="616" y2="507" stroke="#B7B7B7" stroke-width="1"/>
+<text x="814.0" y="165" font-size="20" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">窗口四</tspan></text>
+<line x1="748" y1="184" x2="748" y2="507" stroke="#B7B7B7" stroke-width="1"/>
+<text x="946.0" y="165" font-size="20" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">窗口五</tspan></text>
+<line x1="880" y1="184" x2="880" y2="507" stroke="#B7B7B7" stroke-width="1"/>
+<text x="1078.0" y="165" font-size="20" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">窗口六</tspan></text>
+<line x1="1012" y1="184" x2="1012" y2="507" stroke="#B7B7B7" stroke-width="1"/>
+<line x1="1144" y1="184" x2="1144" y2="507" stroke="#B7B7B7" stroke-width="1"/>
+<text x="50" y="222" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">基准与误差范围</tspan></text>
+<rect x="358" y="193" width="120" height="39" fill="#1F4E79"/>
+<line x1="50" y1="245" x2="1230" y2="245" stroke="#B7B7B7" stroke-width="0.7"/>
+<text x="50" y="284" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">小规模条件筛选</tspan></text>
+<rect x="490" y="255" width="120" height="39" fill="#1F4E79"/>
+<line x1="50" y1="307" x2="1230" y2="307" stroke="#B7B7B7" stroke-width="0.7"/>
+<text x="50" y="346" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">候选样品独立复测</tspan></text>
+<rect x="622" y="317" width="252" height="39" fill="#343434"/>
+<line x1="50" y1="369" x2="1230" y2="369" stroke="#B7B7B7" stroke-width="0.7"/>
+<text x="50" y="408" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">失效模式与耐受窗口</tspan></text>
+<rect x="886" y="379" width="120" height="39" fill="#343434"/>
+<line x1="50" y1="431" x2="1230" y2="431" stroke="#B7B7B7" stroke-width="0.7"/>
+<text x="50" y="470" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">汇总与可复现交付</tspan></text>
 <rect x="1018" y="441" width="120" height="39" fill="#A63237"/>
-<line x1="50" y1="493" x2="1230" y2="493" stroke="#CCD7DF" stroke-width="0.7"/>
+<line x1="50" y1="493" x2="1230" y2="493" stroke="#B7B7B7" stroke-width="0.7"/>
 <path d="M478,212 H497 V246" fill="none" stroke="#15344E" stroke-width="2"/>
 <polygon points="495.00,239.00 495.00,247.00 492.04,247.00 497.00,255.00 501.96,247.00 499.00,247.00 499.00,239.00" fill="#15344E"/>
 <path d="M610,274 H629 V308" fill="none" stroke="#15344E" stroke-width="2"/>
@@ -41,16 +41,16 @@
 <polygon points="891.00,363.00 891.00,371.00 888.04,371.00 893.00,379.00 897.96,371.00 895.00,371.00 895.00,363.00" fill="#15344E"/>
 <path d="M1006,398 H1025 V432" fill="none" stroke="#15344E" stroke-width="2"/>
 <polygon points="1023.00,425.00 1023.00,433.00 1020.04,433.00 1025.00,441.00 1029.96,433.00 1027.00,433.00 1027.00,425.00" fill="#15344E"/>
-<text x="50" y="554" font-size="22" fill="#365F85" font-weight="700" text-anchor="start">里程碑</text>
+<text x="50" y="554" font-size="22" fill="#1F4E79" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">里程碑</tspan></text>
 <path d="M245,541 L256,552 L245,563 L234,552 Z" fill="#A63237" stroke="#A63237" stroke-width="2"/>
-<text x="271" y="556" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">基准可用</text>
-<text x="271" y="597" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">误差边界明确</text>
+<text x="271" y="556" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">基准可用</tspan></text>
+<text x="271" y="597" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">误差边界明确</tspan></text>
 <path d="M569,541 L580,552 L569,563 L558,552 Z" fill="#A63237" stroke="#A63237" stroke-width="2"/>
-<text x="595" y="556" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">候选收敛</text>
-<text x="595" y="597" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">进入独立复测</text>
+<text x="595" y="556" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">候选收敛</tspan></text>
+<text x="595" y="597" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">进入独立复测</tspan></text>
 <path d="M909,541 L920,552 L909,563 L898,552 Z" fill="#A63237" stroke="#A63237" stroke-width="2"/>
-<text x="935" y="556" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">结果可交付</text>
-<text x="935" y="597" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">数据与条件可追溯</text>
-<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle">上一步的验收产物，决定下一步是否进入及如何收缩范围</text>
-<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">24</text>
+<text x="935" y="556" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">结果可交付</tspan></text>
+<text x="935" y="597" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">数据与条件可追溯</tspan></text>
+<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">上一步的验收产物，决定下一步是否进入及如何收缩范围</tspan></text>
+<text x="1230" y="704" font-size="15" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">24</tspan></text>
 </svg>

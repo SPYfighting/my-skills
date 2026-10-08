@@ -1,54 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
 <rect width="1280" height="720" fill="white"/>
-<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
-<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
-<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start">测量资源围绕“可校准、可对照、可复测”配置</text>
-<text x="52" y="100" font-size="19" fill="#657B8B" font-weight="400" text-anchor="start">光学链路记录动态响应，形貌与谱学测量提供补充证据</text>
-<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
-<text x="50" y="157" font-size="22" fill="#365F85" font-weight="700" text-anchor="start">光学测量链路</text>
-<rect x="68" y="203" width="122" height="93" fill="#EFF4F8" stroke="#365F85" stroke-width="1.5"/>
-<circle cx="130" cy="249" r="24" fill="#A47C3D"/>
-<text x="130" y="329" font-size="21" fill="#15344E" font-weight="700" text-anchor="middle">稳定光源</text>
-<polygon points="199.00,251.00 227.00,251.00 227.00,255.44 239.00,248.00 227.00,240.56 227.00,245.00 199.00,245.00" fill="#A47C3D"/>
-<rect x="251" y="213" width="78" height="73" fill="#DDE7ED" stroke="#365F85" stroke-width="1.5"/>
-<line x1="265" y1="270" x2="315" y2="228" stroke="#365F85" stroke-width="5"/>
-<text x="290" y="329" font-size="21" fill="#15344E" font-weight="700" text-anchor="middle">选波模块</text>
-<polygon points="339.00,251.00 373.00,251.00 373.00,255.44 385.00,248.00 373.00,240.56 373.00,245.00 339.00,245.00" fill="#A47C3D"/>
-<rect x="399" y="201" width="78" height="100" fill="white" stroke="#537F78" stroke-width="2"/>
-<rect x="409" y="233" width="58" height="55" fill="#B9D1CC"/>
-<text x="439" y="329" font-size="21" fill="#15344E" font-weight="700" text-anchor="middle">样品池</text>
-<polygon points="487.00,251.00 522.00,251.00 522.00,255.44 534.00,248.00 522.00,240.56 522.00,245.00 487.00,245.00" fill="#A47C3D"/>
-<rect x="547" y="210" width="131" height="80" fill="#EFF4F8" stroke="#365F85" stroke-width="1.5"/>
+<style>text{font-family:"Times New Roman","Microsoft YaHei"}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#1F4E79"/>
+<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">测量资源围绕“可校准、可对照、可复测”配置</tspan></text>
+<text x="52" y="100" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">光学链路记录动态响应，形貌与谱学测量提供补充证据</tspan></text>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#B7B7B7" stroke-width="1.4"/>
+<text x="50" y="157" font-size="22" fill="#1F4E79" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">光学测量链路</tspan></text>
+<rect x="68" y="203" width="122" height="93" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
+<circle cx="130" cy="249" r="24" fill="#6B4A2F"/>
+<text x="130" y="329" font-size="21" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">稳定光源</tspan></text>
+<polygon points="199.00,251.00 227.00,251.00 227.00,255.44 239.00,248.00 227.00,240.56 227.00,245.00 199.00,245.00" fill="#6B4A2F"/>
+<rect x="251" y="213" width="78" height="73" fill="#FFFFFF" stroke="#1F4E79" stroke-width="1.5"/>
+<line x1="265" y1="270" x2="315" y2="228" stroke="#1F4E79" stroke-width="5"/>
+<text x="290" y="329" font-size="21" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">选波模块</tspan></text>
+<polygon points="339.00,251.00 373.00,251.00 373.00,255.44 385.00,248.00 373.00,240.56 373.00,245.00 339.00,245.00" fill="#6B4A2F"/>
+<rect x="399" y="201" width="78" height="100" fill="white" stroke="#343434" stroke-width="2"/>
+<rect x="409" y="233" width="58" height="55" fill="#555555"/>
+<text x="439" y="329" font-size="21" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">样品池</tspan></text>
+<polygon points="487.00,251.00 522.00,251.00 522.00,255.44 534.00,248.00 522.00,240.56 522.00,245.00 487.00,245.00" fill="#6B4A2F"/>
+<rect x="547" y="210" width="131" height="80" fill="white" stroke="#1F4E79" stroke-width="1.5"/>
 <path d="M560,266 L577,243 L592,257 L608,232 L625,249 L662,220" fill="none" stroke="#A63237" stroke-width="3"/>
-<text x="613" y="329" font-size="21" fill="#15344E" font-weight="700" text-anchor="middle">探测与采集</text>
-<path d="M290,292 V382 H704 V248" fill="none" stroke="#537F78" stroke-width="3"/>
-<polygon points="704.00,245.50 691.00,245.50 691.00,241.18 680.00,248.00 691.00,254.82 691.00,250.50 704.00,250.50" fill="#537F78"/>
+<text x="613" y="329" font-size="21" fill="#15344E" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">探测与采集</tspan></text>
+<path d="M290,292 V382 H704 V248" fill="none" stroke="#343434" stroke-width="3"/>
+<polygon points="704.00,245.50 691.00,245.50 691.00,241.18 680.00,248.00 691.00,254.82 691.00,250.50 704.00,250.50" fill="#343434"/>
 <rect x="327" y="361" width="247" height="40" fill="white"/>
-<text x="450" y="389" font-size="18" fill="#537F78" font-weight="700" text-anchor="middle">空白通道校正光源漂移</text>
-<line x1="736" y1="145" x2="736" y2="457" stroke="#CCD7DF" stroke-width="1.5"/>
-<text x="780" y="157" font-size="22" fill="#365F85" font-weight="700" text-anchor="start">配套能力与用途</text>
-<rect x="796.8" y="280.3" width="103.6" height="9.200000000000001" fill="#365F85"/>
-<path d="M875.2,280.3 C892.0,230.85 864.0,204.4 827.6,221.65" fill="none" stroke="#365F85" stroke-width="13"/>
-<path d="M829.0,211.3 L850.0,227.4 L834.6,242.35 L813.6,226.25 Z" fill="#9BB0BD" stroke="#365F85" stroke-width="2"/>
-<line x1="813.6" y1="255.0" x2="871.0" y2="255.0" stroke="#365F85" stroke-width="7"/>
+<text x="450" y="389" font-size="18" fill="#343434" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">空白通道校正光源漂移</tspan></text>
+<line x1="736" y1="145" x2="736" y2="457" stroke="#B7B7B7" stroke-width="1.5"/>
+<text x="780" y="157" font-size="22" fill="#1F4E79" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">配套能力与用途</tspan></text>
+<rect x="796.8" y="280.3" width="103.6" height="9.200000000000001" fill="#1F4E79"/>
+<path d="M875.2,280.3 C892.0,230.85 864.0,204.4 827.6,221.65" fill="none" stroke="#1F4E79" stroke-width="13"/>
+<path d="M829.0,211.3 L850.0,227.4 L834.6,242.35 L813.6,226.25 Z" fill="#555555" stroke="#1F4E79" stroke-width="2"/>
+<line x1="813.6" y1="255.0" x2="871.0" y2="255.0" stroke="#1F4E79" stroke-width="7"/>
 <rect x="824.8" y="250.4" width="22.400000000000002" height="2.875" fill="#A63237"/>
-<text x="950" y="214" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">显微观察</text>
-<text x="950" y="252" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">核对形貌与分散</text>
-<text x="950" y="283" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">定位异常区域</text>
-<rect x="798.2" y="340.1" width="102.2" height="72.45" fill="#E9EFF2" stroke="#657B8B" stroke-width="1.6"/>
-<rect x="810.8" y="350.45" width="60.199999999999996" height="39.1" fill="white" stroke="#365F85" stroke-width="2"/>
-<line x1="817.8" y1="381.5" x2="864.0" y2="381.5" stroke="#657B8B" stroke-width="1.3"/>
-<line x1="817.8" y1="357.35" x2="817.8" y2="381.5" stroke="#657B8B" stroke-width="1.3"/>
-<line x1="817.8" y1="363.38750000000005" x2="864.0" y2="363.38750000000005" stroke="#CCD7DF" stroke-width="0.7"/>
-<line x1="817.8" y1="369.425" x2="864.0" y2="369.425" stroke="#CCD7DF" stroke-width="0.7"/>
-<line x1="817.8" y1="375.46250000000003" x2="864.0" y2="375.46250000000003" stroke="#CCD7DF" stroke-width="0.7"/>
-<path d="M817.8,361.5 L819.3,362.5 L820.9,363.4 L822.4,364.3 L824.0,365.1 L825.5,365.9 L827.0,366.6 L828.6,367.3 L830.1,367.9 L831.7,368.5 L833.2,369.1 L834.7,369.6 L836.3,370.1 L837.8,370.6 L839.4,371.0 L840.9,371.4 L842.4,371.8 L844.0,372.1 L845.5,372.4 L847.1,372.7 L848.6,373.0 L850.1,373.3 L851.7,373.5 L853.2,373.8 L854.8,374.0 L856.3,374.2 L857.8,374.4 L859.4,374.6 L860.9,374.7 L862.5,374.9 L864.0,375.0" fill="none" stroke="#365F85" stroke-width="2.6"/>
-<circle cx="817.8" cy="361.45550000000003" r="2.8" fill="#365F85"/>
-<circle cx="827.04" cy="366.6306510773556" r="2.8" fill="#365F85"/>
-<circle cx="836.28" cy="370.09965858576993" r="2.8" fill="#365F85"/>
-<circle cx="845.52" cy="372.4250038585082" r="2.8" fill="#365F85"/>
-<circle cx="854.76" cy="373.9837294087789" r="2.8" fill="#365F85"/>
-<circle cx="864.0" cy="375.0285743913933" r="2.8" fill="#365F85"/>
+<text x="950" y="214" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">显微观察</tspan></text>
+<text x="950" y="252" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">核对形貌与分散</tspan></text>
+<text x="950" y="283" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">定位异常区域</tspan></text>
+<rect x="798.2" y="340.1" width="102.2" height="72.45" fill="white" stroke="#555555" stroke-width="1.6"/>
+<rect x="810.8" y="350.45" width="60.199999999999996" height="39.1" fill="white" stroke="#1F4E79" stroke-width="2"/>
+<line x1="817.8" y1="381.5" x2="864.0" y2="381.5" stroke="#555555" stroke-width="1.3"/>
+<line x1="817.8" y1="357.35" x2="817.8" y2="381.5" stroke="#555555" stroke-width="1.3"/>
+<line x1="817.8" y1="363.38750000000005" x2="864.0" y2="363.38750000000005" stroke="#B7B7B7" stroke-width="0.7"/>
+<line x1="817.8" y1="369.425" x2="864.0" y2="369.425" stroke="#B7B7B7" stroke-width="0.7"/>
+<line x1="817.8" y1="375.46250000000003" x2="864.0" y2="375.46250000000003" stroke="#B7B7B7" stroke-width="0.7"/>
+<path d="M817.8,361.5 L819.3,362.5 L820.9,363.4 L822.4,364.3 L824.0,365.1 L825.5,365.9 L827.0,366.6 L828.6,367.3 L830.1,367.9 L831.7,368.5 L833.2,369.1 L834.7,369.6 L836.3,370.1 L837.8,370.6 L839.4,371.0 L840.9,371.4 L842.4,371.8 L844.0,372.1 L845.5,372.4 L847.1,372.7 L848.6,373.0 L850.1,373.3 L851.7,373.5 L853.2,373.8 L854.8,374.0 L856.3,374.2 L857.8,374.4 L859.4,374.6 L860.9,374.7 L862.5,374.9 L864.0,375.0" fill="none" stroke="#1F4E79" stroke-width="2.6"/>
+<circle cx="817.8" cy="361.45550000000003" r="2.8" fill="#1F4E79"/>
+<circle cx="827.04" cy="366.6306510773556" r="2.8" fill="#1F4E79"/>
+<circle cx="836.28" cy="370.09965858576993" r="2.8" fill="#1F4E79"/>
+<circle cx="845.52" cy="372.4250038585082" r="2.8" fill="#1F4E79"/>
+<circle cx="854.76" cy="373.9837294087789" r="2.8" fill="#1F4E79"/>
+<circle cx="864.0" cy="375.0285743913933" r="2.8" fill="#1F4E79"/>
 <path d="M817.8,361.5 L819.3,362.9 L820.9,364.3 L822.4,365.5 L824.0,366.6 L825.5,367.6 L827.0,368.5 L828.6,369.4 L830.1,370.1 L831.7,370.8 L833.2,371.4 L834.7,371.9 L836.3,372.4 L837.8,372.9 L839.4,373.3 L840.9,373.7 L842.4,374.0 L844.0,374.3 L845.5,374.6 L847.1,374.8 L848.6,375.0 L850.1,375.2 L851.7,375.4 L853.2,375.6 L854.8,375.7 L856.3,375.9 L857.8,376.0 L859.4,376.1 L860.9,376.2 L862.5,376.3 L864.0,376.4" fill="none" stroke="#A63237" stroke-width="2.6"/>
 <circle cx="817.8" cy="361.45550000000003" r="2.8" fill="#A63237"/>
 <circle cx="827.04" cy="368.53802934241406" r="2.8" fill="#A63237"/>
@@ -56,28 +56,28 @@
 <circle cx="845.52" cy="374.5582207021417" r="2.8" fill="#A63237"/>
 <circle cx="854.76" cy="375.7289549282395" r="2.8" fill="#A63237"/>
 <circle cx="864.0" cy="376.3714674942955" r="2.8" fill="#A63237"/>
-<path d="M817.8,361.5 L819.3,363.4 L820.9,365.1 L822.4,366.6 L824.0,367.9 L825.5,369.1 L827.0,370.1 L828.6,371.0 L830.1,371.8 L831.7,372.4 L833.2,373.0 L834.7,373.5 L836.3,374.0 L837.8,374.4 L839.4,374.7 L840.9,375.0 L842.4,375.3 L844.0,375.5 L845.5,375.7 L847.1,375.9 L848.6,376.1 L850.1,376.2 L851.7,376.3 L853.2,376.4 L854.8,376.5 L856.3,376.6 L857.8,376.7 L859.4,376.7 L860.9,376.8 L862.5,376.8 L864.0,376.9" fill="none" stroke="#537F78" stroke-width="2.6"/>
-<circle cx="817.8" cy="361.45550000000003" r="2.8" fill="#537F78"/>
-<circle cx="827.04" cy="370.09965858576993" r="2.8" fill="#537F78"/>
-<circle cx="836.28" cy="373.9837294087789" r="2.8" fill="#537F78"/>
-<circle cx="845.52" cy="375.7289549282395" r="2.8" fill="#537F78"/>
-<circle cx="854.76" cy="376.51313530304964" r="2.8" fill="#537F78"/>
-<circle cx="864.0" cy="376.8654902585441" r="2.8" fill="#537F78"/>
-<circle cx="883.6" cy="368.85" r="5.6000000000000005" fill="#537F78"/>
-<line x1="810.8" y1="421.75" x2="885.0" y2="421.75" stroke="#365F85" stroke-width="8"/>
-<text x="950" y="352" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">谱学记录</text>
-<text x="950" y="390" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">跟踪特征信号</text>
-<text x="950" y="421" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">检查副产物线索</text>
-<rect x="50" y="478" width="1180" height="34" fill="#365F85"/>
-<text x="640.0" y="502.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">使用前的共同核验</text>
-<text x="74" y="553" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">波长与强度基准</text>
-<text x="74" y="592" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">参照样本限定测量范围</text>
-<text x="467" y="553" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">样品与空白并行</text>
-<text x="467" y="592" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">排除溶剂和基底贡献</text>
-<line x1="443" y1="532" x2="443" y2="610" stroke="#CCD7DF" stroke-width="1.2"/>
-<text x="860" y="553" font-size="22" fill="#15344E" font-weight="700" text-anchor="start">同条件独立复测</text>
-<text x="860" y="592" font-size="20" fill="#15344E" font-weight="400" text-anchor="start">保存完整原始时序</text>
-<line x1="836" y1="532" x2="836" y2="610" stroke="#CCD7DF" stroke-width="1.2"/>
-<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle">校准、空白对照与独立复测共同支撑测量结果</text>
-<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">22</text>
+<path d="M817.8,361.5 L819.3,363.4 L820.9,365.1 L822.4,366.6 L824.0,367.9 L825.5,369.1 L827.0,370.1 L828.6,371.0 L830.1,371.8 L831.7,372.4 L833.2,373.0 L834.7,373.5 L836.3,374.0 L837.8,374.4 L839.4,374.7 L840.9,375.0 L842.4,375.3 L844.0,375.5 L845.5,375.7 L847.1,375.9 L848.6,376.1 L850.1,376.2 L851.7,376.3 L853.2,376.4 L854.8,376.5 L856.3,376.6 L857.8,376.7 L859.4,376.7 L860.9,376.8 L862.5,376.8 L864.0,376.9" fill="none" stroke="#343434" stroke-width="2.6"/>
+<circle cx="817.8" cy="361.45550000000003" r="2.8" fill="#343434"/>
+<circle cx="827.04" cy="370.09965858576993" r="2.8" fill="#343434"/>
+<circle cx="836.28" cy="373.9837294087789" r="2.8" fill="#343434"/>
+<circle cx="845.52" cy="375.7289549282395" r="2.8" fill="#343434"/>
+<circle cx="854.76" cy="376.51313530304964" r="2.8" fill="#343434"/>
+<circle cx="864.0" cy="376.8654902585441" r="2.8" fill="#343434"/>
+<circle cx="883.6" cy="368.85" r="5.6000000000000005" fill="#343434"/>
+<line x1="810.8" y1="421.75" x2="885.0" y2="421.75" stroke="#1F4E79" stroke-width="8"/>
+<text x="950" y="352" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">谱学记录</tspan></text>
+<text x="950" y="390" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">跟踪特征信号</tspan></text>
+<text x="950" y="421" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">检查副产物线索</tspan></text>
+<rect x="50" y="478" width="1180" height="34" fill="#1F4E79"/>
+<text x="640.0" y="502.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">使用前的共同核验</tspan></text>
+<text x="74" y="553" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">波长与强度基准</tspan></text>
+<text x="74" y="592" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">参照样本限定测量范围</tspan></text>
+<text x="467" y="553" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">样品与空白并行</tspan></text>
+<text x="467" y="592" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">排除溶剂和基底贡献</tspan></text>
+<line x1="443" y1="532" x2="443" y2="610" stroke="#B7B7B7" stroke-width="1.2"/>
+<text x="860" y="553" font-size="22" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">同条件独立复测</tspan></text>
+<text x="860" y="592" font-size="20" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">保存完整原始时序</tspan></text>
+<line x1="836" y1="532" x2="836" y2="610" stroke="#B7B7B7" stroke-width="1.2"/>
+<text x="640" y="665" font-size="27" fill="#A63237" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">校准、空白对照与独立复测共同支撑测量结果</tspan></text>
+<text x="1230" y="704" font-size="15" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">22</tspan></text>
 </svg>

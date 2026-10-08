@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
 <rect width="1280" height="720" fill="white"/>
-<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
-<rect x="0" y="0" width="1280" height="6" fill="#365F85"/>
-<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start">条件矩阵揭示响应变化，实验设计解释比较边界</text>
-<text x="52" y="100" font-size="19" fill="#657B8B" font-weight="400" text-anchor="start">固定样本条件，比较参数变化对应的响应模式</text>
-<line x1="50" y1="116" x2="1230" y2="116" stroke="#CCD7DF" stroke-width="1.4"/>
-<rect x="50" y="148" width="785" height="34" fill="#365F85"/>
-<text x="442.5" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">响应矩阵</text>
-<text x="442" y="219" font-size="22" fill="#365F85" font-weight="700" text-anchor="middle">参数分组</text>
+<style>text{font-family:"Times New Roman","Microsoft YaHei"}line,path,rect,circle,ellipse,polyline{vector-effect:non-scaling-stroke}</style>
+<rect x="0" y="0" width="1280" height="6" fill="#1F4E79"/>
+<text x="50" y="63" font-size="34" fill="#15344E" font-weight="700" text-anchor="start"><tspan font-family="Microsoft YaHei">条件矩阵揭示响应变化，实验设计解释比较边界</tspan></text>
+<text x="52" y="100" font-size="19" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">固定样本条件，比较参数变化对应的响应模式</tspan></text>
+<line x1="50" y1="116" x2="1230" y2="116" stroke="#B7B7B7" stroke-width="1.4"/>
+<rect x="50" y="148" width="785" height="34" fill="#1F4E79"/>
+<text x="442.5" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">响应矩阵</tspan></text>
+<text x="442" y="219" font-size="22" fill="#1F4E79" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">参数分组</tspan></text>
 <rect x="95.0" y="251.0" width="49.0" height="37.0" fill="#B96356"/>
 <rect x="145.0" y="251.0" width="49.0" height="37.0" fill="#934141"/>
 <rect x="195.0" y="251.0" width="49.0" height="37.0" fill="#934141"/>
@@ -120,13 +120,13 @@
 <rect x="645.0" y="517.0" width="49.0" height="37.0" fill="#456B8F"/>
 <rect x="695.0" y="517.0" width="49.0" height="37.0" fill="#456B8F"/>
 <rect x="745.0" y="517.0" width="49.0" height="37.0" fill="#456B8F"/>
-<text x="120.0" y="574" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">1</text>
-<text x="470.0" y="574" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">8</text>
-<text x="770.0" y="574" font-size="13" fill="#657B8B" font-weight="400" text-anchor="middle">14</text>
-<text x="88" y="276.46" font-size="13" fill="#657B8B" font-weight="400" text-anchor="end">1</text>
-<text x="88" y="542.46" font-size="13" fill="#657B8B" font-weight="400" text-anchor="end">8</text>
-<text x="65" y="239" font-size="16" fill="#657B8B" font-weight="400" text-anchor="start">条件</text>
-<text x="444" y="597" font-size="21" fill="#657B8B" font-weight="400" text-anchor="middle">每个单元对应一组条件下的相对响应</text>
+<text x="120.0" y="574" font-size="13" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Times New Roman">1</tspan></text>
+<text x="470.0" y="574" font-size="13" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Times New Roman">8</tspan></text>
+<text x="770.0" y="574" font-size="13" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Times New Roman">14</tspan></text>
+<text x="88" y="276.46" font-size="13" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">1</tspan></text>
+<text x="88" y="542.46" font-size="13" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">8</tspan></text>
+<text x="65" y="239" font-size="16" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">条件</tspan></text>
+<text x="444" y="597" font-size="21" fill="#111111" font-weight="400" text-anchor="middle"><tspan font-family="Microsoft YaHei">每个单元对应一组条件下的相对响应</tspan></text>
 <rect x="250" y="616" width="43" height="12" fill="#456B8F"/>
 <rect x="293" y="616" width="43" height="12" fill="#7694AF"/>
 <rect x="336" y="616" width="43" height="12" fill="#ADC0D0"/>
@@ -135,11 +135,11 @@
 <rect x="465" y="616" width="43" height="12" fill="#D9B19A"/>
 <rect x="508" y="616" width="43" height="12" fill="#B96356"/>
 <rect x="551" y="616" width="43" height="12" fill="#934141"/>
-<text x="233" y="629" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">低</text>
-<text x="610" y="629" font-size="15" fill="#657B8B" font-weight="400" text-anchor="start">高</text>
-<rect x="871" y="148" width="359" height="34" fill="#365F85"/>
-<text x="1050.5" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle">实验设计</text>
-<rect x="899" y="206" width="302" height="179" fill="#EFF4F8" stroke="#CCD7DF" stroke-width="1.5"/>
+<text x="233" y="629" font-size="15" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Microsoft YaHei">低</tspan></text>
+<text x="610" y="629" font-size="15" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">高</tspan></text>
+<rect x="871" y="148" width="359" height="34" fill="#1F4E79"/>
+<text x="1050.5" y="172.48" font-size="21" fill="white" font-weight="700" text-anchor="middle"><tspan font-family="Microsoft YaHei">实验设计</tspan></text>
+<rect x="899" y="206" width="302" height="179" fill="white" stroke="#B7B7B7" stroke-width="1.5"/>
 <circle cx="922.2307692307693" cy="225.88888888888889" r="8.136363636363637" fill="#6590A6"/>
 <circle cx="945.4615384615385" cy="225.88888888888889" r="8.136363636363637" fill="#416983"/>
 <circle cx="968.6923076923077" cy="225.88888888888889" r="8.136363636363637" fill="#416983"/>
@@ -236,11 +236,11 @@
 <circle cx="1131.3076923076924" cy="365.1111111111111" r="8.136363636363637" fill="#C6D8DF"/>
 <circle cx="1154.5384615384614" cy="365.1111111111111" r="8.136363636363637" fill="#96B8C5"/>
 <circle cx="1177.7692307692307" cy="365.1111111111111" r="8.136363636363637" fill="#6590A6"/>
-<text x="899" y="437" font-size="23" fill="#15344E" font-weight="400" text-anchor="start">固定样本处理条件</text>
-<text x="899" y="476" font-size="23" fill="#15344E" font-weight="400" text-anchor="start">覆盖选定参数范围</text>
-<text x="899" y="515" font-size="23" fill="#15344E" font-weight="400" text-anchor="start">加入基准与重复测量</text>
-<rect x="887" y="568" width="328" height="75" fill="#EFF4F8"/>
-<text x="906" y="598" font-size="18" fill="#15344E" font-weight="400" text-anchor="start">读图重点：比较条件模式</text>
-<text x="906" y="627" font-size="18" fill="#15344E" font-weight="400" text-anchor="start">不把色块自动等同功能改善</text>
-<text x="1230" y="704" font-size="15" fill="#657B8B" font-weight="400" text-anchor="end">14</text>
+<text x="899" y="437" font-size="23" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">固定样本处理条件</tspan></text>
+<text x="899" y="476" font-size="23" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">覆盖选定参数范围</tspan></text>
+<text x="899" y="515" font-size="23" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">加入基准与重复测量</tspan></text>
+<rect x="887" y="568" width="328" height="75" fill="white"/>
+<text x="906" y="598" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">比较不同条件的响应模式</tspan></text>
+<text x="906" y="629" font-size="21" fill="#111111" font-weight="400" text-anchor="start"><tspan font-family="Microsoft YaHei">结合测量端点选择候选区域</tspan></text>
+<text x="1230" y="704" font-size="15" fill="#111111" font-weight="400" text-anchor="end"><tspan font-family="Times New Roman">14</tspan></text>
 </svg>
