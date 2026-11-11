@@ -12,6 +12,7 @@
 | 用户明确要求通过本机 OpenCode 执行任务或继续 OpenCode 会话 | `opencode/SKILL.md` |
 | 用户明确点名 `draw-complex-interactions` 分析或绘制复合物二维互作 | `draw-complex-interactions/SKILL.md` |
 | 科研汇报 PPT 的制作、布局优化、技术路线与逐页讲稿 | `my-academic-ppt/SKILL.md` |
+| 把当前项目现场、任务、结果和远程进程整理后交给另一位 agent 接手 | `to-another-agent/SKILL.md` |
 
 skill 内部的引用路径是相对 skill 根目录写的。`references/quality-gates.md` 里写 `scripts/validate_package.py`，指的是 `wechat-biosci-writer/scripts/validate_package.py`。
 
@@ -67,4 +68,4 @@ skill 内部的引用路径是相对 skill 根目录写的。`references/quality
 python check.py
 ```
 
-两个 skill 都要通过。改了 skill 的散文，顺带确认 README 的技能表还准确。
+所有 skill 都要通过。改了 skill 的散文，顺带确认 README 的技能表还准确。
