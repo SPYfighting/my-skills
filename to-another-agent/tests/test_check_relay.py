@@ -2,6 +2,7 @@
 
 import importlib.util
 import io
+import os
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -46,7 +47,7 @@ HANDOFF = """# 项目交接
 1. 验收任务。
 
 ## 下一位 agent 接手
-> 请使用 `$to-another-agent` 接手当前项目。读取 `AGENT_HANDOFF.md` 后继续。
+> 请使用 `$to-another-agent` 接手当前项目。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，然后继续。
 """
 
 TASKS = """# 下一位 agent 任务
@@ -293,6 +294,34 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(handoff, tasks)
         self.assertEqual(code, 0, out)
 
+    def test_handoff_without_tasks_or_remote_work_rejects_stale_prompt_clauses(self):
+        body = HANDOFF.replace(
+            "- 后续任务：`tasks/next-agent.md`",
+            "- 后续任务：无",
+        ).replace(
+            "，然后继续。",
+            "，并接管远程任务。",
+        )
+        handoff = self.write("AGENT_HANDOFF.md", body)
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 1)
+        self.assertIn("prompt references a task file but follow-up task is none", out)
+        self.assertIn("prompt mentions remote takeover but no remote task is active", out)
+
+    def test_handoff_tasks_argument_must_match_handoff_metadata(self):
+        handoff = self.write("AGENT_HANDOFF.md", HANDOFF)
+        self.write("tasks/next-agent.md", TASKS)
+        other_tasks = self.write("tasks/other.md", TASKS)
+        code, out = self.validate(handoff, other_tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("--tasks does not match handoff follow-up task", out)
+
+    def test_handoff_referenced_task_file_must_exist(self):
+        handoff = self.write("AGENT_HANDOFF.md", HANDOFF)
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 1)
+        self.assertIn("referenced follow-up task file is missing", out)
+
     def test_unchecked_task_requires_completion_criterion(self):
         broken = TASKS.replace("  - 完成判据：产物存在且可读\n", "")
         tasks = self.write("tasks/next-agent.md", broken)
@@ -317,6 +346,7 @@ class RelayValidatorTests(unittest.TestCase):
 
     def test_recognized_secret_is_rejected(self):
         secret = "gh" + "p_" + ("a" * 30)
+        self.write("tasks/next-agent.md", TASKS)
         handoff = self.write(
             "AGENT_HANDOFF.md",
             HANDOFF.replace("可继续。", "令牌 " + secret),
@@ -324,6 +354,35 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(handoff)
         self.assertEqual(code, 1)
         self.assertIn("credential", out)
+
+    def test_additional_high_confidence_secrets_are_rejected(self):
+        secrets = {
+            "github fine-grained": "github_" + "pat_" + ("a" * 40),
+            "gitlab": "gl" + "pat-" + ("a" * 30),
+            "slack": "xox" + "b-" + ("1" * 20) + "-" + ("a" * 20),
+            "jwt": "eyJ" + ("a" * 20) + "." + ("b" * 20) + "." + ("c" * 20),
+            "signed url": (
+                "https://example.com/file?X-Amz-" + "Signature=" + ("a" * 64)
+            ),
+            "azure signed url": (
+                "https://example.blob.core.windows.net/file?sv=2024-01-01&sp=r&sig="
+                + ("a" * 44)
+            ),
+            "cookie": "Cookie: sessionid=" + ("a" * 32),
+            "connection uri": (
+                "postgresql://user:" + ("a" * 24) + "@db.example/test"
+            ),
+        }
+        self.write("tasks/next-agent.md", TASKS)
+        for label, secret in secrets.items():
+            with self.subTest(label=label):
+                handoff = self.write(
+                    "AGENT_HANDOFF.md",
+                    HANDOFF.replace("可继续。", "敏感值 " + secret),
+                )
+                code, out = self.validate(handoff)
+                self.assertEqual(code, 1, out)
+                self.assertIn("credential", out)
 
     def test_each_remote_task_requires_takeover_fields(self):
         active = """### 作业 A
@@ -343,15 +402,39 @@ class RelayValidatorTests(unittest.TestCase):
 - 监控方式：查询调度器
 - 停止条件：正常完成
 """
+        self.write("tasks/next-agent.md", TASKS)
+        handoff = self.write(
+            "AGENT_HANDOFF.md",
+            HANDOFF.replace("无活动远程任务。", active).replace(
+                "，然后继续。",
+                "，并接管其中记录的远程任务。",
+            ),
+        )
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 1)
+        self.assertIn("remote task 2", out)
+
+    def test_active_remote_work_must_appear_in_takeover_prompt(self):
+        active = """### 作业 A
+- 任务标识：job-1
+- 当前状态：运行
+- 最近核查：2026-11-11 12:00 +08:00
+- 日志或输出：logs/job-1.log
+- 监控方式：查询调度器
+- 接管动作：检查新日志
+- 停止条件：正常完成
+"""
+        self.write("tasks/next-agent.md", TASKS)
         handoff = self.write(
             "AGENT_HANDOFF.md",
             HANDOFF.replace("无活动远程任务。", active),
         )
         code, out = self.validate(handoff)
         self.assertEqual(code, 1)
-        self.assertIn("remote task 2", out)
+        self.assertIn("active remote work is missing", out)
 
     def test_existing_file_anchor_is_checked(self):
+        self.write("tasks/next-agent.md", TASKS)
         handoff = self.write(
             "AGENT_HANDOFF.md",
             HANDOFF.replace("建立记录。", "建立记录；证据为 `target.txt:2`。"),
@@ -359,13 +442,32 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(handoff)
         self.assertEqual(code, 0, out)
 
-    def test_windows_path_anchor_pattern_is_supported(self):
-        match = CHECKER.ANCHOR_RE.search(r"`C:\work\target.txt:12-14`")
-        self.assertIsNotNone(match)
-        self.assertEqual(match.group(1), r"C:\work\target.txt")
+    @unittest.skipUnless(os.name == "nt", "Windows absolute-path behavior")
+    def test_windows_absolute_path_anchor_is_checked_end_to_end(self):
+        self.write("tasks/next-agent.md", TASKS)
+        target = self.write("windows-target.txt", "a\nb\nc\n")
+        body = HANDOFF.replace(
+            "建立记录。",
+            "建立记录；证据为 `" + str(target) + ":2-3`。",
+        )
+        handoff = self.write("AGENT_HANDOFF.md", body)
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 0, out)
+        self.assertIn("1 file anchor(s) resolve", out)
 
     def test_valid_legacy_request_passes_with_warning(self):
         request = self.write("2026-11-11-demo-r1-请求.md", LEGACY_REQUEST)
+        code, out = self.validate(request)
+        self.assertEqual(code, 0, out)
+        self.assertIn("legacy review request", out)
+
+    def test_legacy_r2_shared_scope_section_remains_compatible(self):
+        body = LEGACY_REQUEST.replace(
+            "## 1. 用户原始需求（逐字引用）",
+            "## 0. 本轮范围\n\n上一轮未闭合的发现：无。\n\n"
+            "## 1. 用户原始需求（逐字引用）",
+        )
+        request = self.write("2026-11-11-demo-r2-请求.md", body)
         code, out = self.validate(request)
         self.assertEqual(code, 0, out)
         self.assertIn("legacy review request", out)
@@ -381,6 +483,13 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(request)
         self.assertEqual(code, 1)
         self.assertIn("filename", out)
+
+    def test_review_round_zero_is_rejected(self):
+        name = "2026-11-11-demo-r0-请求.md"
+        request = self.write(name, v2_request(name, round_number=0))
+        code, out = self.validate(request)
+        self.assertEqual(code, 1)
+        self.assertIn("round must start at r1", out)
 
     def test_missing_request_section_fails(self):
         body = LEGACY_REQUEST.replace("## 7. 明确不在范围内", "## 7. 其他")
@@ -441,11 +550,53 @@ class RelayValidatorTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("invalid review verdict", out)
 
+    def test_review_verdict_must_come_from_top_metadata(self):
+        request_name = "2026-11-11-demo-r1-请求.md"
+        result_name = "2026-11-11-demo-r1-审查.md"
+        self.write(request_name, v2_request(request_name))
+        body = v2_result(result_name, request_name).replace(
+            "- 结论：**通过**\n",
+            "",
+        ).replace(
+            "## 4. 盲区扫描\n\n- 未发现问题",
+            "## 4. 盲区扫描\n\n- 结论：通过\n- 未发现问题",
+        )
+        result = self.write(result_name, body)
+        code, out = self.validate(result)
+        self.assertEqual(code, 1)
+        self.assertIn("invalid review verdict", out)
+
     def test_valid_v2_request_passes(self):
         name = "2026-11-11-demo-r1-请求.md"
         request = self.write(name, v2_request(name))
         code, out = self.validate(request)
         self.assertEqual(code, 0, out)
+
+    def test_fenced_code_markup_is_not_treated_as_a_placeholder(self):
+        name = "2026-11-11-demo-r1-请求.md"
+        body = v2_request(name).replace(
+            "**已验证**\n- 跑了 demo",
+            "**已验证**\n```xml\n<sample>value</sample>\n```\n- 跑了 demo",
+        )
+        request = self.write(name, body)
+        code, out = self.validate(request)
+        self.assertEqual(code, 0, out)
+
+    def test_v2_signal_without_protocol_marker_fails(self):
+        name = "2026-11-11-demo-r1-请求.md"
+        body = v2_request(name).replace(
+            "- 协议：to-another-agent/v2\n",
+            "",
+        ).replace(
+            "## 8. 下一位 agent 接手\n\n"
+            f"> 请使用 `$to-another-agent` 以审查方身份接手。读取 `{name}`，"
+            "先验证请求和锚点，再只读核对实际产物。\n",
+            "",
+        )
+        request = self.write(name, body)
+        code, out = self.validate(request)
+        self.assertEqual(code, 1)
+        self.assertIn("protocol marker", out)
 
     def test_v2_request_requires_next_agent_prompt(self):
         name = "2026-11-11-demo-r1-请求.md"
@@ -454,6 +605,29 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(request)
         self.assertEqual(code, 1)
         self.assertIn("next-agent prompt", out)
+
+    def test_v2_request_requires_each_decision_to_have_an_anchor(self):
+        name = "2026-11-11-demo-r1-请求.md"
+        body = v2_request(name).replace(
+            "- 锚点：`target.txt:1-2`\n",
+            "",
+            1,
+        )
+        request = self.write(name, body)
+        code, out = self.validate(request)
+        self.assertEqual(code, 1)
+        self.assertIn("decision 1 needs an anchor or rerunnable command", out)
+
+    def test_v2_request_requires_each_uncertainty_to_have_an_anchor(self):
+        name = "2026-11-11-demo-r1-请求.md"
+        body = v2_request(name).replace(
+            "1. **也许错了** —— 锚点：`target.txt:2-3`",
+            "1. **也许错了**",
+        )
+        request = self.write(name, body)
+        code, out = self.validate(request)
+        self.assertEqual(code, 1)
+        self.assertIn("uncertainty 1 needs an anchor or rerunnable command", out)
 
     def test_v2_prompt_must_name_source_document(self):
         name = "2026-11-11-demo-r1-请求.md"
@@ -470,6 +644,15 @@ class RelayValidatorTests(unittest.TestCase):
         result = self.write(result_name, v2_result(result_name, request_name))
         code, out = self.validate(result)
         self.assertEqual(code, 0, out)
+
+    def test_result_rejects_corresponding_request_for_another_task(self):
+        request_name = "2026-11-11-other-r1-请求.md"
+        result_name = "2026-11-11-demo-r1-审查.md"
+        self.write(request_name, v2_request(request_name))
+        result = self.write(result_name, v2_result(result_name, request_name))
+        code, out = self.validate(result)
+        self.assertEqual(code, 1)
+        self.assertIn("task names do not match", out)
 
     def test_v2_result_requires_next_agent_prompt(self):
         request_name = "2026-11-11-demo-r1-请求.md"
@@ -502,6 +685,39 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(result)
         self.assertEqual(code, 1)
         self.assertIn("verdict conflicts", out)
+
+    def test_v2_finding_requires_its_own_evidence_fields(self):
+        request_name = "2026-11-11-demo-r1-请求.md"
+        result_name = "2026-11-11-demo-r1-审查.md"
+        self.write(request_name, v2_request(request_name))
+        finding = "### F1 `重要·已核实` 只有标题\n"
+        result = self.write(
+            result_name,
+            v2_result(result_name, request_name, "有条件通过", finding),
+        )
+        code, out = self.validate(result)
+        self.assertEqual(code, 1)
+        self.assertIn("F1 missing required field: position", out)
+        self.assertIn("F1 missing required field: evidence", out)
+
+    def test_v2_finding_ids_must_be_unique(self):
+        request_name = "2026-11-11-demo-r1-请求.md"
+        result_name = "2026-11-11-demo-r1-审查.md"
+        self.write(request_name, v2_request(request_name))
+        one = """### F1 `重要·已核实` 风险
+
+- 位置：`target.txt:1-1`
+- 问题：风险
+- 证据：实际内容
+- 建议动作：修正
+"""
+        result = self.write(
+            result_name,
+            v2_result(result_name, request_name, "有条件通过", one + "\n" + one),
+        )
+        code, out = self.validate(result)
+        self.assertEqual(code, 1)
+        self.assertIn("duplicate finding id: F1", out)
 
     def test_conditional_verdict_rejects_blocker(self):
         request_name = "2026-11-11-demo-r1-请求.md"
@@ -541,6 +757,79 @@ class RelayValidatorTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("verdict conflicts", out)
 
+    def test_result_with_tasks_requires_open_findings_in_task_items(self):
+        request_name = "2026-11-11-demo-r1-请求.md"
+        result_name = "2026-11-11-demo-r1-审查.md"
+        self.write(request_name, v2_request(request_name))
+        finding = """### F1 `重要·已核实` 需要落实
+
+- 位置：`target.txt:1-1`
+- 问题：存在实质风险
+- 证据：实际内容
+- 建议动作：写入任务文件
+"""
+        result = self.write(
+            result_name,
+            v2_result(result_name, request_name, "有条件通过", finding),
+        )
+        tasks = self.write(
+            "tasks/next-agent.md",
+            TASKS.replace("交接类型：continue", "交接类型：address-findings"),
+        )
+        code, out = self.validate(result, tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("F1 is not represented in the task file", out)
+
+    def test_result_tasks_reject_finding_id_from_another_round(self):
+        request_name = "2026-11-11-demo-r1-请求.md"
+        result_name = "2026-11-11-demo-r1-审查.md"
+        self.write(request_name, v2_request(request_name))
+        finding = """### F1 `重要·已核实` 需要落实
+
+- 位置：`target.txt:1-1`
+- 问题：存在实质风险
+- 证据：实际内容
+- 建议动作：写入任务文件
+"""
+        result = self.write(
+            result_name,
+            v2_result(result_name, request_name, "有条件通过", finding),
+        )
+        wrong_round_tasks = TASKS.replace(
+            "交接类型：continue",
+            "交接类型：address-findings",
+        ).replace(
+            "- [ ] T2 完成任务",
+            "- [ ] r2-F1 错误轮次",
+        )
+        tasks = self.write("tasks/next-agent.md", wrong_round_tasks)
+        code, out = self.validate(result, tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("expected r1-F1", out)
+
+    def test_completed_finding_tasks_allow_task_type_to_return_to_continue(self):
+        request_name = "2026-11-11-demo-r1-请求.md"
+        result_name = "2026-11-11-demo-r1-审查.md"
+        self.write(request_name, v2_request(request_name))
+        finding = """### F1 `重要·已核实` 已处理
+
+- 位置：`target.txt:1-1`
+- 问题：存在实质风险
+- 证据：实际内容
+- 建议动作：修正并验证
+"""
+        result = self.write(
+            result_name,
+            v2_result(result_name, request_name, "有条件通过", finding),
+        )
+        closed_tasks = TASKS.replace(
+            "- [ ] T2 完成任务",
+            "- [x] r1-F1 已修正并验证",
+        )
+        tasks = self.write("tasks/next-agent.md", closed_tasks)
+        code, out = self.validate(result, tasks)
+        self.assertEqual(code, 0, out)
+
     def test_r2_request_requires_previous_result(self):
         name = "2026-11-11-demo-r2-请求.md"
         request = self.write(name, v2_request(name, round_number=2))
@@ -558,6 +847,30 @@ class RelayValidatorTests(unittest.TestCase):
         )
         code, out = self.validate(request)
         self.assertEqual(code, 0, out)
+
+    def test_r2_request_rejects_previous_result_for_another_task(self):
+        previous_name = "2026-11-10-other-r1-审查.md"
+        self.write(previous_name, LEGACY_RESULT)
+        name = "2026-11-11-demo-r2-请求.md"
+        request = self.write(
+            name,
+            v2_request(name, round_number=2, previous=f"`{previous_name}`"),
+        )
+        code, out = self.validate(request)
+        self.assertEqual(code, 1)
+        self.assertIn("previous result must be the same task", out)
+
+    def test_r2_request_rejects_result_from_the_wrong_round(self):
+        previous_name = "2026-11-10-demo-r2-审查.md"
+        self.write(previous_name, LEGACY_RESULT)
+        name = "2026-11-11-demo-r2-请求.md"
+        request = self.write(
+            name,
+            v2_request(name, round_number=2, previous=f"`{previous_name}`"),
+        )
+        code, out = self.validate(request)
+        self.assertEqual(code, 1)
+        self.assertIn("previous result must be from round rN-1", out)
 
     def test_review_fix_rereview_loop_passes(self):
         request_name = "2026-11-10-demo-r1-请求.md"
@@ -589,6 +902,8 @@ class RelayValidatorTests(unittest.TestCase):
         )
         tasks = self.write("tasks/next-agent.md", address_tasks)
         code, out = self.validate(tasks)
+        self.assertEqual(code, 0, out)
+        code, out = self.validate(result, tasks)
         self.assertEqual(code, 0, out)
 
         next_name = "2026-11-11-demo-r2-请求.md"
