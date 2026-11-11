@@ -1,6 +1,6 @@
 interface:
   display_name: "To Another Agent"
-  short_description: "整理项目现场并无缝交接给下一位 Agent"
-  default_prompt: "使用 $to-another-agent 更新当前项目的事实记录、后续任务和远程任务状态，并生成可直接转交的接手提示词。"
+  short_description: "整理项目现场、执行独立审查并闭环处理跨 Agent 审查结果"
+  default_prompt: "使用 $to-another-agent 判断当前应继续交接、提交审查、执行审查还是处理审查结果，并生成下一位 Agent 可直接使用的提示词。"
 policy:
   allow_implicit_invocation: true

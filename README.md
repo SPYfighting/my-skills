@@ -11,11 +11,10 @@
 |---|---|
 | [`wechat-biosci-writer/`](wechat-biosci-writer/) | 将生命科学论文、技术或草稿写成「快评」或「深解」两级微信公众号文章，并生成兼容微信发布流程的完整文章包 |
 | [`novel-writing/`](novel-writing/) | 长篇网络小说创作协作，覆盖开书立纲、日更写作、剧情讨论修改、角色代入推演，并提供选题扫榜和审稿去 AI 味检查 |
-| [`cross-agent-review/`](cross-agent-review/) | 跨 agent 工作审查：请求方把刚完成的工作写成带锚点的审查请求，审查方按风险分层核对并产出分级审查结果 |
 | [`opencode/`](opencode/) | 仅在用户明确要求时，由 Codex 优先、兼容其他终端 Agent 调用本机 OpenCode，支持模型、推理强度、会话恢复和低上下文长任务管理 |
 | [`draw-complex-interactions/`](draw-complex-interactions/) | 为小分子、核酸、修饰、离子及大分子界面生成可追溯的局部二维互作图或残基网络图 |
 | [`my-academic-ppt/`](my-academic-ppt/) | My Academic PPT：制作图文充实、技术路线清晰、适合跨专业听众的科研汇报PPT，提供37页可编辑PPT参考、无视觉布局数据、讲稿与常见问题修正指南 |
-| [`to-another-agent/`](to-another-agent/) | 将项目现场、结果记录、后续任务和远程进程状态整理成可由另一位 agent 无缝接手的交接包 |
+| [`to-another-agent/`](to-another-agent/) | 统一处理跨 agent 继续交接、独立审查、审查回传与远程任务接管，并为下一角色生成可直接复制的提示词 |
 
 ## 安装
 
