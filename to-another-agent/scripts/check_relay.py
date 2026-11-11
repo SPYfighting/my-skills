@@ -9,9 +9,11 @@ Legacy review request/result files remain valid under the earlier rules.
 """
 
 import argparse
+import math
 import os
 import re
 import sys
+from datetime import datetime, timedelta
 from pathlib import Path
 
 
@@ -22,6 +24,13 @@ REVIEW_NAME_RE = re.compile(
 ANCHOR_RE = re.compile(r"`([^`\r\n]+):(\d+)(?:-(\d+))?`")
 HEADING_RE = re.compile(r"^#{1,6}\s+(.+?)\s*$")
 TASK_RE = re.compile(r"^\s*-\s*\[\s\]\s+(.+?)\s*$")
+FINE_TASK_RE = re.compile(
+    r"^-\s*\[([ xX])\]\s+(T[\w.-]+)\s+(.+?)\s*$"
+)
+FINE_STEP_RE = re.compile(
+    r"^\s+\d+\.\s*\[([ xX])\]\s+(S[\w.-]+)\s+(.+?)\s*$"
+)
+EXECUTION_REPORT_RE = re.compile(r"^###\s+(R[\w.-]+)\s*$")
 FINDING_HEADER_RE = re.compile(
     r"^###\s+(F\d+)\s+`(阻断|重要|可选)·(已核实|存疑)`(?:\s+.+)?$"
 )
@@ -111,6 +120,34 @@ EXPECTED_TYPES = {
     "task": {"continue", "address-findings"},
     "request": {"review-request"},
     "result": {"review-result"},
+}
+NEXT_ROLES = {"工作方", "审查方", "监控方", "执行方", "规划方", "验收方"}
+OUTPUT_LABELS = {
+    "执行策略": "execution strategy",
+    "下一角色": "next role",
+    "结束时间": "ending time",
+    "收尾开始": "wrap-up time",
+    "接手时间": "takeover time",
+    "收尾策略": "wrap-up strategy",
+    "目标": "objective",
+    "输入": "input",
+    "输出": "output",
+    "完成判据": "completion criterion",
+    "默认回退": "default fallback",
+    "回报节点": "report milestone",
+    "操作": "operation",
+    "核验": "verification",
+    "通过条件": "pass condition",
+    "未通过动作": "failure action",
+    "预计耗时": "estimated duration",
+    "证据": "evidence",
+    "时间": "time",
+    "状态": "status",
+    "完成步骤": "completed steps",
+    "关键结果": "key result",
+    "核验证据": "verification evidence",
+    "剩余事项": "remaining work",
+    "建议下一角色": "suggested next role",
 }
 MAX_OPTIONAL = 5
 
@@ -350,6 +387,14 @@ def check_next_prompt(text, sections, kind, path, report):
     role_word = {"request": "审查方", "result": "工作方"}.get(kind)
     if role_word and role_word not in body:
         report.fail("next-agent prompt does not name the required role")
+    declared_role = plain_value(metadata_value(text, "下一角色"))
+    if declared_role:
+        if declared_role not in NEXT_ROLES:
+            report.fail("invalid declared next role")
+        elif declared_role not in body:
+            report.fail("next-agent prompt does not name declared role")
+        if body.count("$to-another-agent") < 2:
+            report.fail("next-agent prompt does not require relay callback")
     report.ok("next-agent prompt contract examined")
 
 
@@ -374,6 +419,70 @@ def is_none_value(value):
         "n/a",
         "not applicable",
     }
+
+
+def parse_aware_time(value, key, report):
+    raw = plain_value(value)
+    try:
+        parsed = datetime.fromisoformat(raw)
+    except (TypeError, ValueError):
+        report.fail(key + " must be an ISO 8601 absolute time")
+        return None
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        report.fail(key + " must include a timezone")
+        return None
+    return parsed
+
+
+def calculate_auto_wrapup(takeover, ending):
+    remaining_minutes = (ending - takeover).total_seconds() / 60
+    if remaining_minutes < 10:
+        return takeover
+    reserve_minutes = max(10, min(30, math.ceil(remaining_minutes * 0.20)))
+    return ending - timedelta(minutes=reserve_minutes)
+
+
+def check_deadline_metadata(text, report):
+    ending_value = metadata_value(text, "结束时间")
+    if ending_value is None or is_none_value(ending_value):
+        wrapup_value = metadata_value(text, "收尾开始")
+        if wrapup_value is not None and not is_none_value(wrapup_value):
+            report.fail("wrap-up time is set while ending time is none")
+        return False
+
+    values = {
+        key: metadata_value(text, key)
+        for key in ("接手时间", "结束时间", "收尾开始", "收尾策略")
+    }
+    for key, value in values.items():
+        if not value:
+            report.fail("deadline mode missing metadata: " + OUTPUT_LABELS[key])
+    takeover = (
+        parse_aware_time(values["接手时间"], "takeover time", report)
+        if values["接手时间"]
+        else None
+    )
+    ending = parse_aware_time(values["结束时间"], "ending time", report)
+    wrapup = (
+        parse_aware_time(values["收尾开始"], "wrap-up time", report)
+        if values["收尾开始"]
+        else None
+    )
+    strategy = plain_value(values["收尾策略"])
+    if strategy and strategy not in {"auto", "user-specified"}:
+        report.fail("invalid wrap-up strategy")
+    if takeover and ending and ending <= takeover:
+        report.fail("ending time must be after takeover time")
+    if takeover and wrapup and wrapup < takeover:
+        report.fail("wrap-up time must not precede takeover time")
+    if wrapup and ending and wrapup >= ending:
+        report.fail("wrap-up time must be earlier than ending time")
+    if takeover and ending and wrapup and strategy == "auto":
+        expected = calculate_auto_wrapup(takeover, ending)
+        if wrapup != expected:
+            report.fail("auto wrap-up time does not match the adaptive formula")
+    report.ok("deadline and wrap-up metadata examined")
+    return True
 
 
 def check_handoff_prompt_state(text, sections, workspace, report):
@@ -417,6 +526,7 @@ def check_handoff(text, sections, path, workspace, report):
     check_next_prompt(text, sections, "handoff", path, report)
     check_remote_section(text, report)
     check_handoff_prompt_state(text, sections, workspace, report)
+    check_deadline_metadata(text, report)
 
 
 def task_blocks(text):
@@ -432,6 +542,278 @@ def task_blocks(text):
     for index, (start, section) in enumerate(starts):
         end = starts[index + 1][0] if index + 1 < len(starts) else len(lines)
         yield section, lines[start + 1:end]
+
+
+def fine_task_blocks(text):
+    """Yield top-level fine tasks without confusing their numbered steps."""
+    lines = text.splitlines()
+    starts = []
+    current_heading = ""
+    for index, line in enumerate(lines):
+        heading = HEADING_RE.match(line)
+        if heading:
+            current_heading = heading.group(1)
+        match = FINE_TASK_RE.match(line)
+        if match:
+            starts.append((index, current_heading, match))
+    for index, (start, section, match) in enumerate(starts):
+        next_task = starts[index + 1][0] if index + 1 < len(starts) else len(lines)
+        next_section = next(
+            (
+                candidate
+                for candidate in range(start + 1, len(lines))
+                if re.match(r"^##\s+", lines[candidate])
+            ),
+            len(lines),
+        )
+        end = min(next_task, next_section)
+        yield {
+            "section": section,
+            "completed": match.group(1).lower() == "x",
+            "id": match.group(2),
+            "title": match.group(3),
+            "lines": lines[start + 1:end],
+        }
+
+
+def fine_steps(lines):
+    starts = []
+    for index, line in enumerate(lines):
+        match = FINE_STEP_RE.match(line)
+        if match:
+            starts.append((index, match))
+    for index, (start, match) in enumerate(starts):
+        end = starts[index + 1][0] if index + 1 < len(starts) else len(lines)
+        yield {
+            "completed": match.group(1).lower() == "x",
+            "id": match.group(2),
+            "title": match.group(3),
+            "body": "\n".join(lines[start + 1:end]),
+        }
+
+
+def list_field(text, key):
+    match = re.search(
+        r"^\s*-\s*" + re.escape(key) + r"\s*[：:]\s*(\S.*)$",
+        text,
+        re.M,
+    )
+    return match.group(1).strip() if match else None
+
+
+def execution_reports(text, report):
+    body = level2_section(text, "执行回报").strip()
+    if not body or body in {"无", "无。"}:
+        return []
+    lines = body.splitlines()
+    starts = []
+    for index, line in enumerate(lines):
+        match = EXECUTION_REPORT_RE.match(line)
+        if match:
+            starts.append((index, match.group(1)))
+    if not starts:
+        report.fail("execution-report section needs an R-prefixed level-3 heading")
+        return []
+    records = []
+    seen = set()
+    required = (
+        "时间",
+        "状态",
+        "完成步骤",
+        "关键结果",
+        "核验证据",
+        "剩余事项",
+        "建议下一角色",
+    )
+    allowed_status = {
+        "milestone",
+        "complete",
+        "blocked",
+        "deadline-handoff",
+        "remote-running",
+    }
+    for index, (start, report_id) in enumerate(starts):
+        end = starts[index + 1][0] if index + 1 < len(starts) else len(lines)
+        record_body = "\n".join(lines[start + 1:end])
+        if report_id in seen:
+            report.fail("duplicate execution report id: " + report_id)
+        seen.add(report_id)
+        values = {field: list_field(record_body, field) for field in required}
+        for field, value in values.items():
+            if not value:
+                report.fail(
+                    "execution report "
+                    + report_id
+                    + " missing field: "
+                    + OUTPUT_LABELS[field]
+                )
+        if values["状态"] and plain_value(values["状态"]) not in allowed_status:
+            report.fail("execution report " + report_id + " has invalid status")
+        if values["时间"]:
+            parse_aware_time(
+                values["时间"], "execution report " + report_id + " time", report
+            )
+        role = plain_value(values["建议下一角色"])
+        if role and role not in NEXT_ROLES:
+            report.fail("execution report " + report_id + " has invalid next role")
+        records.append({"id": report_id, **values})
+    report.ok(str(len(records)) + " execution report(s) examined")
+    return records
+
+
+def is_placeholder_evidence(value):
+    return plain_value(value or "").rstrip("。.").lower() in {
+        "",
+        "无",
+        "待执行",
+        "待补",
+        "pending",
+        "todo",
+        "n/a",
+    }
+
+
+def check_fine_task(text, report):
+    required_metadata = {
+        "执行策略": "persistent",
+        "下一角色": None,
+        "结束时间": None,
+        "收尾开始": None,
+    }
+    for key, expected in required_metadata.items():
+        value = plain_value(metadata_value(text, key))
+        if not value:
+            report.fail("fine task missing metadata: " + OUTPUT_LABELS[key])
+        elif expected and value != expected:
+            report.fail("fine task has invalid " + OUTPUT_LABELS[key])
+    role = plain_value(metadata_value(text, "下一角色"))
+    if role and role not in NEXT_ROLES:
+        report.fail("fine task has invalid next role")
+
+    if not level2_section(text, "执行回报"):
+        report.fail("fine task file missing execution-report section")
+    reports = execution_reports(text, report)
+    if reports and role:
+        latest_role = plain_value(reports[-1].get("建议下一角色"))
+        if latest_role and latest_role != role:
+            report.fail("latest execution-report role differs from task next role")
+    tasks = list(fine_task_blocks(text))
+    if not tasks:
+        report.fail("fine task file contains no top-level task")
+        return
+    task_fields = ("目标", "输入", "输出", "完成判据", "默认回退", "回报节点")
+    step_fields = ("操作", "核验", "通过条件", "未通过动作", "证据")
+    ending_value = metadata_value(text, "结束时间")
+    deadline_active = ending_value is not None and not is_none_value(ending_value)
+    step_count = 0
+    seen_steps = set()
+    for task in tasks:
+        task_text = "\n".join(task["lines"])
+        for field in task_fields:
+            if not list_field(task_text, field):
+                report.fail(
+                    "fine task "
+                    + task["id"]
+                    + " missing field: "
+                    + OUTPUT_LABELS[field]
+                )
+        steps = list(fine_steps(task["lines"]))
+        if not steps:
+            report.fail("fine task " + task["id"] + " contains no execution step")
+        for step in steps:
+            step_count += 1
+            if step["id"] in seen_steps:
+                report.fail("duplicate fine step id: " + step["id"])
+            seen_steps.add(step["id"])
+            for field in step_fields:
+                if not list_field(step["body"], field):
+                    report.fail(
+                        "fine step "
+                        + step["id"]
+                        + " missing field: "
+                        + OUTPUT_LABELS[field]
+                    )
+            if deadline_active and not list_field(step["body"], "预计耗时"):
+                report.fail(
+                    "fine step "
+                    + step["id"]
+                    + " missing field: estimated duration"
+                )
+            failure_action = list_field(step["body"], "未通过动作") or ""
+            repair = "修复" in failure_action or re.search(r"\brepair\b", failure_action, re.I)
+            reverify = "重验" in failure_action or re.search(
+                r"\bre-?verif(?:y|ication)\b", failure_action, re.I
+            )
+            if failure_action and not (repair and reverify):
+                report.fail(
+                    "fine step "
+                    + step["id"]
+                    + " failure action must require repair and reverification"
+                )
+            evidence = list_field(step["body"], "证据")
+            if step["completed"] and is_placeholder_evidence(evidence):
+                report.fail(
+                    "completed fine step "
+                    + step["id"]
+                    + " has placeholder evidence"
+                )
+        if task["completed"] and any(not step["completed"] for step in steps):
+            report.fail(
+                "completed fine task " + task["id"] + " has unfinished steps"
+            )
+        if task["completed"] and not any(
+            plain_value(record.get("状态")) == "complete" for record in reports
+        ):
+            report.fail(
+                "completed fine task " + task["id"] + " has no completion report"
+            )
+        if task["completed"]:
+            completion_reports = [
+                record
+                for record in reports
+                if plain_value(record.get("状态")) == "complete"
+            ]
+            for step in steps:
+                if not any(
+                    re.search(
+                        r"(?<![A-Za-z0-9])"
+                        + re.escape(step["id"])
+                        + r"(?![A-Za-z0-9])",
+                        record.get("完成步骤") or "",
+                    )
+                    for record in completion_reports
+                ):
+                    report.fail(
+                        "completion report does not cover step " + step["id"]
+                    )
+        milestone_value = list_field(task_text, "回报节点") or ""
+        milestone_ids = set(re.findall(r"\bS[\w.-]+\b", milestone_value))
+        if not milestone_ids:
+            report.fail("fine task " + task["id"] + " needs at least one report milestone")
+        known_step_ids = {step["id"] for step in steps}
+        for milestone_id in sorted(milestone_ids - known_step_ids):
+            report.fail("unknown report milestone " + milestone_id)
+        completed_milestones = {
+            step["id"]
+            for step in steps
+            if step["completed"] and step["id"] in milestone_ids
+        }
+        for milestone_id in sorted(completed_milestones):
+            if not any(
+                re.search(
+                    r"(?<![A-Za-z0-9])"
+                    + re.escape(milestone_id)
+                    + r"(?![A-Za-z0-9])",
+                    record.get("完成步骤") or "",
+                )
+                for record in reports
+            ):
+                report.fail(
+                    "milestone " + milestone_id + " has no execution report"
+                )
+    report.ok(
+        str(len(tasks)) + " fine task(s) and " + str(step_count) + " step(s) examined"
+    )
 
 
 def check_task(text, sections, report):
@@ -450,6 +832,12 @@ def check_task(text, sections, report):
         report.ok(str(total) + " unchecked task(s) examined")
     else:
         report.warn("task file contains no unchecked tasks")
+    granularity = plain_value(metadata_value(text, "任务粒度"))
+    if granularity == "fine":
+        check_fine_task(text, report)
+    elif granularity:
+        report.fail("unsupported task granularity")
+    check_deadline_metadata(text, report)
 
 
 def check_remote_section(text, report):
@@ -860,6 +1248,38 @@ def check_handoff_task_argument(handoff_path, task_path, workspace, report):
         report.ok("--tasks matches the handoff follow-up task")
 
 
+def check_handoff_task_contract(handoff_path, task_path, report):
+    try:
+        handoff_text = handoff_path.read_text(encoding="utf-8")
+        task_text = task_path.read_text(encoding="utf-8")
+    except OSError as exc:
+        report.fail("cannot compare handoff and task contract: " + str(exc))
+        return
+    handoff_role = plain_value(metadata_value(handoff_text, "下一角色"))
+    task_role = plain_value(metadata_value(task_text, "下一角色"))
+    if (handoff_role or task_role) and handoff_role != task_role:
+        report.fail("next role differs between handoff and task")
+
+    handoff_end = metadata_value(handoff_text, "结束时间")
+    task_end = metadata_value(task_text, "结束时间")
+    deadline_active = any(
+        value is not None and not is_none_value(value)
+        for value in (handoff_end, task_end)
+    )
+    if deadline_active:
+        if not handoff_end or not task_end:
+            report.fail("deadline must be recorded in both handoff and task")
+        elif plain_value(handoff_end) != plain_value(task_end):
+            report.fail("ending time differs between handoff and task")
+        handoff_wrapup = metadata_value(handoff_text, "收尾开始")
+        task_wrapup = metadata_value(task_text, "收尾开始")
+        if not handoff_wrapup or not task_wrapup:
+            report.fail("wrap-up time must be recorded in both handoff and task")
+        elif plain_value(handoff_wrapup) != plain_value(task_wrapup):
+            report.fail("wrap-up time differs between handoff and task")
+    report.ok("handoff and task relay contract compared")
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("document", help="handoff, task, review request, or review result")
@@ -896,6 +1316,7 @@ def main(argv=None):
         check_result_task_coverage(document, task_path, report)
     if document_kind == "handoff" and task_kind == "task":
         check_handoff_task_argument(document, task_path, workspace, report)
+        check_handoff_task_contract(document, task_path, report)
 
     print("")
     print("FAILED" if report.failed else "PASSED")

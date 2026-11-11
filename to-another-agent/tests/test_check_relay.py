@@ -6,6 +6,7 @@ import os
 import tempfile
 import unittest
 from contextlib import redirect_stdout
+from datetime import datetime
 from pathlib import Path
 
 
@@ -74,6 +75,83 @@ TASKS = """# 下一位 agent 任务
 
 无。
 """
+
+FINE_TASKS = """# 下一位 agent 任务
+
+- 协议：to-another-agent/v2
+- 交接类型：continue
+- 任务粒度：fine
+- 执行策略：persistent
+- 下一角色：执行方
+- 结束时间：无
+- 收尾开始：无
+
+## 接手先验收
+
+无。
+
+## 待执行
+
+- [ ] T1 完成交付
+  - 目标：产生可核验结果
+  - 输入：`target.txt`
+  - 输出：`output.txt`
+  - 完成判据：两个步骤均通过
+  - 默认回退：保留现有路线，修复后重验
+  - 回报节点：S2
+  - 执行步骤：
+    1. [ ] S1 检查输入
+       - 操作：读取 `target.txt`
+       - 核验：确认文件包含三行
+       - 通过条件：读取成功且恰有三行
+       - 未通过动作：修复路径后重验；无法访问时交接
+       - 证据：待执行
+    2. [ ] S2 生成输出
+       - 操作：根据输入生成 `output.txt`
+       - 核验：读取 `output.txt`
+       - 通过条件：文件存在且非空
+       - 未通过动作：修复生成逻辑并重验；触发终止条件时交接
+       - 证据：待执行
+
+## 受阻
+
+无。
+
+## 执行回报
+
+无。
+"""
+
+
+def deadline_fine_tasks():
+    return (
+        FINE_TASKS.replace(
+            "- 结束时间：无\n- 收尾开始：无",
+            "- 接手时间：2026-11-11T12:00:00+08:00\n"
+            "- 结束时间：2026-11-11T13:00:00+08:00\n"
+            "- 收尾开始：2026-11-11T12:48:00+08:00\n"
+            "- 收尾策略：auto",
+        )
+        .replace(
+            "       - 证据：待执行",
+            "       - 预计耗时：10 分钟\n       - 证据：待执行",
+        )
+    )
+
+
+def deadline_handoff():
+    return HANDOFF.replace(
+        "- 后续任务：`tasks/next-agent.md`",
+        "- 后续任务：`tasks/next-agent.md`\n"
+        "- 下一角色：执行方\n"
+        "- 接手时间：2026-11-11T12:00:00+08:00\n"
+        "- 结束时间：2026-11-11T13:00:00+08:00\n"
+        "- 收尾开始：2026-11-11T12:48:00+08:00\n"
+        "- 收尾策略：auto",
+    ).replace(
+        "> 请使用 `$to-another-agent` 接手当前项目。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，然后继续。",
+        "> 请使用 `$to-another-agent` 以执行方身份接手。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，先核验现场并持续执行；完成、达到回报节点、实质受阻或到达收尾开始时，再次使用 `$to-another-agent` 更新记录并回报。",
+    )
 
 LEGACY_REQUEST = """# 审查请求：demo r1
 
@@ -322,6 +400,18 @@ class RelayValidatorTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("referenced follow-up task file is missing", out)
 
+    def test_declared_next_role_requires_role_and_callback_in_prompt(self):
+        self.write("tasks/next-agent.md", TASKS)
+        body = HANDOFF.replace(
+            "- 后续任务：`tasks/next-agent.md`",
+            "- 后续任务：`tasks/next-agent.md`\n- 下一角色：执行方",
+        )
+        handoff = self.write("AGENT_HANDOFF.md", body)
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 1)
+        self.assertIn("next-agent prompt does not name declared role", out)
+        self.assertIn("next-agent prompt does not require relay callback", out)
+
     def test_unchecked_task_requires_completion_criterion(self):
         broken = TASKS.replace("  - 完成判据：产物存在且可读\n", "")
         tasks = self.write("tasks/next-agent.md", broken)
@@ -342,6 +432,310 @@ class RelayValidatorTests(unittest.TestCase):
             TASKS.replace("交接类型：continue", "交接类型：address-findings"),
         )
         code, out = self.validate(tasks)
+        self.assertEqual(code, 0, out)
+
+    def test_valid_fine_task_passes(self):
+        tasks = self.write("tasks/next-agent.md", FINE_TASKS)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 0, out)
+
+    def test_fine_step_requires_each_execution_field(self):
+        fields = ("操作", "核验", "通过条件", "未通过动作", "证据")
+        for field in fields:
+            with self.subTest(field=field):
+                broken = FINE_TASKS.replace(
+                    f"       - {field}：", f"       - 已移除{field}：", 1
+                )
+                tasks = self.write("tasks/next-agent.md", broken)
+                code, out = self.validate(tasks)
+                self.assertEqual(code, 1, out)
+                self.assertIn("fine step S1 missing field", out)
+
+    def test_fine_failure_action_requires_repair_and_reverification(self):
+        broken = FINE_TASKS.replace(
+            "修复路径后重验；无法访问时交接", "失败后记录并交接"
+        )
+        tasks = self.write("tasks/next-agent.md", broken)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("must require repair and reverification", out)
+
+    def test_fine_report_milestones_must_name_known_steps(self):
+        for value, expected in (
+            ("无", "needs at least one report milestone"),
+            ("S9", "unknown report milestone S9"),
+        ):
+            with self.subTest(value=value):
+                broken = FINE_TASKS.replace("- 回报节点：S2", "- 回报节点：" + value)
+                tasks = self.write("tasks/next-agent.md", broken)
+                code, out = self.validate(tasks)
+                self.assertEqual(code, 1)
+                self.assertIn(expected, out)
+
+    def test_completed_fine_step_requires_actual_evidence(self):
+        broken = FINE_TASKS.replace("1. [ ] S1", "1. [x] S1")
+        tasks = self.write("tasks/next-agent.md", broken)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("completed fine step S1 has placeholder evidence", out)
+
+    def test_completed_fine_task_requires_all_steps_complete(self):
+        broken = FINE_TASKS.replace("- [ ] T1", "- [x] T1")
+        tasks = self.write("tasks/next-agent.md", broken)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("completed fine task T1 has unfinished steps", out)
+
+    def test_reached_milestone_requires_execution_report(self):
+        broken = FINE_TASKS.replace("2. [ ] S2", "2. [x] S2").replace(
+            "- 证据：待执行", "- 证据：检查记录位于 `target.txt:1`"
+        )
+        tasks = self.write("tasks/next-agent.md", broken)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("milestone S2 has no execution report", out)
+
+    def test_completed_fine_task_with_report_passes(self):
+        report = """### R1
+- 时间：2026-11-11T13:00:00+08:00
+- 状态：complete
+- 完成步骤：S1, S2
+- 关键结果：输出已经生成
+- 核验证据：`target.txt:1-3`
+- 剩余事项：无
+- 建议下一角色：验收方
+"""
+        completed = (
+            FINE_TASKS.replace("- [ ] T1", "- [x] T1")
+            .replace("- 下一角色：执行方", "- 下一角色：验收方")
+            .replace("1. [ ] S1", "1. [x] S1")
+            .replace("2. [ ] S2", "2. [x] S2")
+            .replace("- 证据：待执行", "- 证据：已核验 `target.txt:1-3`")
+            .replace("## 执行回报\n\n无。", "## 执行回报\n\n" + report)
+        )
+        tasks = self.write("tasks/next-agent.md", completed)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 0, out)
+
+    def test_execution_report_requires_each_receipt_field(self):
+        completed = (
+            FINE_TASKS.replace("- [ ] T1", "- [x] T1")
+            .replace("- 下一角色：执行方", "- 下一角色：验收方")
+            .replace("1. [ ] S1", "1. [x] S1")
+            .replace("2. [ ] S2", "2. [x] S2")
+            .replace("- 证据：待执行", "- 证据：已核验 `target.txt:1-3`")
+            .replace(
+                "## 执行回报\n\n无。",
+                """## 执行回报
+
+### R1
+- 时间：2026-11-11T13:00:00+08:00
+- 状态：complete
+- 完成步骤：S1, S2
+- 关键结果：输出已经生成
+- 剩余事项：无
+- 建议下一角色：验收方
+""",
+            )
+        )
+        tasks = self.write("tasks/next-agent.md", completed)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("execution report R1 missing field", out)
+
+    def test_execution_report_time_requires_timezone(self):
+        report = """### R1
+- 时间：2026-11-11T13:00:00
+- 状态：milestone
+- 完成步骤：S2
+- 关键结果：输出已经生成
+- 核验证据：`target.txt:1-3`
+- 剩余事项：S1
+- 建议下一角色：执行方
+"""
+        body = (
+            FINE_TASKS.replace("2. [ ] S2", "2. [x] S2")
+            .replace("- 证据：待执行", "- 证据：已核验 `target.txt:1-3`")
+            .replace("## 执行回报\n\n无。", "## 执行回报\n\n" + report)
+        )
+        tasks = self.write("tasks/next-agent.md", body)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("execution report R1 time must include a timezone", out)
+
+    def test_completion_report_must_cover_every_completed_task_step(self):
+        report = """### R1
+- 时间：2026-11-11T13:00:00+08:00
+- 状态：complete
+- 完成步骤：S2
+- 关键结果：输出已经生成
+- 核验证据：`target.txt:1-3`
+- 剩余事项：无
+- 建议下一角色：验收方
+"""
+        body = (
+            FINE_TASKS.replace("- [ ] T1", "- [x] T1")
+            .replace("- 下一角色：执行方", "- 下一角色：验收方")
+            .replace("1. [ ] S1", "1. [x] S1")
+            .replace("2. [ ] S2", "2. [x] S2")
+            .replace("- 证据：待执行", "- 证据：已核验 `target.txt:1-3`")
+            .replace("## 执行回报\n\n无。", "## 执行回报\n\n" + report)
+        )
+        tasks = self.write("tasks/next-agent.md", body)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("completion report does not cover step S1", out)
+
+    def test_latest_execution_report_role_must_match_task(self):
+        report = """### R1
+- 时间：2026-11-11T13:00:00+08:00
+- 状态：milestone
+- 完成步骤：S2
+- 关键结果：输出已经生成
+- 核验证据：`target.txt:1-3`
+- 剩余事项：S1
+- 建议下一角色：监控方
+"""
+        body = (
+            FINE_TASKS.replace("2. [ ] S2", "2. [x] S2")
+            .replace("- 证据：待执行", "- 证据：已核验 `target.txt:1-3`")
+            .replace("## 执行回报\n\n无。", "## 执行回报\n\n" + report)
+        )
+        tasks = self.write("tasks/next-agent.md", body)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("latest execution-report role differs from task", out)
+
+    def test_valid_deadline_fine_task_passes(self):
+        tasks = self.write("tasks/next-agent.md", deadline_fine_tasks())
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 0, out)
+
+    def test_deadline_requires_timezone_and_each_step_duration(self):
+        no_timezone = deadline_fine_tasks().replace(
+            "2026-11-11T13:00:00+08:00", "2026-11-11T13:00:00"
+        )
+        tasks = self.write("tasks/next-agent.md", no_timezone)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("ending time must include a timezone", out)
+
+        no_duration = deadline_fine_tasks().replace(
+            "       - 预计耗时：10 分钟\n", "", 1
+        )
+        tasks = self.write("tasks/next-agent.md", no_duration)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("fine step S1 missing field: estimated duration", out)
+
+    def test_auto_wrapup_uses_ratio_bounds_and_immediate_boundary(self):
+        cases = (
+            (30, "2026-11-11T12:20:00+08:00"),
+            (60, "2026-11-11T12:48:00+08:00"),
+            (240, "2026-11-11T15:30:00+08:00"),
+            (9, "2026-11-11T12:00:00+08:00"),
+        )
+        start = datetime.fromisoformat("2026-11-11T12:00:00+08:00")
+        for minutes, expected in cases:
+            with self.subTest(minutes=minutes):
+                end = start + CHECKER.timedelta(minutes=minutes)
+                actual = CHECKER.calculate_auto_wrapup(start, end)
+                self.assertEqual(actual.isoformat(), expected)
+
+    def test_relative_deadline_must_be_converted_to_absolute_time(self):
+        broken = deadline_fine_tasks().replace(
+            "2026-11-11T13:00:00+08:00", "60 分钟后"
+        )
+        tasks = self.write("tasks/next-agent.md", broken)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("ending time must be an ISO 8601 absolute time", out)
+
+    def test_auto_wrapup_metadata_must_match_formula(self):
+        broken = deadline_fine_tasks().replace(
+            "2026-11-11T12:48:00+08:00", "2026-11-11T12:45:00+08:00"
+        )
+        tasks = self.write("tasks/next-agent.md", broken)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("auto wrap-up time does not match", out)
+
+    def test_user_specified_wrapup_is_valid_when_ordered(self):
+        body = deadline_fine_tasks().replace(
+            "- 收尾开始：2026-11-11T12:48:00+08:00\n- 收尾策略：auto",
+            "- 收尾开始：2026-11-11T12:40:00+08:00\n"
+            "- 收尾策略：user-specified",
+        )
+        tasks = self.write("tasks/next-agent.md", body)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 0, out)
+
+    def test_handoff_and_task_deadline_and_role_must_match(self):
+        handoff = self.write("AGENT_HANDOFF.md", deadline_handoff())
+        tasks = self.write("tasks/next-agent.md", deadline_fine_tasks())
+        code, out = self.validate(handoff, tasks)
+        self.assertEqual(code, 0, out)
+
+        role_mismatch = deadline_fine_tasks().replace(
+            "- 下一角色：执行方", "- 下一角色：监控方"
+        )
+        tasks = self.write("tasks/next-agent.md", role_mismatch)
+        code, out = self.validate(handoff, tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("next role differs between handoff and task", out)
+
+        time_mismatch = deadline_fine_tasks().replace(
+            "2026-11-11T13:00:00+08:00", "2026-11-11T13:30:00+08:00"
+        ).replace(
+            "2026-11-11T12:48:00+08:00", "2026-11-11T13:12:00+08:00"
+        )
+        tasks = self.write("tasks/next-agent.md", time_mismatch)
+        code, out = self.validate(handoff, tasks)
+        self.assertEqual(code, 1)
+        self.assertIn("ending time differs between handoff and task", out)
+
+    def test_all_six_next_roles_are_accepted_with_callback(self):
+        self.write("tasks/next-agent.md", TASKS)
+        roles = ("工作方", "审查方", "监控方", "执行方", "规划方", "验收方")
+        for role in roles:
+            with self.subTest(role=role):
+                body = HANDOFF.replace(
+                    "- 后续任务：`tasks/next-agent.md`",
+                    "- 后续任务：`tasks/next-agent.md`\n- 下一角色：" + role,
+                ).replace(
+                    "请使用 `$to-another-agent` 接手当前项目。",
+                    "请使用 `$to-another-agent` 以" + role + "身份接手当前项目。",
+                ).replace(
+                    "，然后继续。",
+                    "；完成或受阻时再次使用 `$to-another-agent` 回报。",
+                )
+                handoff = self.write("AGENT_HANDOFF.md", body)
+                code, out = self.validate(handoff)
+                self.assertEqual(code, 0, out)
+
+    def test_deadline_handoff_can_leave_remote_task_running_for_monitor(self):
+        active = """### 长任务
+- 任务标识：job-42
+- 当前状态：运行
+- 最近核查：2026-11-11T12:48:00+08:00
+- 日志或输出：logs/job-42.log
+- 监控方式：只读查询任务状态
+- 接管动作：读取最新日志并确认进程仍运行
+- 停止条件：正常完成、失败或用户要求停止
+"""
+        handoff_body = (
+            deadline_handoff()
+            .replace("- 下一角色：执行方", "- 下一角色：监控方")
+            .replace("无活动远程任务。", active)
+            .replace("以执行方身份", "以监控方身份")
+            .replace("先核验现场并持续执行", "先只读检查远程任务状态并接管监控")
+        )
+        task_body = deadline_fine_tasks().replace(
+            "- 下一角色：执行方", "- 下一角色：监控方"
+        )
+        handoff = self.write("AGENT_HANDOFF.md", handoff_body)
+        tasks = self.write("tasks/next-agent.md", task_body)
+        code, out = self.validate(handoff, tasks)
         self.assertEqual(code, 0, out)
 
     def test_recognized_secret_is_rejected(self):
