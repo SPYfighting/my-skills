@@ -396,6 +396,58 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(handoff, tasks)
         self.assertEqual(code, 0, out)
 
+    def test_project_native_handoff_and_task_paths_pass_without_reformatting_task(self):
+        native_task_path = "Task/继续优化方案.md"
+        body = HANDOFF.replace("AGENT_HANDOFF.md", "HANDOFF.md").replace(
+            "tasks/next-agent.md", native_task_path
+        )
+        handoff = self.write("HANDOFF.md", body)
+        tasks = self.write(
+            native_task_path,
+            (
+                "# 继续优化方案\n\n"
+                "这是项目原生任务文档，不采用 relay task 模板。\n\n"
+                "## 接手先核对\n\n按项目规则检查。\n\n"
+                "## 待执行\n\n继续既有方案。\n\n"
+                "## 受阻\n\n无。\n"
+            ),
+        )
+
+        code, out = self.validate(handoff, tasks)
+
+        self.assertEqual(code, 0, out)
+        self.assertIn("project-native task file", out)
+
+    def test_project_native_task_argument_still_must_match_handoff(self):
+        native_task_path = "Task/继续优化方案.md"
+        body = HANDOFF.replace("AGENT_HANDOFF.md", "HANDOFF.md").replace(
+            "tasks/next-agent.md", native_task_path
+        )
+        handoff = self.write("HANDOFF.md", body)
+        self.write(native_task_path, "# 继续优化方案\n")
+        other = self.write("Task/另一个任务.md", "# 另一个任务\n")
+
+        code, out = self.validate(handoff, other)
+
+        self.assertEqual(code, 1)
+        self.assertIn("--tasks does not match handoff follow-up task", out)
+
+    def test_project_native_task_is_still_checked_for_credentials(self):
+        native_task_path = "Task/继续优化方案.md"
+        body = HANDOFF.replace("AGENT_HANDOFF.md", "HANDOFF.md").replace(
+            "tasks/next-agent.md", native_task_path
+        )
+        handoff = self.write("HANDOFF.md", body)
+        tasks = self.write(
+            native_task_path,
+            "# 继续优化方案\n\n临时值：ghp_abcdefghijklmnopqrstuvwxyz123456\n",
+        )
+
+        code, out = self.validate(handoff, tasks)
+
+        self.assertEqual(code, 1)
+        self.assertIn("credential or private key", out)
+
     def test_new_takeover_check_heading_and_field_pass(self):
         body = TASKS.replace("接手先验收", "接手先核对").replace(
             "验收动作", "核对动作"

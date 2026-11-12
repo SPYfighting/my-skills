@@ -14,7 +14,7 @@
 | [`opencode/`](opencode/) | 仅在用户明确要求时，由 Codex 优先、兼容其他终端 Agent 调用本机 OpenCode，支持模型、推理强度、会话恢复和低上下文长任务管理 |
 | [`draw-complex-interactions/`](draw-complex-interactions/) | 为小分子、核酸、修饰、离子及大分子界面生成可追溯的局部二维互作图或残基网络图 |
 | [`my-academic-ppt/`](my-academic-ppt/) | My Academic PPT：制作图文充实、技术路线清晰、适合跨专业听众的科研汇报PPT，提供37页可编辑PPT参考、无视觉布局数据、讲稿与常见问题修正指南 |
-| [`to-another-agent/`](to-another-agent/) | 标准化跨 agent 的项目接手、继续交接和独立审查，更新项目记录并生成可复制的下一位 agent 提示词 |
+| [`to-another-agent/`](to-another-agent/) | 标准化跨 agent 的项目接手、继续交接和独立审查，复用项目原生 handoff/task 结构并生成可复制提示词 |
 
 ## 安装
 

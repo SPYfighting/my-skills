@@ -6,6 +6,7 @@ Usage:
 
 Documents marked ``to-another-agent/v2`` use the closed-loop contract.
 Legacy review request/result files remain valid under the earlier rules.
+An optional ``--tasks`` path may use the project's native task schema.
 """
 
 import argparse
@@ -346,9 +347,9 @@ def has_v2_signals(text):
 
 
 def detect_kind(path, text):
-    if path.name == "AGENT_HANDOFF.md":
+    if path.name.casefold() in {"handoff.md", "agent_handoff.md"}:
         return "handoff"
-    if path.name == "next-agent.md":
+    if path.name.casefold() == "next-agent.md":
         return "task"
     match = REVIEW_NAME_RE.match(path.name)
     if match:
@@ -390,17 +391,21 @@ def without_fenced_code(text):
     return "\n".join(kept)
 
 
+def check_credentials(text, label, report):
+    for pattern in SECRET_PATTERNS:
+        if pattern.search(text):
+            report.fail(label + " appears to contain a credential or private key")
+            return
+    report.ok(label + " has no recognized credential pattern")
+
+
 def check_common(text, label, report):
     placeholders = sorted(set(PLACEHOLDER_RE.findall(without_fenced_code(text))))
     if placeholders:
         report.fail(label + " contains unfilled template placeholder(s)")
     else:
         report.ok(label + " has no template placeholders")
-    for pattern in SECRET_PATTERNS:
-        if pattern.search(text):
-            report.fail(label + " appears to contain a credential or private key")
-            return
-    report.ok(label + " has no recognized credential pattern")
+    check_credentials(text, label, report)
 
 
 def check_anchors(text, workspace, report):
@@ -1241,6 +1246,25 @@ def validate_document(path, workspace, report):
     return kind
 
 
+def validate_task_argument(path, workspace, report):
+    """Validate relay tasks, but only link-check project-native task files.
+
+    ``--tasks`` identifies the project's active task source. Projects are free to
+    keep that source in their own schema; the relay validator must not turn its
+    optional template into a second task contract.
+    """
+    text = read_document(path, report)
+    if not text:
+        return None
+    kind = detect_kind(path, text)
+    if kind is None or (kind == "task" and not is_v2(text)):
+        print("  kind  project-native-task")
+        check_credentials(text, "project-native task", report)
+        report.ok("project-native task file exists and is readable; relay schema not imposed")
+        return "native-task"
+    return validate_document(path, workspace, report)
+
+
 def check_result_task_coverage(result_path, task_path, report):
     """Require each open blocker/important finding to have a task item."""
     try:
@@ -1362,7 +1386,13 @@ def main(argv=None):
         default=".",
         help="root for relative paths and file anchors (default: current directory)",
     )
-    parser.add_argument("--tasks", help="optional task file to validate with the document")
+    parser.add_argument(
+        "--tasks",
+        help=(
+            "optional active task file; relay-format tasks are fully validated, "
+            "project-native tasks are link-checked without imposing a schema"
+        ),
+    )
     args = parser.parse_args(argv)
 
     report = Report()
@@ -1382,14 +1412,15 @@ def main(argv=None):
             print("=" * 70)
             print(task_path.name)
             print("=" * 70)
-            task_kind = validate_document(task_path, workspace, report)
-            if task_kind and task_kind != "task":
+            task_kind = validate_task_argument(task_path, workspace, report)
+            if task_kind and task_kind not in {"task", "native-task"}:
                 report.fail("--tasks does not point to a task document")
 
     if document_kind == "result" and task_kind == "task":
         check_result_task_coverage(document, task_path, report)
-    if document_kind == "handoff" and task_kind == "task":
+    if document_kind == "handoff" and task_kind in {"task", "native-task"}:
         check_handoff_task_argument(document, task_path, workspace, report)
+    if document_kind == "handoff" and task_kind == "task":
         check_handoff_task_contract(document, task_path, report)
 
     print("")

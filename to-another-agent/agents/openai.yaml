@@ -1,6 +1,6 @@
 interface:
   display_name: "To Another Agent"
-  short_description: "标准化跨 agent 接手、继续交接与项目审查"
+  short_description: "沿用项目原生记录完成跨 agent 接手、交接与审查"
   default_prompt: "使用 $to-another-agent 接手当前项目，或把当前现场整理给下一位继续。"
 policy:
   allow_implicit_invocation: true
