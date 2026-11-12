@@ -193,7 +193,16 @@ EXPECTED_TYPES = {
     "request": {"review-request"},
     "result": {"review-result"},
 }
-NEXT_ROLES = {"工作方", "审查方", "监控方", "执行方", "规划方", "验收方"}
+NEXT_ROLES = {
+    "接续方",
+    "工作方",
+    "审查方",
+    "监控方",
+    "执行方",
+    "规划方",
+    "验收方",
+}
+ROLE_SOURCES = {"default", "explicit"}
 OUTPUT_LABELS = {
     "执行策略": "execution strategy",
     "下一角色": "next role",
@@ -445,6 +454,24 @@ def check_v2_metadata(text, kind, report):
         report.fail("invalid relay type for " + kind)
     else:
         report.ok("relay type matches " + kind)
+    check_role_metadata(text, report)
+
+
+def check_role_metadata(text, report):
+    role = plain_value(metadata_value(text, "下一角色"))
+    source = plain_value(metadata_value(text, "角色来源"))
+    if role and role not in NEXT_ROLES:
+        report.fail("invalid declared next role")
+    if source and source not in ROLE_SOURCES:
+        report.fail("invalid role source")
+    if source and not role:
+        report.fail("role source is set without a next role")
+    if role and not source:
+        report.warn("legacy next-role metadata has no role source")
+    if source == "default" and role != "接续方":
+        report.fail("default role source must use the continuation role")
+    if role and source:
+        report.ok("next role and role source are consistent")
 
 
 def check_next_prompt(text, sections, kind, path, report):
@@ -765,8 +792,6 @@ def check_fine_task(text, report):
     required_metadata = {
         "执行策略": "persistent",
         "下一角色": None,
-        "结束时间": None,
-        "收尾开始": None,
     }
     for key, expected in required_metadata.items():
         value = plain_value(metadata_value(text, key))
@@ -1347,6 +1372,10 @@ def check_handoff_task_contract(handoff_path, task_path, report):
     task_role = plain_value(metadata_value(task_text, "下一角色"))
     if (handoff_role or task_role) and handoff_role != task_role:
         report.fail("next role differs between handoff and task")
+    handoff_source = plain_value(metadata_value(handoff_text, "角色来源"))
+    task_source = plain_value(metadata_value(task_text, "角色来源"))
+    if (handoff_source or task_source) and handoff_source != task_source:
+        report.fail("role source differs between handoff and task")
 
     handoff_end = metadata_value(handoff_text, "结束时间")
     task_end = metadata_value(task_text, "结束时间")
