@@ -103,6 +103,12 @@ RUNTIME_CONTROL_RE = re.compile(
     r"model_override)\b|(?:^|[\s(,])model\s*[:=]",
     re.I | re.M,
 )
+EAGER_RELAY_INVOCATION_RE = re.compile(
+    r"^\s*(?:```text\s*)?(?:>\s*)?"
+    r"(?:(?:请)?(?:先)?(?:加载并)?使用|(?:please\s+)?(?:first\s+)?use)\s*"
+    r"(?:`?\$?to-another-agent`?)(?:\s*(?:skill|技能))?",
+    re.I,
+)
 FINDING_HEADER_RE = re.compile(
     r"^###\s+(F\d+)\s+`(阻断|重要|可选)·(已核实|存疑)`(?:\s+.+)?$"
 )
@@ -160,7 +166,7 @@ HANDOFF_SECTIONS = (
     ("下一位 agent 接手", "next-agent prompt"),
 )
 TASK_SECTIONS = (
-    ("接手先验收", "acceptance-first tasks"),
+    ("接手先", "takeover checks"),
     ("待执行", "pending tasks"),
     ("受阻", "blocked tasks"),
 )
@@ -182,7 +188,6 @@ RESULT_SECTIONS = (
 )
 HANDOFF_METADATA = (
     ("更新时间", "updated"),
-    ("当前角色", "current role"),
     ("当前目标", "current objective"),
     ("状态基线", "state baseline"),
     ("后续任务", "follow-up task"),
@@ -193,19 +198,8 @@ EXPECTED_TYPES = {
     "request": {"review-request"},
     "result": {"review-result"},
 }
-NEXT_ROLES = {
-    "接续方",
-    "工作方",
-    "审查方",
-    "监控方",
-    "执行方",
-    "规划方",
-    "验收方",
-}
-ROLE_SOURCES = {"default", "explicit"}
 OUTPUT_LABELS = {
     "执行策略": "execution strategy",
-    "下一角色": "next role",
     "结束时间": "ending time",
     "收尾开始": "wrap-up time",
     "接手时间": "takeover time",
@@ -228,7 +222,6 @@ OUTPUT_LABELS = {
     "关键结果": "key result",
     "核验证据": "verification evidence",
     "剩余事项": "remaining work",
-    "建议下一角色": "suggested next role",
 }
 MAX_OPTIONAL = 5
 
@@ -454,24 +447,6 @@ def check_v2_metadata(text, kind, report):
         report.fail("invalid relay type for " + kind)
     else:
         report.ok("relay type matches " + kind)
-    check_role_metadata(text, report)
-
-
-def check_role_metadata(text, report):
-    role = plain_value(metadata_value(text, "下一角色"))
-    source = plain_value(metadata_value(text, "角色来源"))
-    if role and role not in NEXT_ROLES:
-        report.fail("invalid declared next role")
-    if source and source not in ROLE_SOURCES:
-        report.fail("invalid role source")
-    if source and not role:
-        report.fail("role source is set without a next role")
-    if role and not source:
-        report.warn("legacy next-role metadata has no role source")
-    if source == "default" and role != "接续方":
-        report.fail("default role source must use the continuation role")
-    if role and source:
-        report.ok("next role and role source are consistent")
 
 
 def check_next_prompt(text, sections, kind, path, report):
@@ -479,31 +454,22 @@ def check_next_prompt(text, sections, kind, path, report):
     if not body.strip():
         report.fail("missing next-agent prompt body")
         return
+    if not re.search(r"```text\s*\n[\s\S]+?\n```", body, re.I):
+        report.fail("next-agent prompt is not in a copyable text fence")
     skill_references = SKILL_REFERENCE_RE.findall(body)
     if not skill_references:
         report.fail("next-agent prompt does not name the to-another-agent skill")
     if path.name not in body:
         report.fail("next-agent prompt does not name its source document")
-    role_word = {"request": "审查方", "result": "工作方"}.get(kind)
-    if role_word and role_word not in body:
-        report.fail("next-agent prompt does not name the required role")
-    declared_role = plain_value(metadata_value(text, "下一角色"))
-    if declared_role:
-        if declared_role not in NEXT_ROLES:
-            report.fail("invalid declared next role")
-        elif declared_role not in body:
-            report.fail("next-agent prompt does not name declared role")
-        if len(skill_references) < 2:
-            report.fail("next-agent prompt does not require relay callback")
+    if EAGER_RELAY_INVOCATION_RE.search(body):
+        report.fail("next-agent prompt starts by invoking the relay skill")
     mandatory_subagent = any(
         pattern.search(body) for pattern in MANDATORY_SUBAGENT_PATTERNS
     )
     if mandatory_subagent:
         report.fail("next-agent prompt mandates subagent orchestration")
-    elif SUBAGENT_TERM_RE.search(body) and not (
-        kind == "request" or declared_role == "审查方"
-    ):
-        report.fail("subagent suggestion is outside an independent review handoff")
+    elif SUBAGENT_TERM_RE.search(body):
+        report.fail("next-agent prompt contains subagent orchestration advice")
     if any(
         pattern.search(body) for pattern in CONCRETE_RUNTIME_ASSIGNMENT_PATTERNS
     ):
@@ -622,7 +588,11 @@ def check_handoff_prompt_state(text, sections, workspace, report):
     remote = level2_section(text, "远程任务").strip()
     no_remote = remote in {"无活动远程任务", "无活动远程任务。"}
     prompt_mentions_remote = bool(
-        re.search(r"远程(?:任务|进程)|(?:接管|监控|接收)[^\n。]*远程", prompt)
+        re.search(
+            r"(?:远程|服务器|集群|后台)(?:任务|进程)|"
+            r"(?:接管|监控|接收)[^\n。]*(?:远程|服务器|集群|后台)",
+            prompt,
+        )
     )
     if no_remote and prompt_mentions_remote:
         report.fail("prompt mentions remote takeover but no remote task is active")
@@ -738,7 +708,6 @@ def execution_reports(text, report):
         "关键结果",
         "核验证据",
         "剩余事项",
-        "建议下一角色",
     )
     allowed_status = {
         "milestone",
@@ -768,9 +737,6 @@ def execution_reports(text, report):
             parse_aware_time(
                 values["时间"], "execution report " + report_id + " time", report
             )
-        role = plain_value(values["建议下一角色"])
-        if role and role not in NEXT_ROLES:
-            report.fail("execution report " + report_id + " has invalid next role")
         records.append({"id": report_id, **values})
     report.ok(str(len(records)) + " execution report(s) examined")
     return records
@@ -791,7 +757,6 @@ def is_placeholder_evidence(value):
 def check_fine_task(text, report):
     required_metadata = {
         "执行策略": "persistent",
-        "下一角色": None,
     }
     for key, expected in required_metadata.items():
         value = plain_value(metadata_value(text, key))
@@ -799,17 +764,9 @@ def check_fine_task(text, report):
             report.fail("fine task missing metadata: " + OUTPUT_LABELS[key])
         elif expected and value != expected:
             report.fail("fine task has invalid " + OUTPUT_LABELS[key])
-    role = plain_value(metadata_value(text, "下一角色"))
-    if role and role not in NEXT_ROLES:
-        report.fail("fine task has invalid next role")
-
     if not level2_section(text, "执行回报"):
         report.fail("fine task file missing execution-report section")
     reports = execution_reports(text, report)
-    if reports and role:
-        latest_role = plain_value(reports[-1].get("建议下一角色"))
-        if latest_role and latest_role != role:
-            report.fail("latest execution-report role differs from task next role")
     tasks = list(fine_task_blocks(text))
     if not tasks:
         report.fail("fine task file contains no top-level task")
@@ -938,9 +895,11 @@ def check_task(text, sections, report):
         body_text = "\n".join(body)
         if not re.search(r"^\s+-\s*完成判据\s*：\s*\S", body_text, re.M):
             report.fail("unchecked task " + str(total) + " lacks a completion criterion")
-        if "接手先验收" in section:
-            if not re.search(r"^\s+-\s*验收动作\s*：\s*\S", body_text, re.M):
-                report.fail("acceptance-first task " + str(total) + " lacks a validation action")
+        if "接手先" in section:
+            if not re.search(
+                r"^\s+-\s*(?:验收|核对)动作\s*：\s*\S", body_text, re.M
+            ):
+                report.fail("takeover-check task " + str(total) + " lacks a check action")
     if total:
         report.ok(str(total) + " unchecked task(s) examined")
     else:
@@ -1064,7 +1023,8 @@ def check_request_evidence_details(text, report):
         match.start()
         for match in re.finditer(r"^###\s+决策\b.*$", decisions, re.M)
     ]
-    if not decision_starts:
+    no_decision = plain_value(decisions).rstrip("。.") in {"无", "无实质决策"}
+    if not decision_starts and not no_decision:
         report.fail("v2 review request needs at least one key decision")
     for index, start in enumerate(decision_starts, 1):
         end = (
@@ -1202,6 +1162,9 @@ def check_verdict_mapping(verdict, findings, report):
 
 def check_corresponding_request(text, result_match, workspace, report):
     value = metadata_value(text, "对应请求")
+    if plain_value(value) in {"当前用户指令", "current user instruction"}:
+        report.ok("direct review uses the current user instruction as its scope")
+        return
     request_path = backtick_path(value)
     if not request_path:
         report.fail("v2 review result does not point to its request")
@@ -1227,6 +1190,9 @@ def check_corresponding_request(text, result_match, workspace, report):
 def check_result(text, sections, path, workspace, report):
     match = check_review_filename(path, "审查", report)
     check_sections(sections, RESULT_SECTIONS, "review result", report)
+    for keyword, description in RESULT_SECTIONS:
+        if not level2_section(text, keyword).strip():
+            report.fail("review result section is empty: " + description)
     lines = text.splitlines()
     findings = parse_findings(lines, report)
     verdict = parse_verdict(text, report)
@@ -1368,15 +1334,6 @@ def check_handoff_task_contract(handoff_path, task_path, report):
     except OSError as exc:
         report.fail("cannot compare handoff and task contract: " + str(exc))
         return
-    handoff_role = plain_value(metadata_value(handoff_text, "下一角色"))
-    task_role = plain_value(metadata_value(task_text, "下一角色"))
-    if (handoff_role or task_role) and handoff_role != task_role:
-        report.fail("next role differs between handoff and task")
-    handoff_source = plain_value(metadata_value(handoff_text, "角色来源"))
-    task_source = plain_value(metadata_value(task_text, "角色来源"))
-    if (handoff_source or task_source) and handoff_source != task_source:
-        report.fail("role source differs between handoff and task")
-
     handoff_end = metadata_value(handoff_text, "结束时间")
     task_end = metadata_value(task_text, "结束时间")
     deadline_active = any(

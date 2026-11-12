@@ -48,7 +48,10 @@ HANDOFF = """# 项目交接
 1. 验收任务。
 
 ## 下一位 agent 接手
-> 请使用 `$to-another-agent` 接手当前项目。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，然后继续。
+
+```text
+请读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，核对现场后继续未完成工作。完成或实质受阻时，使用 `to-another-agent` 技能更新记录并生成下一份接手提示词。
+```
 """
 
 TASKS = """# 下一位 agent 任务
@@ -82,7 +85,6 @@ FINE_TASKS = """# 下一位 agent 任务
 - 交接类型：continue
 - 任务粒度：fine
 - 执行策略：persistent
-- 下一角色：执行方
 - 结束时间：无
 - 收尾开始：无
 
@@ -143,42 +145,33 @@ def deadline_handoff():
     return HANDOFF.replace(
         "- 后续任务：`tasks/next-agent.md`",
         "- 后续任务：`tasks/next-agent.md`\n"
-        "- 下一角色：执行方\n"
         "- 接手时间：2026-11-11T12:00:00+08:00\n"
         "- 结束时间：2026-11-11T13:00:00+08:00\n"
         "- 收尾开始：2026-11-11T12:48:00+08:00\n"
         "- 收尾策略：auto",
     ).replace(
-        "> 请使用 `$to-another-agent` 接手当前项目。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，然后继续。",
-        "> 请使用 `$to-another-agent` 以执行方身份接手。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，先核验现场并持续执行；完成、达到回报节点、实质受阻或到达收尾开始时，再次使用 `$to-another-agent` 更新记录并回报。",
+        "请读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，核对现场后继续未完成工作。完成或实质受阻时，使用 `to-another-agent` 技能更新记录并生成下一份接手提示词。",
+        "请读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，先核验现场并持续执行；完成、达到回报节点、实质受阻或到达收尾开始时，使用 `to-another-agent` 技能更新记录并生成下一份接手提示词。",
     )
 
 
 def portable_handoff(extra_instruction=""):
     prompt = (
-        "> 请加载并使用 `to-another-agent` 技能，以执行方身份接手当前项目。"
-        "读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，先核验现场再继续；"
+        "请读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，先核验现场再继续；"
         + extra_instruction
-        + "完成或实质受阻时，再次使用 `to-another-agent` 技能更新记录并回报。"
+        + "完成或实质受阻时，使用 `to-another-agent` 技能更新记录并生成下一份接手提示词。"
     )
     return HANDOFF.replace(
         "- 后续任务：`tasks/next-agent.md`",
-        "- 后续任务：`tasks/next-agent.md`\n- 下一角色：执行方",
+        "- 后续任务：`tasks/next-agent.md`",
     ).replace(
-        "> 请使用 `$to-another-agent` 接手当前项目。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，然后继续。",
+        "请读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，核对现场后继续未完成工作。完成或实质受阻时，使用 `to-another-agent` 技能更新记录并生成下一份接手提示词。",
         prompt,
     )
 
 
 def default_continue_handoff():
-    return (
-        portable_handoff()
-        .replace(
-            "- 下一角色：执行方",
-            "- 下一角色：接续方\n- 角色来源：default",
-        )
-        .replace("以执行方身份", "以接续方身份")
-    )
+    return portable_handoff()
 
 LEGACY_REQUEST = """# 审查请求：demo r1
 
@@ -315,7 +308,9 @@ def v2_request(name, round_number=1, previous="无"):
 
 ## 8. 下一位 agent 接手
 
-> 请使用 `$to-another-agent` 以审查方身份接手。读取 `{name}`，先验证请求和锚点，再只读核对实际产物。
+```text
+请读取 `{name}`，先验证请求和锚点，再只读核对实际产物；完成或实质受阻时，使用 `to-another-agent` 技能整理审查结果和下一份提示词。
+```
 """
 
 
@@ -361,7 +356,9 @@ def v2_result(name, request_name, verdict="通过", findings="未发现阻断、
 
 ## 8. 下一位 agent 接手
 
-> 请使用 `$to-another-agent` 以工作方身份处理 `{name}`。审查已经完成，请更新项目记录。
+```text
+请读取 `{name}`，核对发现是否仍适用于当前版本并更新项目记录；完成或实质受阻时，使用 `to-another-agent` 技能生成下一份提示词。
+```
 """
 
 
@@ -399,13 +396,51 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(handoff, tasks)
         self.assertEqual(code, 0, out)
 
+    def test_new_takeover_check_heading_and_field_pass(self):
+        body = TASKS.replace("接手先验收", "接手先核对").replace(
+            "验收动作", "核对动作"
+        )
+        tasks = self.write("tasks/next-agent.md", body)
+        code, out = self.validate(tasks)
+        self.assertEqual(code, 0, out)
+
+    def test_takeover_prompt_starts_with_project_files_and_uses_skill_on_exit(self):
+        self.write("tasks/next-agent.md", TASKS)
+        handoff = self.write("AGENT_HANDOFF.md", HANDOFF)
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 0, out)
+
+        eager = HANDOFF.replace(
+            "请读取 `AGENT_HANDOFF.md`",
+            "请先使用 `to-another-agent` 技能，再读取 `AGENT_HANDOFF.md`",
+        )
+        handoff = self.write("AGENT_HANDOFF.md", eager)
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 1)
+        self.assertIn("starts by invoking the relay skill", out)
+
+    def test_next_prompt_requires_a_copyable_text_fence(self):
+        self.write("tasks/next-agent.md", TASKS)
+        unfenced = HANDOFF.replace("```text\n", "").replace("\n```\n", "\n", 1)
+        handoff = self.write("AGENT_HANDOFF.md", unfenced)
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 1)
+        self.assertIn("copyable text fence", out)
+
+    def test_direct_review_result_can_use_current_user_instruction_as_scope(self):
+        name = "2026-11-11-demo-r1-审查.md"
+        body = v2_result(name, "当前用户指令")
+        result = self.write("cross-agent-review-files/" + name, body)
+        code, out = self.validate(result)
+        self.assertEqual(code, 0, out)
+
     def test_handoff_without_tasks_or_remote_work_rejects_stale_prompt_clauses(self):
         body = HANDOFF.replace(
             "- 后续任务：`tasks/next-agent.md`",
             "- 后续任务：无",
         ).replace(
-            "，然后继续。",
-            "，并接管远程任务。",
+            "核对现场后继续未完成工作。",
+            "核对现场后继续未完成工作，并接管远程任务。",
         )
         handoff = self.write("AGENT_HANDOFF.md", body)
         code, out = self.validate(handoff)
@@ -427,17 +462,15 @@ class RelayValidatorTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("referenced follow-up task file is missing", out)
 
-    def test_declared_next_role_requires_role_and_callback_in_prompt(self):
+    def test_legacy_declared_role_remains_readable_when_prompt_names_it(self):
         self.write("tasks/next-agent.md", TASKS)
         body = HANDOFF.replace(
             "- 后续任务：`tasks/next-agent.md`",
             "- 后续任务：`tasks/next-agent.md`\n- 下一角色：执行方",
-        )
+        ).replace("核对现场后继续", "以执行方身份核对现场后继续")
         handoff = self.write("AGENT_HANDOFF.md", body)
         code, out = self.validate(handoff)
-        self.assertEqual(code, 1)
-        self.assertIn("next-agent prompt does not name declared role", out)
-        self.assertIn("next-agent prompt does not require relay callback", out)
+        self.assertEqual(code, 0, out)
 
     def test_next_prompt_accepts_platform_neutral_skill_name(self):
         self.write("tasks/next-agent.md", TASKS)
@@ -445,27 +478,20 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(handoff)
         self.assertEqual(code, 0, out)
 
-    def test_default_role_is_neutral_continuation(self):
+    def test_new_handoff_needs_no_role_metadata(self):
         self.write("tasks/next-agent.md", TASKS)
         handoff = self.write("AGENT_HANDOFF.md", default_continue_handoff())
         code, out = self.validate(handoff)
         self.assertEqual(code, 0, out)
 
-    def test_default_role_source_rejects_specialized_role(self):
+    def test_legacy_role_metadata_remains_readable(self):
         self.write("tasks/next-agent.md", TASKS)
-        broken = default_continue_handoff().replace("接续方", "审查方")
-        handoff = self.write("AGENT_HANDOFF.md", broken)
-        code, out = self.validate(handoff)
-        self.assertEqual(code, 1)
-        self.assertIn("default role source must use the continuation role", out)
-
-    def test_explicit_role_source_accepts_specialized_role(self):
-        self.write("tasks/next-agent.md", TASKS)
-        body = (
-            default_continue_handoff()
-            .replace("接续方", "审查方")
-            .replace("角色来源：default", "角色来源：explicit")
-        )
+        body = HANDOFF.replace(
+            "- 后续任务：`tasks/next-agent.md`",
+            "- 后续任务：`tasks/next-agent.md`\n"
+            "- 下一角色：接续方\n"
+            "- 角色来源：default",
+        ).replace("核对现场后继续", "以接续方身份核对现场后继续")
         handoff = self.write("AGENT_HANDOFF.md", body)
         code, out = self.validate(handoff)
         self.assertEqual(code, 0, out)
@@ -532,7 +558,7 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(handoff)
         self.assertEqual(code, 0, out)
 
-    def test_optional_subagent_suggestion_is_limited_to_review_handoffs(self):
+    def test_optional_subagent_suggestion_is_rejected_in_all_handoffs(self):
         self.write("tasks/next-agent.md", TASKS)
         execution_handoff = self.write(
             "AGENT_HANDOFF.md",
@@ -540,16 +566,17 @@ class RelayValidatorTests(unittest.TestCase):
         )
         code, out = self.validate(execution_handoff)
         self.assertEqual(code, 1)
-        self.assertIn("subagent suggestion is outside an independent review", out)
+        self.assertIn("subagent orchestration advice", out)
 
         name = "2026-11-11-demo-r1-请求.md"
         request = v2_request(name).replace(
-            "再只读核对实际产物。",
-            "再只读核对实际产物；如环境支持，可考虑使用子智能体做独立核验。",
+            "再只读核对实际产物；",
+            "再只读核对实际产物；如环境支持，可考虑使用子智能体做独立核验；",
         )
         request_path = self.write("cross-agent-review-files/" + name, request)
         code, out = self.validate(request_path)
-        self.assertEqual(code, 0, out)
+        self.assertEqual(code, 1)
+        self.assertIn("subagent orchestration advice", out)
 
     def test_next_prompt_allows_model_names_as_review_objects(self):
         self.write("tasks/next-agent.md", TASKS)
@@ -572,7 +599,7 @@ class RelayValidatorTests(unittest.TestCase):
         tasks = self.write("tasks/next-agent.md", broken)
         code, out = self.validate(tasks)
         self.assertEqual(code, 1)
-        self.assertIn("validation action", out)
+        self.assertIn("check action", out)
 
     def test_address_findings_is_a_valid_task_type(self):
         tasks = self.write(
@@ -746,7 +773,7 @@ class RelayValidatorTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("completion report does not cover step S1", out)
 
-    def test_latest_execution_report_role_must_match_task(self):
+    def test_legacy_execution_report_role_does_not_control_task(self):
         report = """### R1
 - 时间：2026-11-11T13:00:00+08:00
 - 状态：milestone
@@ -763,8 +790,7 @@ class RelayValidatorTests(unittest.TestCase):
         )
         tasks = self.write("tasks/next-agent.md", body)
         code, out = self.validate(tasks)
-        self.assertEqual(code, 1)
-        self.assertIn("latest execution-report role differs from task", out)
+        self.assertEqual(code, 0, out)
 
     def test_valid_deadline_fine_task_passes(self):
         tasks = self.write("tasks/next-agent.md", deadline_fine_tasks())
@@ -830,19 +856,11 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(tasks)
         self.assertEqual(code, 0, out)
 
-    def test_handoff_and_task_deadline_and_role_must_match(self):
+    def test_handoff_and_task_deadline_must_match(self):
         handoff = self.write("AGENT_HANDOFF.md", deadline_handoff())
         tasks = self.write("tasks/next-agent.md", deadline_fine_tasks())
         code, out = self.validate(handoff, tasks)
         self.assertEqual(code, 0, out)
-
-        role_mismatch = deadline_fine_tasks().replace(
-            "- 下一角色：执行方", "- 下一角色：监控方"
-        )
-        tasks = self.write("tasks/next-agent.md", role_mismatch)
-        code, out = self.validate(handoff, tasks)
-        self.assertEqual(code, 1)
-        self.assertIn("next role differs between handoff and task", out)
 
         time_mismatch = deadline_fine_tasks().replace(
             "2026-11-11T13:00:00+08:00", "2026-11-11T13:30:00+08:00"
@@ -854,52 +872,18 @@ class RelayValidatorTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("ending time differs between handoff and task", out)
 
-    def test_handoff_and_task_role_source_must_match(self):
-        handoff = self.write("AGENT_HANDOFF.md", default_continue_handoff())
-        task_body = TASKS.replace(
-            "- 交接类型：continue",
-            "- 交接类型：continue\n"
+    def test_legacy_role_fields_are_optional_and_do_not_cross_bind_documents(self):
+        self.write("tasks/next-agent.md", TASKS)
+        body = HANDOFF.replace(
+            "- 后续任务：`tasks/next-agent.md`",
+            "- 后续任务：`tasks/next-agent.md`\n"
             "- 下一角色：接续方\n"
             "- 角色来源：default",
-        )
-        tasks = self.write("tasks/next-agent.md", task_body)
+        ).replace("核对现场后继续", "以接续方身份核对现场后继续")
+        handoff = self.write("AGENT_HANDOFF.md", body)
+        tasks = self.write("tasks/next-agent.md", TASKS)
         code, out = self.validate(handoff, tasks)
         self.assertEqual(code, 0, out)
-
-        tasks = self.write(
-            "tasks/next-agent.md",
-            task_body.replace("角色来源：default", "角色来源：explicit"),
-        )
-        code, out = self.validate(handoff, tasks)
-        self.assertEqual(code, 1)
-        self.assertIn("role source differs between handoff and task", out)
-
-    def test_all_seven_next_roles_are_accepted_with_callback(self):
-        self.write("tasks/next-agent.md", TASKS)
-        roles = (
-            "接续方",
-            "工作方",
-            "审查方",
-            "监控方",
-            "执行方",
-            "规划方",
-            "验收方",
-        )
-        for role in roles:
-            with self.subTest(role=role):
-                body = HANDOFF.replace(
-                    "- 后续任务：`tasks/next-agent.md`",
-                    "- 后续任务：`tasks/next-agent.md`\n- 下一角色：" + role,
-                ).replace(
-                    "请使用 `$to-another-agent` 接手当前项目。",
-                    "请使用 `$to-another-agent` 以" + role + "身份接手当前项目。",
-                ).replace(
-                    "，然后继续。",
-                    "；完成或受阻时再次使用 `$to-another-agent` 回报。",
-                )
-                handoff = self.write("AGENT_HANDOFF.md", body)
-                code, out = self.validate(handoff)
-                self.assertEqual(code, 0, out)
 
     def test_deadline_handoff_can_leave_remote_task_running_for_monitor(self):
         active = """### 长任务
@@ -913,14 +897,10 @@ class RelayValidatorTests(unittest.TestCase):
 """
         handoff_body = (
             deadline_handoff()
-            .replace("- 下一角色：执行方", "- 下一角色：监控方")
             .replace("无活动远程任务。", active)
-            .replace("以执行方身份", "以监控方身份")
-            .replace("先核验现场并持续执行", "先只读检查远程任务状态并接管监控")
+            .replace("先核验现场并持续执行", "先只读检查远程任务状态并继续既定工作")
         )
-        task_body = deadline_fine_tasks().replace(
-            "- 下一角色：执行方", "- 下一角色：监控方"
-        )
+        task_body = deadline_fine_tasks()
         handoff = self.write("AGENT_HANDOFF.md", handoff_body)
         tasks = self.write("tasks/next-agent.md", task_body)
         code, out = self.validate(handoff, tasks)
@@ -1154,6 +1134,16 @@ class RelayValidatorTests(unittest.TestCase):
         code, out = self.validate(request)
         self.assertEqual(code, 0, out)
 
+    def test_v2_request_allows_no_substantive_decision(self):
+        name = "2026-11-11-demo-r1-请求.md"
+        body = v2_request(name)
+        start = body.index("## 3. 关键决策")
+        end = body.index("## 4. 判断依据与证据等级")
+        body = body[:start] + "## 3. 关键决策\n\n无实质决策。\n\n" + body[end:]
+        request = self.write(name, body)
+        code, out = self.validate(request)
+        self.assertEqual(code, 0, out)
+
     def test_fenced_code_markup_is_not_treated_as_a_placeholder(self):
         name = "2026-11-11-demo-r1-请求.md"
         body = v2_request(name).replace(
@@ -1226,6 +1216,19 @@ class RelayValidatorTests(unittest.TestCase):
         result = self.write(result_name, v2_result(result_name, request_name))
         code, out = self.validate(result)
         self.assertEqual(code, 0, out)
+
+    def test_v2_result_rejects_empty_review_evidence_sections(self):
+        request_name = "2026-11-11-demo-r1-请求.md"
+        result_name = "2026-11-11-demo-r1-审查.md"
+        self.write(request_name, v2_request(request_name))
+        body = v2_result(result_name, request_name).replace(
+            "## 1. 核对轨迹\n\n- `target.txt:1-2`",
+            "## 1. 核对轨迹\n",
+        )
+        result = self.write(result_name, body)
+        code, out = self.validate(result)
+        self.assertEqual(code, 1)
+        self.assertIn("review result section is empty: verification trail", out)
 
     def test_result_rejects_corresponding_request_for_another_task(self):
         request_name = "2026-11-11-other-r1-请求.md"

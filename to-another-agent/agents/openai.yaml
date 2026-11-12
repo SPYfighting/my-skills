@@ -1,6 +1,6 @@
 interface:
   display_name: "To Another Agent"
-  short_description: "整理可持续接力、限时收尾与独立审查的项目现场"
-  default_prompt: "使用 to-another-agent 技能整理现场；没有明确角色或限制时按接续方做最小接手核验并继续，只有用户明确表达等义意图时才启用审查、监控、细粒度或时限规则。"
+  short_description: "标准化跨 agent 接手、继续交接与项目审查"
+  default_prompt: "使用 $to-another-agent 接手当前项目，或把当前现场整理给下一位继续。"
 policy:
   allow_implicit_invocation: true
