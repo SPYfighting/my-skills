@@ -31,6 +31,78 @@ FINE_STEP_RE = re.compile(
     r"^\s+\d+\.\s*\[([ xX])\]\s+(S[\w.-]+)\s+(.+?)\s*$"
 )
 EXECUTION_REPORT_RE = re.compile(r"^###\s+(R[\w.-]+)\s*$")
+SKILL_REFERENCE_RE = re.compile(
+    r"(?:\$to-another-agent\b|`to-another-agent`(?:\s*(?:skill|技能))?|"
+    r"(?<![\w/.-])to-another-agent\s+(?:skill|技能))",
+    re.I,
+)
+SUBAGENT_TERM_RE = re.compile(r"(?:子智能体|子\s*agent|sub-?agent)", re.I)
+MANDATORY_SUBAGENT_PATTERNS = (
+    re.compile(
+        r"(?:必须|务必|应当|需要|请)\s*"
+        r"(?:创建|使用|调用|启动|派遣|安排|要求)"
+        r"[^，。；\n]{0,20}(?:子智能体|子\s*agent|sub-?agent)",
+        re.I,
+    ),
+    re.compile(
+        r"\b(?:must|always|please|required\s+to)\s+"
+        r"(?:use|spawn|create|launch|delegate\s+to)\b"
+        r"[^.\n;]{0,30}\bsub-?agent\b",
+        re.I,
+    ),
+    re.compile(
+        r"(?:让|由)\s*(?:一个|某个)?\s*"
+        r"(?:子智能体|子\s*agent|sub-?agent)\s*"
+        r"(?:负责|执行|检查|核验|审查|处理)",
+        re.I,
+    ),
+    re.compile(
+        r"(?:^|[；。！!\n>])\s*(?:创建|使用|调用|启动|派遣)"
+        r"[^，。；\n]{0,20}(?:子智能体|子\s*agent|sub-?agent)",
+        re.I,
+    ),
+    re.compile(r"\b(?:have|let)\s+(?:a\s+)?sub-?agent\b", re.I),
+)
+MODEL_OR_RUNTIME_NAME = (
+    r"(?:gpt(?:[-\s]?[0-9][\w.-]*)?|luna|"
+    r"claude(?:[-\s](?:code|opus|sonnet|haiku|[0-9][\w.-]*))?|"
+    r"gemini(?:[-\s][\w.-]+)?|codex|opencode|"
+    r"deepseek(?:[-\s][\w.-]+)?|qwen(?:[-\s][\w.-]+)?|"
+    r"llama(?:[-\s][\w.-]+)?|mistral(?:[-\s][\w.-]+)?)"
+)
+CONCRETE_RUNTIME_ASSIGNMENT_PATTERNS = (
+    re.compile(
+        r"(?:请|必须|务必|应当|需要)?\s*"
+        r"(?:使用|采用|指定|选择|调用)\s*"
+        + MODEL_OR_RUNTIME_NAME
+        + r"(?:\s*模型)?",
+        re.I,
+    ),
+    re.compile(
+        r"\b(?:must\s+|always\s+|please\s+|required\s+to\s+)?"
+        r"(?:use|select|choose|run(?:\s+this)?\s+on)\s+"
+        + MODEL_OR_RUNTIME_NAME
+        + r"\b",
+        re.I,
+    ),
+    re.compile(
+        r"(?:由|交给)\s*"
+        + MODEL_OR_RUNTIME_NAME
+        + r"(?:\s*模型)?\s*(?:执行|完成|处理|审查|核验)",
+        re.I,
+    ),
+    re.compile(
+        r"\bdelegate(?:\s+this|\s+the\s+\w+)?\s+to\s+"
+        + MODEL_OR_RUNTIME_NAME
+        + r"\b",
+        re.I,
+    ),
+)
+RUNTIME_CONTROL_RE = re.compile(
+    r"\b(?:spawn_agent|fork_turns|reasoning_effort|service_tier|"
+    r"model_override)\b|(?:^|[\s(,])model\s*[:=]",
+    re.I | re.M,
+)
 FINDING_HEADER_RE = re.compile(
     r"^###\s+(F\d+)\s+`(阻断|重要|可选)·(已核实|存疑)`(?:\s+.+)?$"
 )
@@ -380,8 +452,9 @@ def check_next_prompt(text, sections, kind, path, report):
     if not body.strip():
         report.fail("missing next-agent prompt body")
         return
-    if "$to-another-agent" not in body:
-        report.fail("next-agent prompt does not invoke $to-another-agent")
+    skill_references = SKILL_REFERENCE_RE.findall(body)
+    if not skill_references:
+        report.fail("next-agent prompt does not name the to-another-agent skill")
     if path.name not in body:
         report.fail("next-agent prompt does not name its source document")
     role_word = {"request": "审查方", "result": "工作方"}.get(kind)
@@ -393,8 +466,23 @@ def check_next_prompt(text, sections, kind, path, report):
             report.fail("invalid declared next role")
         elif declared_role not in body:
             report.fail("next-agent prompt does not name declared role")
-        if body.count("$to-another-agent") < 2:
+        if len(skill_references) < 2:
             report.fail("next-agent prompt does not require relay callback")
+    mandatory_subagent = any(
+        pattern.search(body) for pattern in MANDATORY_SUBAGENT_PATTERNS
+    )
+    if mandatory_subagent:
+        report.fail("next-agent prompt mandates subagent orchestration")
+    elif SUBAGENT_TERM_RE.search(body) and not (
+        kind == "request" or declared_role == "审查方"
+    ):
+        report.fail("subagent suggestion is outside an independent review handoff")
+    if any(
+        pattern.search(body) for pattern in CONCRETE_RUNTIME_ASSIGNMENT_PATTERNS
+    ):
+        report.fail("next-agent prompt assigns a concrete runtime or model")
+    if RUNTIME_CONTROL_RE.search(body):
+        report.fail("next-agent prompt contains runtime-specific controls")
     report.ok("next-agent prompt contract examined")
 
 

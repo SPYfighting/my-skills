@@ -153,6 +153,22 @@ def deadline_handoff():
         "> 请使用 `$to-another-agent` 以执行方身份接手。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，先核验现场并持续执行；完成、达到回报节点、实质受阻或到达收尾开始时，再次使用 `$to-another-agent` 更新记录并回报。",
     )
 
+
+def portable_handoff(extra_instruction=""):
+    prompt = (
+        "> 请加载并使用 `to-another-agent` 技能，以执行方身份接手当前项目。"
+        "读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，先核验现场再继续；"
+        + extra_instruction
+        + "完成或实质受阻时，再次使用 `to-another-agent` 技能更新记录并回报。"
+    )
+    return HANDOFF.replace(
+        "- 后续任务：`tasks/next-agent.md`",
+        "- 后续任务：`tasks/next-agent.md`\n- 下一角色：执行方",
+    ).replace(
+        "> 请使用 `$to-another-agent` 接手当前项目。读取 `AGENT_HANDOFF.md` 和 `tasks/next-agent.md`，然后继续。",
+        prompt,
+    )
+
 LEGACY_REQUEST = """# 审查请求：demo r1
 
 ## 1. 用户原始需求（逐字引用）
@@ -411,6 +427,102 @@ class RelayValidatorTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("next-agent prompt does not name declared role", out)
         self.assertIn("next-agent prompt does not require relay callback", out)
+
+    def test_next_prompt_accepts_platform_neutral_skill_name(self):
+        self.write("tasks/next-agent.md", TASKS)
+        handoff = self.write("AGENT_HANDOFF.md", portable_handoff())
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 0, out)
+
+    def test_next_prompt_rejects_mandatory_subagent_orchestration(self):
+        self.write("tasks/next-agent.md", TASKS)
+        instructions = (
+            "必须创建子智能体并行检查；",
+            "让子智能体负责独立核验；",
+            "创建一个 subagent 检查结果；",
+            "Have a subagent review the result; ",
+        )
+        for instruction in instructions:
+            with self.subTest(instruction=instruction):
+                handoff = self.write(
+                    "AGENT_HANDOFF.md", portable_handoff(instruction)
+                )
+                code, out = self.validate(handoff)
+                self.assertEqual(code, 1)
+                self.assertIn(
+                    "next-agent prompt mandates subagent orchestration", out
+                )
+
+    def test_next_prompt_rejects_concrete_model_assignment(self):
+        self.write("tasks/next-agent.md", TASKS)
+        assignments = (
+            "请使用 Luna 模型完成核验；",
+            "必须采用 GPT-4.1 完成核验；",
+            "请选择 Claude Sonnet 执行审查；",
+            "Please use Gemini Pro for the review; ",
+            "使用 Codex 完成任务；",
+            "由 Claude Opus 执行审查；",
+            "Delegate this to Gemini Pro; ",
+        )
+        for instruction in assignments:
+            with self.subTest(instruction=instruction):
+                handoff = self.write(
+                    "AGENT_HANDOFF.md", portable_handoff(instruction)
+                )
+                code, out = self.validate(handoff)
+                self.assertEqual(code, 1)
+                self.assertIn(
+                    "next-agent prompt assigns a concrete runtime or model", out
+                )
+
+    def test_next_prompt_rejects_runtime_specific_delegation_controls(self):
+        self.write("tasks/next-agent.md", TASKS)
+        handoff = self.write(
+            "AGENT_HANDOFF.md",
+            portable_handoff("调用 spawn_agent 并设置 reasoning_effort=high；"),
+        )
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 1)
+        self.assertIn("next-agent prompt contains runtime-specific controls", out)
+
+    def test_next_prompt_allows_optional_platform_neutral_independent_check(self):
+        self.write("tasks/next-agent.md", TASKS)
+        handoff = self.write(
+            "AGENT_HANDOFF.md",
+            portable_handoff(
+                "如环境支持且存在可分离范围，可选择安排独立复核；"
+            ),
+        )
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 0, out)
+
+    def test_optional_subagent_suggestion_is_limited_to_review_handoffs(self):
+        self.write("tasks/next-agent.md", TASKS)
+        execution_handoff = self.write(
+            "AGENT_HANDOFF.md",
+            portable_handoff("如环境支持，可考虑使用子智能体做独立核验；"),
+        )
+        code, out = self.validate(execution_handoff)
+        self.assertEqual(code, 1)
+        self.assertIn("subagent suggestion is outside an independent review", out)
+
+        name = "2026-11-11-demo-r1-请求.md"
+        request = v2_request(name).replace(
+            "再只读核对实际产物。",
+            "再只读核对实际产物；如环境支持，可考虑使用子智能体做独立核验。",
+        )
+        request_path = self.write("cross-agent-review-files/" + name, request)
+        code, out = self.validate(request_path)
+        self.assertEqual(code, 0, out)
+
+    def test_next_prompt_allows_model_names_as_review_objects(self):
+        self.write("tasks/next-agent.md", TASKS)
+        handoff = self.write(
+            "AGENT_HANDOFF.md",
+            portable_handoff("比较 GPT-4 与 Claude 输出中的事实差异；"),
+        )
+        code, out = self.validate(handoff)
+        self.assertEqual(code, 0, out)
 
     def test_unchecked_task_requires_completion_criterion(self):
         broken = TASKS.replace("  - 完成判据：产物存在且可读\n", "")
